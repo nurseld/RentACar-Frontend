@@ -103,7 +103,11 @@
 
 .main__navbar {
   padding: 15px 0px;
-  background: #000d6b;
+  /* background: transparent; */
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
 .mobile__menu i {
@@ -152,6 +156,7 @@
 .search__box input::placeholder {
   font-size: 0.8rem;
 }
+
 .search__box span i {
   color: rgba(255, 255, 255, 0.555);
   cursor: pointer;
@@ -162,6 +167,7 @@
 }
 
 @media only screen and (max-width: 768px) {
+
   .header__top,
   .header__middle,
   .nav__right {

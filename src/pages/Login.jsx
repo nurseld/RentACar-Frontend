@@ -1,8 +1,24 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { Container, Row, Col, Form, FormGroup, Input } from "reactstrap";
+import Helmet from "../components/Helmet/Helmet";
+import CommonSection from "../components/UI/CommonSection";
 
-const Login () => {
+import "../styles/contact.css";
+
+
+
+const Login = () => {
     return (
-        <div>Login</div>
-    )
-}
+        <Helmet title="Login">
+            <CommonSection title="Login" />
+            <section>
+                <Container>
+
+                </Container>
+            </section>
+        </Helmet>
+    );
+};
+
 export default Login;
