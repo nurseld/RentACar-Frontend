@@ -1,0 +1,71 @@
+.register-page-section {
+    background: linear-gradient(rgb(0, 13, 107, 0.6), rgb(0, 13, 107, 0.6)),
+        url("../assets/all-images/drive.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.register-container {
+    color: #ddd;
+    width: 500px;
+    padding: 30px 50px;
+    margin: 150px auto;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.13);
+    backdrop-filter: blur(7.5px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+}
+
+.register-form input {
+    padding: 10px 16px;
+    margin: 30px 0px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, .85);
+}
+
+.register-button {
+    width: 70%;
+    padding: 7px 15px;
+    background: crimson;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-weight: 900px;
+    transition: .2s;
+}
+
+.register-button:hover {
+    background-color: rgba(220, 20, 60, .85);
+}
+
+.register-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-footer a {
+    color: white;
+    background-color: crimson;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 900;
+    border-radius: 8px;
+    padding: 2px 10px;
+    margin-left: 5px;
+    transition: .2s;
+}
+
+
+.register-footer a:hover {
+    background-color: rgba(220, 20, 60, .7);
+}
+
+
+.register-footer button {
+    margin: 5px 0px 25px;
+}
