@@ -1,3 +1,14 @@
+.modal-body {
+  padding: 0 !important;
+}
+
+.modal-close-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px;
+}
+
 .modal-backdrop.show {
   opacity: 0.3 !important;
 }
@@ -51,16 +62,13 @@
   z-index: 99999;
 }
 
-.test {
-  padding-left: 235px;
-}
-
 .login-container {
-  background-color: whitesmoke !important;
+  background-color: white !important;
   color: #aaa;
-  width: 300px;
-  padding: 30px 20px;
+  width: 100%;
+  padding: 110px 20px;
   margin: 0px auto;
+  border-radius: 10px;
 }
 
 .login-form input {

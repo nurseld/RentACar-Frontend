@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 import {
   Container, Row, Col,
@@ -7,7 +7,7 @@ import {
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
-import { Link, NavLink, Navigate, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./header.css";
 
 
@@ -48,24 +48,19 @@ const headerLinks = [
 ]
 
 const Header = () => {
-
-  const history = useNavigate();
-
   const menuRef = useRef(null);
 
   const toggleMenu = () => menuRef.current.classList.toggle("menu__active");
 
-  const [modalOpen, setModalOpen] = useState(false);
+  const navigate = useNavigate();
+  const [modalStatus, setModalStatus] = useState(false);
 
-  const openModal = () => {
-    setModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalOpen(false);
-    history("/Register");
-  };
-
+  useEffect(() => {
+    if (modalStatus) {
+      navigate('/register');
+      setModalStatus(false)
+    }
+  }, [modalStatus]);
 
   return (
     <header className="header">
@@ -85,24 +80,17 @@ const Header = () => {
 
             <Col lg="6" md="6" sm="6">
               <div className="header__top__right d-flex align-items-center justify-content-end gap-3">
-
-
-
-                <Link to="/login" className="d-flex align-items-center gap-1 test" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                  <i className="ri-login-circle-line"></i> Login
+                <Link to="/login" className="d-flex align-items-center gap-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                  <i className="fa-solid fa-arrow-right-to-bracket"></i> Login / Register
                 </Link>
-
-
-                <div className="modal fade" id="staticBackdrop" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div className="modal fade" id="staticBackdrop" tabIndex="-1"
+                  aria-labelledby="staticBackdropLabel" aria-hidden="true">
                   <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
-
-                      {/* <div className="modal-header">
-                        <h1 className="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div> */}
-
                       <div className="modal-body">
+                        <div className="modal-close-button-container">
+                          <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
                         <div className="login-container">
                           <div className="login-body">
                             <div className="login-form">
@@ -113,26 +101,33 @@ const Header = () => {
                           <div className="login-footer">
                             <button className="login-button" type="submit" >Giriş Yap</button>
                             <a href="#">Şifremi Unuttum</a>
-                            <span>Henüz üye değil misin? <button onClick={closeModal}>Kayıt Ol</button></span>
-
+                            <span>Henüz üye değil misin?
+                              <Link
+                                to="/register"
+                                data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop"
+                                onClick={async () => await setModalStatus(true)}
+                                className="login-footer-link"
+                              >
+                                Kayıt Ol
+                              </Link>
+                            </span>
                           </div>
                         </div>
                       </div>
-
                       {/* <div className="modal-footer">
                         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="button" className="btn btn-primary">Understood</button>
                       </div> */}
-
                     </div>
                   </div>
                 </div>
 
 
-
+                {/* 
                 <Link to="/register" className=" d-flex align-items-center gap-1">
                   <i className="ri-user-line"></i> Register
-                </Link>
+                </Link> */}
               </div>
             </Col>
           </Row>
