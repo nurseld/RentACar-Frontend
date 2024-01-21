@@ -30,15 +30,14 @@ const Register = () => {
                     <div className="register-container">
                         <ul className="nav nav-tabs" id="myTab" role="tablist">
                             <li className="nav-item" role="presentation">
-                                <button className="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Bireysel</button>
+                                <button className="nav-link active" id="register-individual-tab" data-bs-toggle="tab" data-bs-target="#register-individual" type="button" role="tab" aria-controls="home" aria-selected="true">Bireysel</button>
                             </li>
                             <li className="nav-item" role="presentation">
-                                <button className="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Kurumsal</button>
+                                <button className="nav-link" id="register-corporate-tab" data-bs-toggle="tab" data-bs-target="#register-corporate" type="button" role="tab" aria-controls="profile" aria-selected="false">Kurumsal</button>
                             </li>
                         </ul>
                         <div className="tab-content" id="myTabContent">
-                            <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-
+                            <div className="tab-pane fade show active" id="register-individual" role="tabpanel" aria-labelledby="register-individual-tab">
 
                                 <div className="individual-register-body">
                                     <div className="register-form">
@@ -67,7 +66,7 @@ const Register = () => {
 
 
                             </div>
-                            <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <div className="tab-pane fade" id="register-corporate" role="tabpanel" aria-labelledby="register-corporate-tab">
                                 <div className="corporate-register-body">
                                     <div className="register-form">
                                         <input className="form-control" type="text" placeholder="Yetkili Ad*" />

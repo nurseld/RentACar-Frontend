@@ -1,0 +1,96 @@
+.login-modal .nav-item {
+    padding: 0 10px;
+    padding-bottom: 30px;
+}
+
+.login-modal .nav-link {
+    color: #000d6b !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.login-modal .nav-link:hover {
+    border: none !important;
+}
+
+.login-modal .nav-link.active {
+    border-bottom: 4px solid crimson !important;
+}
+
+.login-container {
+    background-color: white !important;
+    color: #aaa;
+    width: 100%;
+    padding: 10px 20px;
+    margin: 0px auto;
+    border-radius: 10px;
+}
+
+.login-container .title {
+    margin-bottom: 50px;
+}
+
+.login-form input {
+    padding: 10px 16px;
+    margin-bottom: 30px !important;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 1px solid #00000018;
+}
+
+.login-button {
+    width: 60%;
+    padding: 7px 15px;
+    background: crimson;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-weight: 900px;
+    transition: .2s;
+    margin: 5px 0px 10px;
+}
+
+.login-button:hover {
+    background-color: rgba(220, 20, 60, .85);
+}
+
+
+.login-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 75px;
+}
+
+.login-footer a:nth-child(even) {
+    color: gray;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.login-footer a:nth-child(even):hover {
+    color: white;
+}
+
+.login-footer a:nth-child(odd) {
+    color: white;
+    background-color: crimson;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 2px 10px;
+    margin-left: 5px;
+    transition: .2s;
+}
+
+.login-footer a:nth-child(odd):hover {
+    background-color: rgba(220, 20, 60, .7);
+}

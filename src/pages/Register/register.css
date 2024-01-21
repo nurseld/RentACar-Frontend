@@ -1,6 +1,8 @@
 .register-page-section {
-    background: linear-gradient(rgb(0, 13, 107, 0.6), rgb(0, 13, 107, 0.6)),
-        url("../../assets/all-images/drive.jpg");
+    background: linear-gradient(rgb(0, 13, 107, 0.2), rgb(0, 13, 107, 0.3)),
+        url("https://images.unsplash.com/photo-1538393458636-02b5a75c6feb?q=80&w=2144&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    /* background: linear-gradient(rgb(0, 13, 107, 0.2), rgb(0, 13, 107, 0.3)),
+        url("../../assets/all-images/register-back.jpg"); */
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -24,7 +26,7 @@
 
 .individual-register-body {}
 
-.nav-link {
+.register-page-section .nav-link {
     color: whitesmoke !important;
     font-size: 16px !important;
     font-weight: 700 !important;
@@ -32,11 +34,11 @@
     border: none !important;
 }
 
-.nav-link:hover {
+.register-page-section .nav-link:hover {
     border: none !important;
 }
 
-.nav-link.active {
+.register-page-section .nav-link.active {
     border-bottom: 4px solid crimson !important;
 }
 

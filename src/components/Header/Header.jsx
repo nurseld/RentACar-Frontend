@@ -7,8 +7,9 @@ import {
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./header.css";
+import Login from "../Login/Login";
 
 
 const navLinks = [
@@ -52,15 +53,7 @@ const Header = () => {
 
   const toggleMenu = () => menuRef.current.classList.toggle("menu__active");
 
-  const navigate = useNavigate();
-  const [modalStatus, setModalStatus] = useState(false);
 
-  useEffect(() => {
-    if (modalStatus) {
-      navigate('/register');
-      setModalStatus(false)
-    }
-  }, [modalStatus]);
 
   return (
     <header className="header">
@@ -83,7 +76,7 @@ const Header = () => {
                 <Link to="/login" className="d-flex align-items-center gap-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                   <i className="fa-solid fa-arrow-right-to-bracket"></i> Login / Register
                 </Link>
-                <div className="modal fade" id="staticBackdrop" tabIndex="-1"
+                <div className="modal fade login-modal" id="staticBackdrop" tabIndex="-1"
                   aria-labelledby="staticBackdropLabel" aria-hidden="true">
                   <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
@@ -91,29 +84,29 @@ const Header = () => {
                         <div className="modal-close-button-container">
                           <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div className="login-container">
-                          <div className="login-body">
-                            <div className="login-form">
-                              <input className="form-control" type="email" placeholder="E-Posta" />
-                              <input className="form-control" type="password" placeholder="Şifre" />
+
+                        <>
+                          <ul className="nav nav-tabs" id="myTab" role="tablist">
+                            <li className="nav-item" role="presentation">
+                              <button className="nav-link active" id="login-individual-tab" data-bs-toggle="tab" data-bs-target="#login-individual" type="button" role="tab" aria-controls="home" aria-selected="true">Bireysel</button>
+                            </li>
+                            <li className="nav-item" role="presentation">
+                              <button className="nav-link" id="login-corporate-tab" data-bs-toggle="tab" data-bs-target="#login-corporate" type="button" role="tab" aria-controls="profile" aria-selected="false">Kurumsal</button>
+                            </li>
+                          </ul>
+                          <div className="tab-content" id="myTabContent">
+                            <div className="tab-pane fade show active" id="login-individual" role="tabpanel" aria-labelledby="login-individual-tab">
+                              <Login title="Bireysel" />
+                            </div>
+
+                            <div className="tab-pane fade" id="login-corporate" role="tabpanel" aria-labelledby="login-corporate-tab">
+                              <Login title="Kurumsal" />
                             </div>
                           </div>
-                          <div className="login-footer">
-                            <button className="login-button" type="submit" >Giriş Yap</button>
-                            <a href="#">Şifremi Unuttum</a>
-                            <span>Henüz üye değil misin?
-                              <Link
-                                to="/register"
-                                data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop"
-                                onClick={async () => await setModalStatus(true)}
-                                className="login-footer-link"
-                              >
-                                Kayıt Ol
-                              </Link>
-                            </span>
-                          </div>
-                        </div>
+                        </>
+
+
+
                       </div>
                       {/* <div className="modal-footer">
                         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
