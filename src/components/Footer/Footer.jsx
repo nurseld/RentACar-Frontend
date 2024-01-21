@@ -75,7 +75,7 @@ const Footer = () => {
               <p className="office__info">123 Zindabazar, Sylhet, Bangladesh</p>
               <p className="office__info">Phone: +0995345875365</p>
 
-              <p className="office__info">Email: muhib5532@gmail.com</p>
+              <p className="office__info">Email: pair2@gmail.com</p>
 
               <p className="office__info">Office Time: 10am - 7pm</p>
             </div>
@@ -98,7 +98,7 @@ const Footer = () => {
             <div className="footer__bottom">
               <p className="section__description d-flex align-items-center justify-content-center gap-1 pt-4">
                 <i className="ri-copyright-line"></i>Copyright {year}, Developed by
-                Muhibur Rahman. All rights reserved.
+                Tobeto Pair2
               </p>
             </div>
           </Col>

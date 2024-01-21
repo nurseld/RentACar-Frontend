@@ -48,11 +48,11 @@ const CarDetails = () => {
 
             <Col lg="6">
               <div className="car__info">
-                <h2 className="section__title">{carDetail.modelName}</h2>
+                <h2 className="section__title">{carDetail.brandName} {carDetail.modelName}</h2>
 
                 <div className=" d-flex align-items-center gap-5 mb-4 mt-3">
                   <h6 className="rent__price fw-bold fs-4">
-                    ${carDetail.dailyPrice}.00 / Day
+                    {carDetail.dailyPrice}₺ / Day
                   </h6>
 
                   <span className=" d-flex align-items-center gap-2">
@@ -69,6 +69,7 @@ const CarDetails = () => {
 
                 <p className="section__description">
                   {/* {carDetail.description} */}
+                  {carDetail.colorName}
                 </p>
 
                 <div
@@ -89,6 +90,7 @@ const CarDetails = () => {
                       style={{ color: "#f9a826" }}
                     ></i>{" "}
                     {/* {carDetail.automatic} */}
+                    {carDetail.kilometer}
                   </span>
 
                   <span className=" d-flex align-items-center gap-1 section__description">
@@ -97,6 +99,7 @@ const CarDetails = () => {
                       style={{ color: "#f9a826" }}
                     ></i>{" "}
                     {/* {carDetail.speed} */}
+                    {carDetail.year}
                   </span>
                 </div>
 
@@ -122,7 +125,7 @@ const CarDetails = () => {
                       className="ri-building-2-line"
                       style={{ color: "#f9a826" }}
                     ></i>{" "}
-                    {carDetail.brand}
+                    {/* {carDetail.brandName} */}
                   </span>
                 </div>
               </div>

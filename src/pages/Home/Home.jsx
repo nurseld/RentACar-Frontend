@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import HeroSlider from "../../components/HeroSlider/HeroSlider";
 import Helmet from "../../components/Helmet/Helmet";
@@ -13,8 +13,23 @@ import BecomeDriverSection from "../../components/BecomeDriverSection/BecomeDriv
 import Testimonial from "../../components/Testimonials/Testimonial";
 
 import BlogList from "../../components/BlogList/BlogList";
+import axios from "axios";
 
 const Home = () => {
+
+  const [posts, setPosts] = useState([]);
+
+  const fetchPosts = async () => {
+    const response = await axios.get("http://localhost:8081/api/cars/getAll");
+    setPosts(response.data);
+  };
+
+  useEffect(() => {
+
+    fetchPosts();
+
+  }, []);
+
   return (
     <Helmet title="Home">
       {/* ============= hero section =========== */}
@@ -61,7 +76,7 @@ const Home = () => {
               <h2 className="section__title">Hot Offers</h2>
             </Col>
 
-            {carData.slice(0, 6).map((item) => (
+            {posts.slice(0, 3).map((item) => (
               <CarItem item={item} key={item.id} />
             ))}
           </Row>

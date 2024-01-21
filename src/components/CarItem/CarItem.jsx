@@ -9,7 +9,6 @@ const CarItem = (props) => {
   console.log(props.item);
   const { id, modelName, colorName, year, dailyPrice, imagePath, brandName } = props.item;
 
-  console.log(id);
   return (
     <Col lg="4" md="4" sm="6" className="mb-5">
       <div className="car__item" key={id}>
@@ -36,7 +35,7 @@ const CarItem = (props) => {
           </div>
 
           <button className=" w-50 car__item-btn car__btn-rent">
-            <Link to={`/cars/${modelName}`}>Rent</Link>
+            <Link to={`/cars/${id}`}>Rent</Link>
           </button>
 
           <button className=" w-50 car__item-btn car__btn-details">
