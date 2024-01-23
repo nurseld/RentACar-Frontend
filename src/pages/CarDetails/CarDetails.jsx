@@ -30,12 +30,6 @@ const CarDetails = () => {
   }, [id]);
 
 
-  // const singleCarItem = data.find((item) => item.carName === id);
-
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, [singleCarItem]);
-
   return (
     <Helmet title={carDetail.modelName}>
       <CommonSection title="CarDetails" />
@@ -54,17 +48,6 @@ const CarDetails = () => {
                   <h6 className="rent__price fw-bold fs-4">
                     {carDetail.dailyPrice}₺ / Day
                   </h6>
-
-                  <span className=" d-flex align-items-center gap-2">
-                    <span style={{ color: "#f9a826" }}>
-                      <i className="ri-star-s-fill"></i>
-                      <i className="ri-star-s-fill"></i>
-                      <i className="ri-star-s-fill"></i>
-                      <i className="ri-star-s-fill"></i>
-                      <i className="ri-star-s-fill"></i>
-                    </span>
-                    {/* ({carDetail.rating} ratings) */}
-                  </span>
                 </div>
 
                 <p className="section__description">
@@ -100,32 +83,6 @@ const CarDetails = () => {
                     ></i>{" "}
                     {/* {carDetail.speed} */}
                     {carDetail.year}
-                  </span>
-                </div>
-
-                <div
-                  className=" d-flex align-items-center mt-3"
-                  style={{ columnGap: "2.8rem" }}
-                >
-                  <span className=" d-flex align-items-center gap-1 section__description">
-                    <i className="ri-map-pin-line" style={{ color: "#f9a826" }}></i>{" "}
-                    {/* {carDetail.gps} */}
-                  </span>
-
-                  <span className=" d-flex align-items-center gap-1 section__description">
-                    <i
-                      className="ri-wheelchair-line"
-                      style={{ color: "#f9a826" }}
-                    ></i>{" "}
-                    {/* {carDetail.seatType} */}
-                  </span>
-
-                  <span className=" d-flex align-items-center gap-1 section__description">
-                    <i
-                      className="ri-building-2-line"
-                      style={{ color: "#f9a826" }}
-                    ></i>{" "}
-                    {/* {carDetail.brandName} */}
                   </span>
                 </div>
               </div>
