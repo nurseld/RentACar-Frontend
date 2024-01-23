@@ -9,19 +9,19 @@ const PaymentMethod = () => {
     <>
       <div className="payment">
         <label htmlFor="" className="d-flex align-items-center gap-2">
-          <input type="radio" /> Direct Bank Transfer
+          <input type="radio" /> Havale & EFT
         </label>
       </div>
 
       <div className="payment mt-3">
         <label htmlFor="" className="d-flex align-items-center gap-2">
-          <input type="radio" /> Cheque Payment
+          <input type="radio" /> Online Kredi Kartı
         </label>
       </div>
 
       <div className="payment mt-3 d-flex align-items-center justify-content-between">
         <label htmlFor="" className="d-flex align-items-center gap-2">
-          <input type="radio" /> Master Card
+          <input type="radio" />Araç Tesliminde Banka Kartı
         </label>
 
         <img src={masterCard} alt="" />
@@ -29,7 +29,7 @@ const PaymentMethod = () => {
 
       <div className="payment mt-3 d-flex align-items-center justify-content-between">
         <label htmlFor="" className="d-flex align-items-center gap-2">
-          <input type="radio" /> Paypal
+          <input type="radio" /> Araç Tesliminde Kredi Kartı
         </label>
 
         <img src={paypal} alt="" />
