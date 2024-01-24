@@ -1,21 +1,15 @@
 .booking__form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.booking__form__element {
   width: 47.5%;
 }
 
-.booking__form__element input {
+.booking__form input {
   padding: 8px 15px;
   border: 1px solid #7c8a972a;
   color: #7c8a97;
   width: 100%;
 }
 
-.booking__form__element select,
+.booking__form select,
 .textarea {
   width: 100%;
   padding: 10px 15px;
@@ -31,19 +25,19 @@
 }
 
 .textarea:focus,
-.booking__form__element input:focus,
-.booking__form__element select:focus {
+.booking__form input:focus,
+.booking__form select:focus {
   outline: none;
 }
 
 @media only screen and (max-width: 768px) {
-  .booking__form__element {
+  .booking__form {
     width: 100%;
   }
 
-  .booking__form__element input,
+  .booking__form input,
   .textarea,
-  .booking__form__element select {
+  .booking__form select {
     font-size: 0.8rem;
   }
 }
