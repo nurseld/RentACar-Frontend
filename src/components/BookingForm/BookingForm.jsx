@@ -1,25 +1,93 @@
 import React from "react";
+import { Formik, Field, Form, ErrorMessage } from "formik";
+import * as Yup from "yup";
 import "./booking-form.css";
-import { Form, FormGroup } from "reactstrap";
-import FormInput from "../FormInput/FormInput";
+import { FormGroup } from "reactstrap";
+
 
 const BookingForm = () => {
-  const submitHandler = (event) => {
-    event.preventDefault();
-  };
+    const initialValues = {
+        firstName: "",
+        lastName: "",
+        email: "",
+        phoneNumber: "",
+        fromAddress: "",
+        toAddress: "",
+        journeyDate: "",
+        journeyTime: "",
+    };
 
-  return (
-    <Form onSubmit={submitHandler}>
-      <FormInput name="first-name" placeholder="First Name" formGroupClass="booking__form d-inline-block me-4 mb-4" />
-      <FormInput name="last-name" placeholder="Last Name" formGroupClass="booking__form d-inline-block ms-1 mb-4" />
-      <FormInput type="email" name="email" placeholder="Email" formGroupClass="booking__form d-inline-block me-4 mb-4" />
-      <FormInput name="phone-number" placeholder="Phone Number" formGroupClass="booking__form d-inline-block ms-1 mb-4" />
-      <FormInput name="from-address" placeholder="From Address" formGroupClass="booking__form d-inline-block me-4 mb-4" />
-      <FormInput name="to-address" placeholder="To Address" formGroupClass="booking__form d-inline-block ms-1 mb-4" />
-      <FormInput type="date" name="journey-date" placeholder="Journey Date" formGroupClass="booking__form d-inline-block me-4 mb-4" />
-      <FormInput type="time" name="journey-time" placeholder="Journey Time" formGroupClass="booking__form d-inline-block ms-1 mb-4" inputClass="time__picker" />
-    </Form>
-  );
+    const validationSchema = Yup.object().shape({
+        firstName: Yup.string().required("First Name is required"),
+        lastName: Yup.string().required("Last Name is required"),
+        email: Yup.string().email("Invalid email").required("Email is required"),
+        phoneNumber: Yup.number().typeError("Phone Number must be a number").required("Phone Number is required"),
+        fromAddress: Yup.string().required("From Address is required"),
+        toAddress: Yup.string().required("To Address is required"),
+        journeyDate: Yup.date().required("Journey Date is required"),
+        journeyTime: Yup.string().required("Journey Time is required"),
+    });
+
+    const onSubmit = (values, { resetForm }) => {
+
+        console.log("Form submitted with values:", values);
+        resetForm();
+    };
+
+    return (
+        <Formik
+            initialValues={initialValues}
+            validationSchema={validationSchema}
+            onSubmit={onSubmit}
+        >
+            <Form>
+                <FormGroup className="booking__form d-inline-block me-4 mb-4">
+                    <Field type="text" name="firstName" placeholder="First Name" />
+                    <ErrorMessage name="firstName" component="div" className="error" />
+                </FormGroup>
+                <FormGroup className="booking__form d-inline-block ms-1 mb-4">
+                    <Field type="text" name="lastName" placeholder="Last Name" />
+                    <ErrorMessage name="lastName" component="div" className="error" />
+                </FormGroup>
+                <FormGroup className="booking__form d-inline-block me-4 mb-4">
+                    <Field type="email" name="email" placeholder="Email" />
+                    <ErrorMessage name="email" component="div" className="error" />
+                </FormGroup>
+                <FormGroup className="booking__form d-inline-block ms-1 mb-4">
+                    <Field
+                        type="text"
+                        name="phoneNumber"
+                        placeholder="Phone Number"
+                    />
+                    <ErrorMessage name="phoneNumber" component="div" className="error" />
+                </FormGroup>
+                <FormGroup className="booking__form d-inline-block me-4 mb-4">
+                    <Field type="text" name="fromAddress" placeholder="From Address" />
+                    <ErrorMessage name="fromAddress" component="div" className="error" />
+                </FormGroup>
+                <FormGroup className="booking__form d-inline-block ms-1 mb-4">
+                    <Field type="text" name="toAddress" placeholder="To Address" />
+                    <ErrorMessage name="toAddress" component="div" className="error" />
+                </FormGroup>
+
+                <FormGroup className="booking__form d-inline-block me-4 mb-4">
+                    <Field type="date" name="journeyDate" placeholder="Journey Date" />
+                    <ErrorMessage name="journeyDate" component="div" className="error" />
+                </FormGroup>
+                <FormGroup className="booking__form d-inline-block ms-1 mb-4">
+                    <Field
+                        type="time"
+                        name="journeyTime"
+                        placeholder="Journey Time"
+                        className="time__picker"
+                    />
+                    <ErrorMessage name="journeyTime" component="div" className="error" />
+                </FormGroup>
+
+                <button type="submit">Submit</button>
+            </Form>
+        </Formik>
+    );
 };
 
 export default BookingForm;
