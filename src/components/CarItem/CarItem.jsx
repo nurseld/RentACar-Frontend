@@ -10,7 +10,7 @@ const CarItem = (props) => {
   const { id, modelName, colorName, year, dailyPrice, imagePath, brandName } = props.item;
 
   return (
-    <Col lg="4" md="4" sm="6" className="mb-5">
+    <Col xl="4" lg="6" md="6" sm="12" className="mb-5">
       <div className="car__item" key={id}>
         <div className="car__img">
           <img src={imagePath} alt="not found" className="w-100" />
