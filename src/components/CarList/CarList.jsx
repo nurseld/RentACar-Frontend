@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Container, Row, Col } from "reactstrap";
 import CarItem from "../CarItem/CarItem";
 import axios from "axios";
+import axiosInstance from '../../core/utils/interceptors/axiosInterceptors';
 
 function CarList() {
 
@@ -11,14 +12,14 @@ function CarList() {
 
     const fetchPosts = async () => {
         try {
-            const response = await axios.get("http://localhost:8081/api/cars/getAll");
+            const response = await axiosInstance.get("cars/getAll");
             if (selectedYear === "all") {
                 setPosts(response.data);
             } else {
                 setPosts(response.data.filter((c) => c.year == selectedYear));
             }
         } catch (error) {
-            console.error("Error fetching posts:", error);
+            console.log("Error fetching posts:", error);
         }
     };
 

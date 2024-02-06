@@ -10,6 +10,8 @@ import NotFound from "../pages/NotFound/NotFound";
 import Contact from "../pages/Contact/Contact";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import Reservation from "../pages/Reservation/Reservation";
+import OrderComplete from "../pages/OrderComplete/OrderComplete";
 
 const Routers = () => {
   return (
@@ -25,6 +27,8 @@ const Routers = () => {
       <Route path="*" element={<NotFound />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/reservation/:id" element={<Reservation />} />
+      <Route path="/order-complete" element={<OrderComplete />} />
     </Routes>
   );
 };

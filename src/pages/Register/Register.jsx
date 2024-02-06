@@ -72,7 +72,7 @@ const Register = () => {
                                         <input className="form-control" type="text" placeholder="Yetkili Ad*" />
                                         <input className="form-control" type="text" placeholder="Yetkili Soyad*" />
                                         <input className="form-control" type="text" placeholder="Company Name" />
-                                        <input className="form-control" type="text" placeholder="Tax No Tarihi" />
+                                        <input className="form-control" type="text" placeholder="Tax No" />
                                         <input className="form-control" type="text" placeholder="Telefon*" />
                                         <input className="form-control" type="email" placeholder="E-Posta*" />
                                         <input className="form-control" type="password" placeholder="Şifre*" />

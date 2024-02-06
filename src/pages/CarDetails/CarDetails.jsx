@@ -9,6 +9,7 @@ import PaymentMethod from "../../components/PaymentMethod/PaymentMethod";
 import CommonSection from "../../components/CommonSection/CommonSection";
 import axios from "axios";
 import CarItem from "../../components/CarItem/CarItem";
+import axiosInstance from "../../core/utils/interceptors/axiosInterceptors";
 
 const CarDetails = () => {
   const { id } = useParams();
@@ -17,7 +18,7 @@ const CarDetails = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`http://localhost:8081/api/cars/getById/${id}`);
+      const response = await axiosInstance.get(`cars/getById/${id}`);
       console.log('Response:', response);
       setCarDetail(response.data);
     } catch (error) {

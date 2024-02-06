@@ -14,13 +14,14 @@ import Testimonial from "../../components/Testimonials/Testimonial";
 
 import BlogList from "../../components/BlogList/BlogList";
 import axios from "axios";
+import axiosInstance from "../../core/utils/interceptors/axiosInterceptors";
 
 const Home = () => {
 
   const [posts, setPosts] = useState([]);
 
   const fetchPosts = async () => {
-    const response = await axios.get("http://localhost:8081/api/cars/getAll");
+    const response = await axiosInstance.get("cars/getAll");
     setPosts(response.data);
   };
 
@@ -29,6 +30,9 @@ const Home = () => {
     fetchPosts();
 
   }, []);
+
+
+
 
   return (
     <Helmet title="Home">
