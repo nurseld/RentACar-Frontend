@@ -28,13 +28,17 @@
     border-radius: 10px;
 }
 
+.login-container .form-control:focus {
+    background-color: #fff !important;
+}
+
 .login-container .title {
     margin-bottom: 50px;
 }
 
 .login-form input {
     padding: 10px 16px;
-    margin-bottom: 30px !important;
+    /* margin-bottom: 30px !important; */
     border-radius: 10px;
     background-color: #fff;
     border: 1px solid #00000018;
