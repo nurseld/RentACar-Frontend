@@ -6,7 +6,8 @@ import axiosInstance from '../../core/utils/interceptors/axiosInterceptors';
 
 function CarList() {
 
-    const [posts, setPosts] = useState([]);
+    const [initialPosts, setInitialPosts] = useState([]);
+    const [filteredPosts, setFilteredPosts] = useState([]);
     const [selectedYear, setSelectedYear] = useState("all");
     const [years, setYears] = useState([]);
 
@@ -14,9 +15,10 @@ function CarList() {
         try {
             const response = await axiosInstance.get("cars/getAll");
             if (selectedYear === "all") {
-                setPosts(response.data);
+                setInitialPosts(response.data)
+                setFilteredPosts(response.data);
             } else {
-                setPosts(response.data.filter((c) => c.year == selectedYear));
+                setFilteredPosts(response.data.filter((c) => c.year == selectedYear));
             }
         } catch (error) {
             console.log("Error fetching posts:", error);
@@ -24,7 +26,7 @@ function CarList() {
     };
 
     const getUniqueYears = async () => {
-        const updatedYears = posts.reduce((years, car) => {
+        const updatedYears = initialPosts.reduce((years, car) => {
             if (!years.includes(car.year)) {
                 return [...years, car.year];
             }
@@ -41,7 +43,7 @@ function CarList() {
 
     useEffect(() => {
         getUniqueYears();
-    }, [posts]);
+    }, [initialPosts]);
 
     return (
 
@@ -68,7 +70,7 @@ function CarList() {
                 </Col>
 
                 {
-                    posts.map((item) => (
+                    filteredPosts.map((item) => (
                         <CarItem item={item} key={item.id} />
                     ))
                 }
