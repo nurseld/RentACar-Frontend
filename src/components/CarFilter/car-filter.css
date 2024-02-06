@@ -1,0 +1,10 @@
+.car-filter {
+    height: 750px;
+    width: 250px;
+    border: 1px solid #7c8a9736;
+    opacity: .95;
+    color: #000d6b;
+    border-radius: 8px;
+    margin: 72px 0 24px auto;
+    padding: 30px;
+}

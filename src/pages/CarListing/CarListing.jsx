@@ -1,55 +1,28 @@
-import React, { useEffect, useState } from "react";
-import { Container, Row, Col } from "reactstrap";
+import React from "react";
 import Helmet from "../../components/Helmet/Helmet";
 import CommonSection from "../../components/CommonSection/CommonSection";
-import CarItem from "../../components/CarItem/CarItem";
-import carData from "../../assets/data/carData";
-import axios from "axios";
+import CarList from "../../components/CarList/CarList";
+import CarFilter from "../../components/CarFilter/CarFilter";
+import "./car-listing.css"
 
 
 const CarListing = () => {
-
-  const [posts, setPosts] = useState([]);
-
-  const fetchPosts = async () => {
-    const response = await axios.get("http://localhost:8081/api/cars/getAll");
-    setPosts(response.data);
-  };
-
-  useEffect(() => {
-
-    fetchPosts();
-
-  }, []);
-
   return (
     <Helmet title="Cars">
       <CommonSection title="Car Listing" />
+      <section className="car-listing">
 
-      <section>
-        <Container>
-          <Row>
-            <Col lg="12">
-              <div className=" d-flex align-items-center gap-3 mb-5">
-                <span className=" d-flex align-items-center gap-2">
-                  <i className="ri-sort-asc"></i> Sort By
-                </span>
+        <div className='car-filter'>
+          <CarFilter name="BMW" id="1" />
+          <CarFilter name="Nissan" id="2" />
+          <CarFilter name="Mercedes Benz" id="3" />
+          <CarFilter name="Fiat" id="4" />
+          <CarFilter name="Renault" id="5" />
+        </div>
 
-                <select>
-                  <option>Select</option>
-                  <option value="low">Low to High</option>
-                  <option value="high">High to Low</option>
-                </select>
-              </div>
-            </Col>
 
-            {
-              posts.map((item) => (
-                <CarItem item={item} key={item.id} />
-              ))
-            }
-          </Row>
-        </Container>
+
+        <CarList />
       </section>
     </Helmet>
   );
