@@ -11,7 +11,17 @@ const CarListing = () => {
     <Helmet title="Cars">
       <CommonSection title="Car Listing" />
       <section className="car-listing">
-        <CarFilter />
+
+        <div className='car-filter'>
+          <CarFilter name="BMW" id="1" />
+          <CarFilter name="Nissan" id="2" />
+          <CarFilter name="Mercedes Benz" id="3" />
+          <CarFilter name="Fiat" id="4" />
+          <CarFilter name="Renault" id="5" />
+        </div>
+
+
+
         <CarList />
       </section>
     </Helmet>
