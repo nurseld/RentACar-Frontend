@@ -11,11 +11,21 @@ import "remixicon/fonts/remixicon.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter, BrowserRouter as Router } from "react-router-dom";
+import { Provider } from "react-redux";
+import { store } from "./store/configureStore";
+import OverlayLoader from './components/OverlayLoader/OverlayLoader.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // <React.StrictMode>
+  //   <Router>
+  //     <App />
+  //   </Router>
+  // </React.StrictMode>
+  <Provider store={store}>
+    {/* <OverlayLoader /> */}
     <Router>
       <App />
     </Router>
-  </React.StrictMode>
+  </Provider>
+
 )
