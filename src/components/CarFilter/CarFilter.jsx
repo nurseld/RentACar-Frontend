@@ -10,7 +10,6 @@ function CarFilter({ name, id, labelClassForColor = "secondary" }) {
     const fetchData = async () => {
         try {
             const response = await axiosInstance.get("brands/getAll");
-            console.log(response);
             setCarData(response.data);
         } catch (error) {
             console.error("Veri çekme hatası:", error);

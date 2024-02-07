@@ -6,7 +6,6 @@ import "./car-item.css";
 
 const CarItem = (props) => {
 
-  console.log(props.item);
   const { id, modelName, colorName, year, dailyPrice, imagePath, brandName } = props.item;
 
   return (
