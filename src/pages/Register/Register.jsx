@@ -7,6 +7,7 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import FormInput from "../../components/FormInput/FormInput";
 import "./register.css";
+import authService from "../../services/authService";
 
 
 
@@ -66,7 +67,7 @@ const Register = () => {
         firstName: Yup.string().required("First name is required"),
         lastName: Yup.string().required("Last name is required"),
         nationalIdNo: Yup.string().required("TC No is required"),
-        birthDate: Yup.date().required("Birth date is required"),
+        birthDate: Yup.string().required("Birth date is required"),
         phoneNumber: Yup.string().required("Phone number is required"),
         email: Yup.string().required("Email is required"),
         password: Yup.string().required("Password is required"),
@@ -77,9 +78,7 @@ const Register = () => {
         // Handle form submission logic here
         console.log("Form submitted with values:", values);
         try {
-            // const response = await axiosInstance.post(`rentals/add`, { ...values, userId: 9, carId: id });
-            // console.log('Response:', response);
-            // navigate("/order-complete", { state: { info: response.data, rental: values } })
+            authService.customerRegister(values)
         } catch (error) {
             console.error('Veri çekme hatası:', error);
         }
