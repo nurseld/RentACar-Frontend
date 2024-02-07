@@ -18,12 +18,21 @@ function CarList() {
         }
     }
 
+    // const getUniqueYears = async () => {
+    //     const updatedYears = initialCars.reduce((years, car) => {
+    //         if (!years.includes(car.year)) {
+    //             return [...years, car.year];
+    //         }
+    //     }, []);
+    //     setYears(updatedYears.sort((a, b) => b - a));
+    // };
+
     const getUniqueYears = async () => {
-        const updatedYears = initialCars.reduce((years, car) => {
-            if (!years.includes(car.year)) {
-                return [...years, car.year];
-            }
-        }, []);
+        const yearsSet = new Set();
+        initialCars.forEach(car => {
+            yearsSet.add(car.year);
+        });
+        const updatedYears = Array.from(yearsSet);
         setYears(updatedYears.sort((a, b) => b - a));
     };
 
