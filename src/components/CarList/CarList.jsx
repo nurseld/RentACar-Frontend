@@ -1,49 +1,48 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Row, Col } from "reactstrap";
 import CarItem from "../CarItem/CarItem";
-import axios from "axios";
-import axiosInstance from '../../core/utils/interceptors/axiosInterceptors';
+import { useSelector } from "react-redux";
 
 function CarList() {
 
-    const [initialPosts, setInitialPosts] = useState([]);
-    const [filteredPosts, setFilteredPosts] = useState([]);
-    const [selectedYear, setSelectedYear] = useState("all");
+    const initialCars = useSelector((state) => state.cars.cars);
+    const [filteredCars, setFilteredCars] = useState([]);
     const [years, setYears] = useState([]);
+    const [selectedYear, setSelectedYear] = useState("all");
 
-    const fetchPosts = async () => {
-        try {
-            const response = await axiosInstance.get("cars/getAll");
-            if (selectedYear === "all") {
-                setInitialPosts(response.data)
-                setFilteredPosts(response.data);
-            } else {
-                setFilteredPosts(response.data.filter((c) => c.year == selectedYear));
-            }
-        } catch (error) {
-            console.log("Error fetching posts:", error);
+    const filterByYear = () => {
+        if (selectedYear === "all") {
+            setFilteredCars(initialCars);
+        } else {
+            setFilteredCars(initialCars.filter((c) => c.year == selectedYear));
         }
-    };
+    }
+
+    // const getUniqueYears = async () => {
+    //     const updatedYears = initialCars.reduce((years, car) => {
+    //         if (!years.includes(car.year)) {
+    //             return [...years, car.year];
+    //         }
+    //     }, []);
+    //     setYears(updatedYears.sort((a, b) => b - a));
+    // };
 
     const getUniqueYears = async () => {
-        const updatedYears = initialPosts.reduce((years, car) => {
-            if (!years.includes(car.year)) {
-                return [...years, car.year];
-            }
-            return years.sort((a, b) => b - a);
-        }, []);
-        setYears(updatedYears);
-
+        const yearsSet = new Set();
+        initialCars.forEach(car => {
+            yearsSet.add(car.year);
+        });
+        const updatedYears = Array.from(yearsSet);
+        setYears(updatedYears.sort((a, b) => b - a));
     };
-
-    useEffect(() => {
-
-        fetchPosts();
-    }, [selectedYear]);
 
     useEffect(() => {
         getUniqueYears();
-    }, [initialPosts]);
+    }, []);
+
+    useEffect(() => {
+        filterByYear()
+    }, [selectedYear]);
 
     return (
 
@@ -70,7 +69,7 @@ function CarList() {
                 </Col>
 
                 {
-                    filteredPosts.map((item) => (
+                    filteredCars.map((item) => (
                         <CarItem item={item} key={item.id} />
                     ))
                 }

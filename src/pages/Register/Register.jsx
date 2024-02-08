@@ -7,8 +7,7 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import FormInput from "../../components/FormInput/FormInput";
 import "./register.css";
-
-
+import authService from "../../services/authService";
 
 
 const Register = () => {
@@ -38,7 +37,6 @@ const Register = () => {
         password: Yup.string().min(6).max(12).required("Password is required"),
         confirmPassword: Yup.string().min(6).max(12).required("Password confirmation doesnt match. Please try again.").oneOf[Yup.ref("password")]
     });
-
 
     const corporateOnSubmit = async (values, { resetForm }) => {
         // Handle form submission logic here

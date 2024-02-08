@@ -1,12 +1,12 @@
-const axiosInstance = require("../core/utils/interceptors/axiosInterceptors");
+import axiosInstance from "../core/utils/interceptors/axiosInterceptors";
 
 class BaseService {
     constructor() {
         this.apiUrl = "";
     }
 
-    getAll() {
-        return axiosInstance.get(this.apiUrl);
+    async getAll() {
+        return await axiosInstance.get(this.apiUrl + "/getAll");
     }
 
     getById(id) {
@@ -26,4 +26,4 @@ class BaseService {
     }
 }
 
-module.exports = BaseService;
+export default BaseService;

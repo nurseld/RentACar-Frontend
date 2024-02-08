@@ -4,6 +4,7 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import FormInput from "../FormInput/FormInput";
 import './login.css'
+import authService from '../../services/authService';
 
 function Login({ title }) {
 
@@ -31,9 +32,9 @@ function Login({ title }) {
         // Handle form submission logic here
         console.log("Form submitted with values:", values);
         try {
-            // const response = await axiosInstance.post(`rentals/add`, { ...values, userId: 9, carId: id });
-            // console.log('Response:', response);
-            // navigate("/order-complete", { state: { info: response.data, rental: values } })
+            // authService.login(values);
+            const response = await authService.login(values)
+            console.log(response);
         } catch (error) {
             console.error('Veri çekme hatası:', error);
         }

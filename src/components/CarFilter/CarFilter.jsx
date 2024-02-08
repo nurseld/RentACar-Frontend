@@ -10,7 +10,6 @@ function CarFilter({ name, id, labelClassForColor = "secondary" }) {
     const fetchData = async () => {
         try {
             const response = await axiosInstance.get("brands/getAll");
-            console.log(response);
             setCarData(response.data);
         } catch (error) {
             console.error("Veri çekme hatası:", error);
@@ -24,12 +23,10 @@ function CarFilter({ name, id, labelClassForColor = "secondary" }) {
     }, []);
 
     return (
-
         <>
             <input type="checkbox" className="btn-check" id={id} />
-            <label
-                className={`btn btn-outline-${labelClassForColor}`}
-            >{name}
+            <label for={id} className={`btn btn-outline-${labelClassForColor} filter-btn-outline filter-btn-outline-hover`}>
+                {name}
             </label>
         </>
     )

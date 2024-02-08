@@ -48,7 +48,21 @@
     justify-content: space-between;
 }
 
-.register-form input {
+.register-form.page-form div {
+    width: 48.5%;
+    margin-top: 10px;
+}
+
+.register-form.page-form div.width-100 {
+    width: 100%;
+}
+
+.register-form.page-form div.m-top-20 {
+    margin-top: 20px;
+}
+
+.register-form input,
+.register-form div input {
     width: 48.5% !important;
     padding: 10px 16px;
     margin: 20px 0px;
@@ -56,6 +70,16 @@
     background-color: rgba(0, 0, 0, 0.27);
     border: none;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.register-form div input {
+    width: 100% !important;
+    margin: 0;
+}
+
+.register-form input.full-size,
+.register-form div input.full-size {
+    width: 100% !important;
 }
 
 ::-webkit-calendar-picker-indicator {
