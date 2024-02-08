@@ -10,7 +10,6 @@ import "./register.css";
 import authService from "../../services/authService";
 
 
-
 const Register = () => {
 
     const [dateInputType, setDateInputType] = useState("text");
@@ -34,9 +33,9 @@ const Register = () => {
         taxNo: Yup.string().required("Tax No is required"),
         contactName: Yup.string().required("Contact name is required"),
         phoneNumber: Yup.string().required("Phone number is required"),
-        email: Yup.string().required("Email is required"),
-        password: Yup.string().required("Password is required"),
-        confirmPassword: Yup.string().required("Type your password again."),
+        email: Yup.string().email.required("Email is required"),
+        password: Yup.string().min(6).max(12).required("Password is required"),
+        confirmPassword: Yup.string().min(6).max(12).required("Password confirmation doesnt match. Please try again.").oneOf[Yup.ref("password")]
     });
 
     const corporateOnSubmit = async (values, { resetForm }) => {
@@ -69,9 +68,9 @@ const Register = () => {
         nationalIdNo: Yup.string().required("TC No is required"),
         birthDate: Yup.string().required("Birth date is required"),
         phoneNumber: Yup.string().required("Phone number is required"),
-        email: Yup.string().required("Email is required"),
-        password: Yup.string().required("Password is required"),
-        confirmPassword: Yup.string().required("Type your password again."),
+        email: Yup.string().email.required("Email is required"),
+        password: Yup.string().min(6).max(12).required("Password is required"),
+        confirmPassword: Yup.string().min(6).max(12).required("Password confirmation doesnt match. Please try again.").oneOf[Yup.ref("password")]
     });
 
     const individualOnSubmit = async (values, { resetForm }) => {
