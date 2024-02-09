@@ -43,9 +43,8 @@ const Register = () => {
         // Handle form submission logic here
         console.log("Form submitted with values:", values);
         try {
-            // const response = await axiosInstance.post(`rentals/add`, { ...values, userId: 9, carId: id });
-            // console.log('Response:', response);
-            // navigate("/order-complete", { state: { info: response.data, rental: values } })
+
+            authService.corporateRegister(values);
         } catch (error) {
             console.error('Veri çekme hatası:', error);
         }
