@@ -76,7 +76,10 @@ const Register = () => {
       firstName: Yup.string().matches(nameValidationRegex, "Only letters are allowed").max(30).required("First name is required"),
       lastName: Yup.string().matches(nameValidationRegex, "Only letters are allowed").max(20).required("Last name is required"),
       nationalIdNo: Yup.string().matches(/^\d{11}$/, "Please enter a valid National ID.").required("TC No is required"),
-      birthDate: Yup.string().required("Birth date is required"),
+      birthDate: Yup.date()
+      .max(new Date(new Date().setFullYear(new Date().getFullYear() - 18)), "You must be at least 18 years old")
+      .min(new Date(new Date().setFullYear(new Date().getFullYear() - 88)), "You cannot be older than 88 years")
+      .required("Birth date is required"),
       phoneNumber: Yup.string()
         .matches(phoneValidationRegex, "Please enter a valid phone number.")
         .required("Phone number is required"),
