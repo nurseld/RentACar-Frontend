@@ -2,8 +2,7 @@ import React from 'react';
 import { Route, Navigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const ProtectedRoute = ({ children }) => {
-  const isAuthenticated = false; // Gerçek duruma uygun olarak kontrol edin
+const ProtectedRoute = ({ children }) => { const isAuthenticated = true; // TODO
 
   if (!isAuthenticated) {
     return <Navigate to="/login" />;
