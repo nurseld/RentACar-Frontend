@@ -12,7 +12,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Reservation from "../pages/Reservation/Reservation";
 import OrderComplete from "../pages/OrderComplete/OrderComplete";
-import ProtectedRoute from "./ProtectedRoute"; 
+import ProtectedRoute from "./ProtectedRoute";
 import Admin from "../pages/Admin/Admin";
 import PrivacyPolicy from "../pages/PrivacyPolicy/PrivacyPolicy";
 
@@ -32,12 +32,11 @@ const Routers = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/reservation/:id" element={<Reservation />} />
-      <Route path="/order-complete" element={<OrderComplete />} />
       <Route
-        path="/admin/*"  
+        path="/admin/*"
         element={
           <ProtectedRoute>
-            <Route index element={<Admin />} />
+            <Route path="/" element={<Admin />} />
           </ProtectedRoute>
         }
       />

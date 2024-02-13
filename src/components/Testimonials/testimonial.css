@@ -1,3 +1,30 @@
+/* Genel Stiller */
+
+.testimonial img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonial-content {
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-image {
+  width: 80px; /* İstenilen genişliği belirleyin */
+  height: 80px; /* İstenilen yüksekliği belirleyin */
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 20px; /* İstenilen boşluk miktarını belirleyin */
+}
+
+.testimonial-text {
+  width: calc(100% - 100px); /* İstenilen genişliği belirleyin ve testimonial-image'in genişliğini çıkartın */
+}
+
+/* Medya Sorguları */
+
 @media only screen and (max-width: 768px) {
   .testimonial p {
     font-size: 0.8rem;
@@ -13,6 +40,10 @@
   .testimonial img {
     width: 60px !important;
     height: 60px !important;
-    object-fit: cover;
+  }
+
+  .testimonial-image {
+    width: 60px; /* İstenilen genişliği belirleyin */
+    height: 60px; /* İstenilen yüksekliği belirleyin */
   }
 }
