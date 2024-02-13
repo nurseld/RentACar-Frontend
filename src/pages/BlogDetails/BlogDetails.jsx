@@ -58,7 +58,9 @@ const BlogDetails = () => {
                     <h6 className=" fw-bold">David Visa</h6>
                     <p className="section__description mb-0">14 July, 2022</p>
                     <p className="section__description">
-                    Just stumbled upon your latest blog, and WOW! It's like you have a magical pen that turns words into pure brilliance. 🌟 
+                      Just stumbled upon your latest blog, and WOW! It's like you
+                      have a magical pen that turns words into pure brilliance.
+                      🌟
                     </p>
 
                     <span className="replay d-flex align-items-center gap-1">
@@ -103,9 +105,13 @@ const BlogDetails = () => {
               {blogData.map((item) => (
                 <div className="recent__blog-post mb-4" key={item.id}>
                   <div className="recent__blog-item d-flex gap-3">
-                    <img src={item.imgUrl} alt="" className="w-25 rounded-2" />
+                    <img
+                      src={item.imgUrl}
+                      alt=""
+                      className="w-25 rounded-2"
+                    />
                     <h6>
-                      <Link to={`/blogs/${item.title}`}>{blog.title}</Link>
+                      <Link to={`/blogs/${item.title}`}>{item.title}</Link>
                     </h6>
                   </div>
                 </div>
