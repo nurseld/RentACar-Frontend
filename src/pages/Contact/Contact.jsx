@@ -60,16 +60,16 @@ const Contact = () => {
               <div className="contact__info">
                 <h6 className="fw-bold">Contact Information</h6>
                 <p className="section__description mb-0">
-                  123 ZindaBazar, Sylhet, Bangladesh
+                Koşuyolu Mah. Lambacı Sok. No: 2 Kadıköy İSTANBUL
                 </p>
                 <div className=" d-flex align-items-center gap-2">
                   <h6 className="fs-6 mb-0">Phone:</h6>
-                  <p className="section__description mb-0">+88683896366</p>
+                  <p className="section__description mb-0">0 (550) 500 50 50</p>
                 </div>
 
                 <div className=" d-flex align-items-center gap-2">
                   <h6 className="mb-0 fs-6">Email:</h6>
-                  <p className="section__description mb-0">example@gmail.com</p>
+                  <p className="section__description mb-0">2G0Cars@pair2b2mail.com</p>
                 </div>
 
                 <h6 className="fw-bold mt-4">Follow Us</h6>

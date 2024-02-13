@@ -14,6 +14,7 @@ import Reservation from "../pages/Reservation/Reservation";
 import OrderComplete from "../pages/OrderComplete/OrderComplete";
 import ProtectedRoute from "./ProtectedRoute"; 
 import Admin from "../pages/Admin/Admin";
+import PrivacyPolicy from "../pages/PrivacyPolicy/PrivacyPolicy";
 
 const Routers = () => {
   return (
@@ -22,6 +23,7 @@ const Routers = () => {
       <Route path="/home" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/cars" element={<CarListing />} />
+      <Route path="/privacypolicy" element={<PrivacyPolicy />} />
       <Route path="/cars/:id" element={<CarDetails />} />
       <Route path="/blogs" element={<Blog />} />
       <Route path="/blogs/:slug" element={<BlogDetails />} />

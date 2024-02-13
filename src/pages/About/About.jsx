@@ -28,21 +28,17 @@ const About = () => {
             <Col lg="6" md="6" sm="12">
               <div className="about__page-content">
                 <h2 className="section__title">
-                  We Are Committed To Provide Safe Ride Solutions
+                  
+Dedicated to Your Safety, Every Ride. Your Peace of Mind, Our Priority.
                 </h2>
 
                 <p className="section__description">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Eveniet veniam assumenda aperiam accusantium ex autem
-                  perferendis repellendus nostrum delectus. Nemo et dolore est
-                  tempore rem minima adipisci magni dolorum ipsam.
+                  
+At 2G0 Cars, safety is our unwavering commitment as we provide reliable ride solutions for our valued customers. We recognize the paramount importance of delivering secure transportation, starting with the meticulous maintenance and regular inspections of our diverse fleet. Each vehicle undergoes rigorous checks to meet and exceed the highest safety standards, ensuring your peace of mind every time you step into one of our cars.
                 </p>
 
                 <p className="section__description">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Eveniet veniam assumenda aperiam accusantium ex autem
-                  perferendis repellendus nostrum delectus. Nemo et dolore est
-                  tempore rem minima adipisci magni dolorum ipsam.
+                When you choose 2G0 Cars, you're not just opting for a ride; you're selecting a secure and reliable transportation partner. Our dedication to providing safe ride solutions is deeply embedded in every facet of our service, ensuring that your journey with us is not only comfortable but, most importantly, safe.
                 </p>
 
                 <div className=" d-flex align-items-center gap-3 mt-4">
@@ -52,7 +48,7 @@ const About = () => {
 
                   <div>
                     <h6 className="section__subtitle">Need Any Help?</h6>
-                    <h4>+00123456789</h4>
+                    <h4>0 (550) 500 50 50</h4>
                   </div>
                 </div>
               </div>
