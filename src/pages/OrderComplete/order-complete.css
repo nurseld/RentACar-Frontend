@@ -1,0 +1,17 @@
+.order-complete-container {
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-radius: 16px;
+}
+
+.transaction-information-card,
+.rental-details-card {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border: none;
+    border-radius: 16px;
+    transition: .4s;
+}
+
+.transaction-information-card:hover,
+.rental-details-card:hover {
+    transform: scale(1.01);
+}

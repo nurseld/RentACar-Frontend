@@ -1,0 +1,10 @@
+.profile-page-container {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    margin: 20px auto 50px auto;
+}
+
+.profile-page-content {
+    width: 75%;
+}

@@ -9,8 +9,8 @@ class BaseService {
         return await axiosInstance.get(this.apiUrl + "/getAll");
     }
 
-    getById(id) {
-        return axiosInstance.get(this.apiUrl + "/" + id);
+    async getById(id) {
+        return await axiosInstance.get(this.apiUrl + "/getById/" + id);
     }
 
     add(request) {

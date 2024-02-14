@@ -12,6 +12,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Reservation from "../pages/Reservation/Reservation";
 import OrderComplete from "../pages/OrderComplete/OrderComplete";
+import Profile from "../pages/Profile/Profile";
 
 const Routers = () => {
   return (
@@ -29,6 +30,7 @@ const Routers = () => {
       <Route path="/register" element={<Register />} />
       <Route path="/reservation/:id" element={<Reservation />} />
       <Route path="/order-complete" element={<OrderComplete />} />
+      <Route path="/profile" element={<Profile />} />
     </Routes>
   );
 };
