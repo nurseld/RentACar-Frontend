@@ -8,3 +8,16 @@
     margin: 72px 0 24px auto;
     padding: 30px;
 }
+
+.car-filter .filter-btn-outline {
+    margin: 2px !important;
+}
+
+.car-filter .filter-btn-outline-hover:hover {
+    background-color: #f9a826 !important;
+}
+
+.btn-check:checked+.btn {
+
+    background-color: #f9a826 !important;
+}

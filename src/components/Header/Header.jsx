@@ -129,30 +129,15 @@ const Header = () => {
                             </div>
                           </div>
                         </>
-
-
-
                       </div>
-                      {/* <div className="modal-footer">
-                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" className="btn btn-primary">Understood</button>
-                      </div> */}
                     </div>
                   </div>
                 </div>
-
-
-                {/* 
-                <Link to="/register" className=" d-flex align-items-center gap-1">
-                  <i className="ri-user-line"></i> Register
-                </Link> */}
               </div>
             </Col>
           </Row>
         </Container>
       </div>
-
-      {/* =============== header middle =========== */}
 
       {/* ========== main navigation =========== */}
 
@@ -177,15 +162,6 @@ const Header = () => {
                   </NavLink>
                 ))}
               </div>
-            </div>
-
-            <div className="nav__right">
-              {/* <div className="search__box">
-                <input type="text" placeholder="Search" />
-                <span>
-                  <i className="ri-search-line"></i>
-                </span>
-              </div> */}
             </div>
           </div>
         </Container>

@@ -53,7 +53,7 @@ const CarItem = (props) => {
           </button>
 
           <button className=" w-50 car__item-btn car__btn-details">
-            <Link to={`/cars/${id}`}>Details</Link>
+            <Link className="link-padding" to={`/cars/${id}`}>Details</Link>
           </button>
         </div>
       </div>
