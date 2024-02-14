@@ -7,9 +7,11 @@ import {
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./header.css";
 import Login from "../Login/Login";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutSuccess } from "../../store/auth/authSlice";
 import logo from "../../assets/all-images/logo.png";
 
 
@@ -46,6 +48,11 @@ const headerLinks = [
   {
     path: "/register",
     display: "Register"
+  },
+
+  {
+    path: "/profile",
+    display: "Profile"
   }
 ]
 
@@ -54,7 +61,11 @@ const Header = () => {
 
   const toggleMenu = () => menuRef.current.classList.toggle("menu__active");
 
+  const authState = useSelector((store) => store.auth);
 
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate();
 
   return (
     <header className="header">
@@ -77,9 +88,23 @@ const Header = () => {
 
             <Col lg="6" md="6" sm="6">
               <div className="header__top__right d-flex align-items-center justify-content-end gap-3">
-                <Link to="/login" className="d-flex align-items-center gap-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                  <i className="fa-solid fa-arrow-right-to-bracket"></i> Login / Register
-                </Link>
+                {authState.id !== 0 && <Link to="/profile" className="d-flex align-items-center gap-1">
+                  <i className="fa-solid fa-arrow-right-to-bracket"></i> Profile
+                </Link>}
+
+                {authState.id !== 0 && <Link onClick={() => { dispatch(logoutSuccess()); navigate("/home") }} to="/home" className="d-flex align-items-center gap-1">
+                  <i className="fa-solid fa-arrow-right-to-bracket"></i> Logout
+                </Link>}
+
+
+                {authState.id === 0 && <Link to="/login" className="d-flex align-items-center gap-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                  <i className="fa-solid fa-arrow-right-to-bracket"></i> Login
+                </Link>}
+
+                {authState.id === 0 && <Link to="/register" className="d-flex align-items-center gap-1" data-bs-target="#staticBackdrop">
+                  <i className="fa-solid fa-arrow-right-to-bracket"></i> Register
+                </Link>}
+
                 <div className="modal fade login-modal" id="staticBackdrop" tabIndex="-1"
                   aria-labelledby="staticBackdropLabel" aria-hidden="true">
                   <div className="modal-dialog modal-dialog-centered">

@@ -10,6 +10,7 @@ const FormInput = ({
     name,
     placeholder,
     inputClass,
+    value,
     onFocus,
     pattern }) => (
     <FormGroup className={`height-60px ${formGroupClass}`}>
@@ -18,6 +19,7 @@ const FormInput = ({
             id={id}
             name={name}
             placeholder={placeholder}
+            value={value}
             className={inputClass}
             onFocus={onFocus}
             pattern={pattern}

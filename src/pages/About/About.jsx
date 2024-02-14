@@ -43,7 +43,7 @@ At 2G0 Cars, safety is our unwavering commitment as we provide reliable ride sol
 
                 <div className=" d-flex align-items-center gap-3 mt-4">
                   <span className="fs-4">
-                    <i class="ri-phone-line"></i>
+                    <i className="ri-phone-line"></i>
                   </span>
 
                   <div>
