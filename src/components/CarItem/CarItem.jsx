@@ -2,9 +2,24 @@ import React from "react";
 import { Col } from "reactstrap";
 import { Link } from "react-router-dom";
 import "./car-item.css";
+import axiosInstance from "../../core/utils/interceptors/axiosInterceptors";
+import { toast } from "react-toastify";
+import { useSelector } from "react-redux";
 
 
 const CarItem = (props) => {
+
+  const authState = useSelector((store) => store.auth);
+
+  const test = async () => {
+    if (authState.id !== 0) {
+      // toast.success("olduuuuuuuu <33333")
+    } else {
+      // navigate("/login")
+      toast.error("Üye girişi yapmalısınız!")
+    }
+
+  }
 
   const { id, modelName, colorName, year, dailyPrice, imagePath, brandName } = props.item;
 
@@ -34,7 +49,7 @@ const CarItem = (props) => {
           </div>
 
           <button className=" w-50 car__item-btn car__btn-rent">
-            <Link to={`/reservation/${id}`}>Rent</Link>
+            <Link to={`/reservation/${id}`} onClick={test}>Rent</Link>
           </button>
 
           <button className=" w-50 car__item-btn car__btn-details">

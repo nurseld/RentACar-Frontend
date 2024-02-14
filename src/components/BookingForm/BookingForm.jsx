@@ -6,6 +6,8 @@ import { FormGroup } from "reactstrap";
 import FormInput from "../FormInput/FormInput";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import axiosInstance from "../../core/utils/interceptors/axiosInterceptors";
+import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 
 // const FormField = ({ type, name, placeholder }) => (
@@ -20,6 +22,8 @@ const BookingForm = () => {
     const { id } = useParams()
 
     const navigate = useNavigate()
+
+    const authState = useSelector((store) => store.auth);
 
     const initialValues = {
 
@@ -44,9 +48,15 @@ const BookingForm = () => {
         // Handle form submission logic here
         console.log("Form submitted with values:", values);
         try {
-            const response = await axiosInstance.post(`rentals/add`, { ...values, userId: 9, carId: id });
-            console.log('Response:', response);
-            navigate("/order-complete", { state: { info: response.data, rental: values } })
+            if (authState.id !== 0) {
+                const response = await axiosInstance.post(`rentals/add`, { ...values, userId: authState.id, carId: id });
+                console.log('Response:', response);
+                navigate("/order-complete", { state: { info: response.data, rental: values } })
+            } else {
+                // navigate("/login")
+                toast.error("Üye girişi yapmalısınız!")
+            }
+
 
         } catch (error) {
             console.error('Veri çekme hatası:', error);

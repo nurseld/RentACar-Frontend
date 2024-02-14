@@ -4,6 +4,9 @@ import {
     increaseRequestCount,
 } from "../../../store/loading/loadingSlice";
 import tokenService from "../../../services/tokenService";
+import { loadToken, storeToken } from "../../../store/storage/storage";
+
+
 
 const axiosInstance = axios.create({
     baseURL: "http://localhost:8081/api/"
@@ -11,7 +14,8 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(config => {
     let token = tokenService.getToken();
-    if (token) config.headers.Authorization = `Bearer ${token}`;
+    if (token) config.headers.Authorization = `Bearer ${token}`
+
     // store.dispatch(increaseRequestCount());
     return config;
 });
@@ -26,4 +30,10 @@ axios.interceptors.response.use(
     },
 );
 
+let authToken = loadToken();
+
+export function setToken(token) {
+    authToken = token;
+    storeToken(token);
+}
 export default axiosInstance;
