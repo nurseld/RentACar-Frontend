@@ -62,8 +62,8 @@ const FindCarForm = () => {
           <FormInput
             name="journeyDate"
             inputClass="form-control"
-            type={dateInputType}
-            placeholder="Journey Dateeeeee"
+            type="date"
+            placeholder="Start Date"
             id="date"
             onFocus={activateDateInput}
             onBlur={deactivateDateInput}
@@ -74,8 +74,8 @@ const FindCarForm = () => {
           <FormInput
             name="journeyTime"
             inputClass="journey__time"
-            type="time"
-            placeholder="Journey time"
+            type="date"
+            placeholder="End Date"
             formGroupClass="form__group"
 
           />
