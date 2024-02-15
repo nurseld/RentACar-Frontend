@@ -13,6 +13,9 @@ import Register from "../pages/Register/Register";
 import Reservation from "../pages/Reservation/Reservation";
 import OrderComplete from "../pages/OrderComplete/OrderComplete";
 import Profile from "../pages/Profile/Profile";
+import ProtectedRoute from "./ProtectedRoute";
+import Admin from "../pages/Admin/Admin";
+import PrivacyPolicy from "../pages/PrivacyPolicy/PrivacyPolicy";
 
 const Routers = () => {
   return (
@@ -21,6 +24,7 @@ const Routers = () => {
       <Route path="/home" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/cars" element={<CarListing />} />
+      <Route path="/privacypolicy" element={<PrivacyPolicy />} />
       <Route path="/cars/:id" element={<CarDetails />} />
       <Route path="/blogs" element={<Blog />} />
       <Route path="/blogs/:slug" element={<BlogDetails />} />
@@ -31,6 +35,14 @@ const Routers = () => {
       <Route path="/reservation/:id" element={<Reservation />} />
       <Route path="/order-complete" element={<OrderComplete />} />
       <Route path="/profile" element={<Profile />} />
+      <Route
+        path="/admin/*"
+        element={
+          <ProtectedRoute>
+            <Route path="/" element={<Admin />} />
+          </ProtectedRoute>
+        }
+      />
     </Routes>
   );
 };

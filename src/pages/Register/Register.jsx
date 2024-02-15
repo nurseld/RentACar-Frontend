@@ -30,7 +30,7 @@ const Register = () => {
     };
 
     const nameValidationRegex = /^[A-Za-zÇçĞğİıÖöŞşÜü\s]+$/;
-    const phoneValidationRegex = /^(?:(\+|00)90[\s-]?)?(?:(0[1-9]\d{8,9}))$/;
+    const phoneValidationRegex = /^(?:(\+|00)90[\s-]?)?(?:(0)?[1-9]\d{8,9})$/;
     const corporateValidationSchema = Yup.object().shape({
       companyName: Yup.string().max(100).required("Company name is required"),
       taxNo: Yup.string().matches(/^\d{10}$/, "Please enter a valid tax number.").required("Tax No is required"),

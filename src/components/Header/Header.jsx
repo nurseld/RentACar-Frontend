@@ -12,6 +12,7 @@ import "./header.css";
 import Login from "../Login/Login";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutSuccess } from "../../store/auth/authSlice";
+import logo from "../../assets/all-images/logo.png";
 
 
 const navLinks = [
@@ -73,14 +74,17 @@ const Header = () => {
 
         <Container>
           <Row>
-            <Col lg="6" md="6" sm="6">
-              <div className="header__top__left">
-                <span>Need Help?</span>
-                <span className="header__top__help">
-                  <i className="ri-phone-fill"></i> +1-202-555-0149
-                </span>
-              </div>
-            </Col>
+          <Col lg="6" md="6" sm="6">
+  <div className="header__top__left">
+    <Link to="/home"> 
+      <img src={logo} alt="Home" className="logo" />
+    </Link>
+    <span>Need Help?</span>
+    <span className="header__top__help">
+      <i className="ri-phone-fill"></i> 0 (550) 500 50 50
+    </span>
+  </div>
+</Col>
 
             <Col lg="6" md="6" sm="6">
               <div className="header__top__right d-flex align-items-center justify-content-end gap-3">
