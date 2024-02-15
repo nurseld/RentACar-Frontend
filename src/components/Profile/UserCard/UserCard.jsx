@@ -43,7 +43,7 @@ function UserCard({ user, corporate, customer }) {
                             return (
                                 <>
                                     <p className="user-birthDate">{customer?.birthDate}</p>
-                                    <p className="user-nationalIdentity">{customer?.nationalIdentity}</p>
+                                    <p className="user-nationalIdentity">{customer?.nationalIdNo}</p>
                                 </>)
                         }
                         else {

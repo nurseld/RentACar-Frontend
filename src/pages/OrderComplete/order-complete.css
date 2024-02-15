@@ -1,17 +1,60 @@
 .order-complete-container {
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
     border-radius: 16px;
+    margin: 100px;
+    padding: 1.6rem !important;
 }
 
-.transaction-information-card,
+.order-information-card {
+    display: flex;
+    justify-content: space-between;
+}
+
+.car-image-card .car-image {
+    transition: .5s;
+    transform: scale(1.275);
+    width: 550px;
+}
+
+.car-image-card .car-image:hover {
+    /* transform: scale(1.675) rotateY(180deg); */
+    transform: translate(-25%, 10%) scale(1.675) rotateY(180deg);
+}
+
+.car-details-card,
 .rental-details-card {
+    width: 400px !important;
+    padding: 20px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    border: none;
+    border: none !important;
     border-radius: 16px;
     transition: .4s;
 }
 
-.transaction-information-card:hover,
+.car-details-card:hover,
 .rental-details-card:hover {
-    transform: scale(1.01);
+    /* transform: scale(1.03); */
+}
+
+.car-details-card .card-title,
+.rental-details-card .card-title {
+    margin-bottom: 30px;
+    padding-bottom: 16px;
+}
+
+.car-details-card-row,
+.rental-details-card-row {
+    margin: 16px 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 19px;
+    border-bottom: 2px solid #00000030;
+}
+
+.car-details-card-row .car-details-card-description,
+.rental-details-card-row .rental-details-card-description {}
+
+.car-details-card-row .car-details-card-value,
+.rental-details-card-row .rental-details-card-value {
+    font-weight: 600;
 }
