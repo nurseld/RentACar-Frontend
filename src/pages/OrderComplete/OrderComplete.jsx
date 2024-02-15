@@ -14,26 +14,61 @@ function OrderComplete() {
     }, []);
 
     return (
-        <div className="order-complete-container container mb-5 mt-5 p-4">
+        <div className="order-complete-container container">
             <h2 className="text-center mb-4">Order Complete</h2>
-
-            <div className="transaction-information-card card mb-4">
-                <div className="transaction-information-card-body card-body">
-                    <h3 className="card-title">Transaction Information:</h3>
-                    <p className="card-text">Total Price: {info.totalPrice}</p>
-                    <p className="card-text">User ID: {info.userId}</p>
-                    <p className="card-text">Car Plate: {info.car.plate}</p>
-                    <img src={info.car.imagePath} />
+            <div className="order-information-card">
+                <div className="car-details-card">
+                    <div className="car-details-card-body">
+                        <h3 className="card-title text-center">Car Details</h3>
+                        <div className="car-details-card-row">
+                            <span className="car-details-card-description">Car Plate</span>
+                            <span className="car-details-card-value">{info.car.plate}</span>
+                        </div>
+                        <div className="car-details-card-row">
+                            <span className="car-details-card-description">Brand</span>
+                            <span className="car-details-card-value">{info.car.brandName}</span>
+                        </div>
+                        <div className="car-details-card-row">
+                            <span className="car-details-card-description">Model</span>
+                            <span className="car-details-card-value">{info.car.modelName}</span>
+                        </div>
+                        <div className="car-details-card-row">
+                            <span className="car-details-card-description">Year</span>
+                            <span className="car-details-card-value">{info.car.year}</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <div className="rental-details-card card mb-5">
-                <div className="rental-details-card-body card-body">
-                    <h3 className="card-title">Rental Details:</h3>
-                    <p className="card-text">Pick-Up Location: {rental.pickUpLocation}</p>
-                    <p className="card-text">Drop-Off Location: {rental.dropOffLocation}</p>
-                    <p className="card-text">Start Date: {rental.startDate}</p>
-                    <p className="card-text">End Date: {rental.endDate}</p>
+                <div className="car-image-card">
+                    <img className='car-image' src={info.car.imagePath} />
+                </div>
+                <div className="rental-details-card">
+                    <div className="rental-details-card-body">
+                        <h3 className="card-title text-center">Rental Details</h3>
+                        {/* <div className="rental-details-card-row">
+                            <span className="rental-details-card-description">User ID:</span>
+                            <span className="rental-details-card-value">{info.userId}</span>
+                        </div> */}
+                        <div className="rental-details-card-row">
+                            <span className="rental-details-card-description">Pick-Up Location</span>
+                            <span className="rental-details-card-value">{rental.pickUpLocation}</span>
+                        </div>
+                        <div className="rental-details-card-row">
+                            <span className="rental-details-card-description">Drop-Off Location</span>
+                            <span className="rental-details-card-value">{rental.dropOffLocation}</span>
+                        </div>
+                        <div className="rental-details-card-row">
+                            <span className="rental-details-card-description">Start Date</span>
+                            <span className="rental-details-card-value">{rental.startDate}</span>
+                        </div>
+                        <div className="rental-details-card-row">
+                            <span className="rental-details-card-description">End Date</span>
+                            <span className="rental-details-card-value">{rental.endDate}</span>
+                        </div>
+                        <div className="rental-details-card-row">
+                            <span className="rental-details-card-description">Total Price</span>
+                            <span className="rental-details-card-value">{info.totalPrice}</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
