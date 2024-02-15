@@ -17,18 +17,18 @@ const FindCarForm = () => {
   };
 
   const initialValues = {
-    fromAddress: "",
-    toAddress: "",
-    journeyDate: "",
-    journeyTime: "",
+    // fromAddress: "",
+    // toAddress: "",
+    startDate: "",
+    endDate: "",
 
   };
 
   const validationSchema = Yup.object().shape({
-    fromAddress: Yup.string().required("From Address is required"),
-    toAddress: Yup.string().required("To Address is required"),
-    journeyDate: Yup.date().required("Journey Date is required"),
-    journeyTime: Yup.string().required("Journey Time is required"),
+    // fromAddress: Yup.string().required("From Address is required"),
+    // toAddress: Yup.string().required("To Address is required"),
+    startDate: Yup.date().required("Start Date is required"),
+    endDate: Yup.string().required("End Date is required"),
   });
 
   const onSubmit = (values, { resetForm }) => {
@@ -45,22 +45,22 @@ const FindCarForm = () => {
     >
       <Form className="form">
         <div className="d-flex align-items-center justify-content-between flex-wrap">
-          <FormInput
+          {/* <FormInput
             name="fromAddress"
             placeholder="From address"
             formGroupClass="form__group"
 
-          />
+          /> */}
 
-          <FormInput
+          {/* <FormInput
             name="toAddress"
             placeholder="To address"
             formGroupClass="form__group"
 
-          />
+          /> */}
 
           <FormInput
-            name="journeyDate"
+            name="startDate"
             inputClass="form-control"
             type="date"
             placeholder="Start Date"
@@ -72,8 +72,8 @@ const FindCarForm = () => {
           />
 
           <FormInput
-            name="journeyTime"
-            inputClass="journey__time"
+            name="endDate"
+            inputClass="form-control"
             type="date"
             placeholder="End Date"
             formGroupClass="form__group"
