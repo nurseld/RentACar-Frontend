@@ -48,13 +48,14 @@ const CarItem = (props) => {
             </span>
           </div>
 
-          <button className=" w-50 car__item-btn car__btn-rent">
-            <Link to={`/reservation/${id}`} onClick={test}>Rent</Link>
-          </button>
-
-          <button className=" w-50 car__item-btn car__btn-details">
-            <Link className="link-padding" to={`/cars/${id}`}>Details</Link>
-          </button>
+          <div className="car__item__buttons">
+            <button className="car__item-btn car__btn-rent">
+              <Link className="link-padding" to={`/reservation/${id}`} onClick={test}>Rent</Link>
+            </button>
+            <button className="car__item-btn car__btn-details">
+              <Link className="link-padding" to={`/cars/${id}`}>Details</Link>
+            </button>
+          </div>
         </div>
       </div>
     </Col>
