@@ -3,7 +3,6 @@ import React from "react";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
 import { Link } from "react-router-dom";
 import "./footer.css";
-
 const quickLinks = [
   {
     path: "/about",
