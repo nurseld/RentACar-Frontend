@@ -5,46 +5,44 @@ import { Link } from "react-router-dom";
 import ava01 from "../../assets/all-images/ava-1.jpg";
 import ava02 from "../../assets/all-images/ava-2.jpg";
 import ava03 from "../../assets/all-images/ava-3.jpg";
+import ava04 from "../../assets/all-images/ava-4.jpg";
 
 const OUR__MEMBERS = [
   {
-    name: "Jhon Doe",
-    experience: "5 years of experience",
-    fbUrl: "#",
+    name: "Nursel Demirkıran",
+    experience: "7 years of experience",
+    ghUrl: "https://github.com/nurseld",
     instUrl: "#",
     twitUrl: "#",
-    linkedinUrl: "#",
+    linkedinUrl: "https://www.linkedin.com/in/nurseldemirkiran/",
     imgUrl: ava01,
   },
-
   {
-    name: "David Lisa",
+    name: "Adem Furkan Kavuş",
     experience: "5 years of experience",
-    fbUrl: "#",
+    ghUrl: "https://github.com/adem24077",
     instUrl: "#",
     twitUrl: "#",
-    linkedinUrl: "#",
+    linkedinUrl: "https://www.linkedin.com/in/adem-furkan-kavus",
     imgUrl: ava02,
   },
-
   {
-    name: "Hilton King",
-    experience: "5 years of experience",
-    fbUrl: "#",
+    name: "Enes Yetgin",
+    experience: "2 years of experience",
+    ghUrl: "https://github.com/enyetgin",
     instUrl: "#",
     twitUrl: "#",
-    linkedinUrl: "#",
+    linkedinUrl: "https://www.linkedin.com/in/enes-yetgin-7931a9257/",
     imgUrl: ava03,
   },
-
   {
-    name: "Jhon Doe",
-    experience: "5 years of experience",
-    fbUrl: "#",
+    name: "Melisa Selin Welfringer",
+    experience: "6 years of experience",
+    ghUrl: "https://github.com/melselin",
     instUrl: "#",
     twitUrl: "#",
-    linkedinUrl: "#",
-    imgUrl: ava01,
+    linkedinUrl: "https://www.linkedin.com/in/melisa-selin-welfringer",
+    imgUrl: ava04,
   },
 ];
 
@@ -58,18 +56,16 @@ const OurMembers = () => {
               <img src={item.imgUrl} alt="" className="w-100" />
 
               <div className="single__member-social">
-                <Link to={item.fbUrl}>
-                  <i className="ri-facebook-line"></i>
+                <Link to={item.ghUrl} target="_blank" rel="noopener noreferrer">
+                  <i className="line-md--github-loop"></i>
                 </Link>
-                <Link to={item.twitUrl}>
+                <Link to={item.twitUrl} target="_blank" rel="noopener noreferrer">
                   <i className="ri-twitter-line"></i>
                 </Link>
-
-                <Link to={item.linkedinUrl}>
+                <Link to={item.linkedinUrl} target="_blank" rel="noopener noreferrer">
                   <i className="ri-linkedin-line"></i>
                 </Link>
-
-                <Link to={item.instUrl}>
+                <Link to={item.instUrl} target="_blank" rel="noopener noreferrer">
                   <i className="ri-instagram-line"></i>
                 </Link>
               </div>
