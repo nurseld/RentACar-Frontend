@@ -4,16 +4,18 @@ import { Link } from "react-router-dom";
 import "./car-item.css";
 import axiosInstance from "../../core/utils/interceptors/axiosInterceptors";
 import { toast } from "react-toastify";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { loadCar } from "../../store/rental/rentalSlice";
 
 
 const CarItem = (props) => {
 
+  const { id, modelName, colorName, year, dailyPrice, imagePath, brandName } = props.item;
   const authState = useSelector((store) => store.auth);
-
+  const dispatch = useDispatch();
   const test = async () => {
     if (authState.id !== 0) {
-      // toast.success("olduuuuuuuu <33333")
+      dispatch(loadCar(id))
     } else {
       // navigate("/login")
       toast.error("Üye girişi yapmalısınız!")
@@ -21,7 +23,7 @@ const CarItem = (props) => {
 
   }
 
-  const { id, modelName, colorName, year, dailyPrice, imagePath, brandName } = props.item;
+
 
   return (
     <Col xl="4" lg="6" md="6" sm="12" className="mb-5">

@@ -13,11 +13,13 @@ import Register from "../pages/Register/Register";
 import Reservation from "../pages/Reservation/Reservation";
 import OrderComplete from "../pages/OrderComplete/OrderComplete";
 import Profile from "../pages/Profile/Profile";
+import RentableCars from "../pages/RentableCars/RentableCars";
 import ProtectedRoute from "./ProtectedRoute";
 import Admin from "../pages/Admin/Admin";
 import PrivacyPolicy from "../pages/PrivacyPolicy/PrivacyPolicy";
 import Dashboard from "../pages/Admin/AdminPages/Dashboard";
 import CarControl from "../pages/Admin/AdminPages/CarControl";
+
 
 const Routers = () => {
   return (
@@ -37,6 +39,7 @@ const Routers = () => {
       <Route path="/reservation/:id" element={<Reservation />} />
       <Route path="/order-complete" element={<OrderComplete />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/rentable-cars" element={<RentableCars />} />
      
       <Route
         path="/admin/*"

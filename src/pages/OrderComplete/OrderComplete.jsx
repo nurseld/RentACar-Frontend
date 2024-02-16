@@ -68,6 +68,10 @@ function OrderComplete() {
                             <span className="rental-details-card-description">Total Price</span>
                             <span className="rental-details-card-value">{info.totalPrice}</span>
                         </div>
+                        <div className="rental-details-card-row">
+                            <span className="rental-details-card-description">Invoice No</span>
+                            <span className="rental-details-card-value">{info.invoiceNo}</span>
+                        </div>
                     </div>
                 </div>
             </div>
