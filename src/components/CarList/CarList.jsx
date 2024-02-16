@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Container, Row, Col } from "reactstrap";
 import CarItem from "../CarItem/CarItem";
 import { useSelector } from "react-redux";
+import { Page } from '../../constants';
 
 function CarList() {
 
@@ -70,7 +71,7 @@ function CarList() {
 
                 {
                     filteredCars.map((item) => (
-                        <CarItem item={item} key={item.id} />
+                        <CarItem item={item} key={item.id} page={Page.CarListing_CarList} />
                     ))
                 }
             </Row>
