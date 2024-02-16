@@ -85,6 +85,31 @@ const CarDetails = () => {
                     {/* {carDetail.speed} */}
                     {carDetail.year}
                   </span>
+
+                  <span className=" d-flex align-items-center gap-1 section__description">
+                    <i
+                      className="ri-timer-flash-line"
+                      style={{ color: "#f9a826" }}
+                    ></i>{" "}
+                    {/* {carDetail.speed} */}
+                    {carDetail.gearType}
+                  </span>
+                  <span className=" d-flex align-items-center gap-1 section__description">
+                    <i
+                      className="ri-timer-flash-line"
+                      style={{ color: "#f9a826" }}
+                    ></i>{" "}
+                    {/* {carDetail.speed} */}
+                    {carDetail.fuelType}
+                  </span>
+                  <span className=" d-flex align-items-center gap-1 section__description">
+                    <i
+                      className="ri-timer-flash-line"
+                      style={{ color: "#f9a826" }}
+                    ></i>{" "}
+                    {/* {carDetail.speed} */}
+                    {carDetail.bodyType}
+                  </span>
                 </div>
               </div>
             </Col>
