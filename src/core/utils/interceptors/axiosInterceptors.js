@@ -5,6 +5,7 @@ import {
 } from "../../../store/loading/loadingSlice";
 import tokenService from "../../../services/tokenService";
 import { loadToken, storeToken } from "../../../store/storage/storage";
+import { toast } from "react-toastify";
 
 
 
@@ -26,6 +27,8 @@ axios.interceptors.response.use(
         return response;
     },
     error => {
+        console.log(error.response.data.message)
+
         // store.dispatch(decreaseRequestCount());
     },
 );
