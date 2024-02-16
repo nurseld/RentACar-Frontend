@@ -1,12 +1,24 @@
 import React, { useState } from "react";
 import "./find-car-form.css";
-import { Form, FormGroup } from "reactstrap";
+import { FormGroup } from "reactstrap";
 import FormInput from "../FormInput/FormInput";
-import { Formik } from "formik";
+import { Formik, Form } from "formik";
 import * as Yup from "yup";
+import axiosInstance from "../../core/utils/interceptors/axiosInterceptors";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { loadRental } from "../../store/rental/rentalSlice";
+
 
 const FindCarForm = () => {
   const [dateInputType, setDateInputType] = useState("text");
+
+  const authState = useSelector((store) => store.auth);
+
+  const navigate = useNavigate();
+
+  const dispatch = useDispatch();
 
   const activateDateInput = () => {
     setDateInputType("date");
@@ -24,77 +36,95 @@ const FindCarForm = () => {
 
   };
 
+
+
   const validationSchema = Yup.object().shape({
     // fromAddress: Yup.string().required("From Address is required"),
     // toAddress: Yup.string().required("To Address is required"),
-    startDate: Yup.date().required("Start Date is required"),
+    startDate: Yup.string().required("Start Date is required"),
     endDate: Yup.string().required("End Date is required"),
   });
 
-  const onSubmit = (values, { resetForm }) => {
+  const onSubmit = async (values, { resetForm }) => {
     // Handle form submission logic here
+
     console.log("Form submitted with values:", values);
+    try {
+      if (authState.id !== 0) {
+        const response = await axiosInstance.post(`cars/getAvailableCars`, { ...values });
+        console.log('Response:', response);
+        dispatch(loadRental(values))
+        navigate("/rentable-cars", { state: { cars: response.data } })
+      } else {
+        // navigate("/login")
+        toast.error("Üye girişi yapmalısınız!")
+      }
+
+
+    } catch (error) {
+      console.error('Veri çekme hatası:', error);
+      toast.error(error.response.data.message)
+    }
     resetForm();
   };
 
+
+  const [selectedCity, setSelectedCity] = useState('');
+  const [selectedCity2, setSelectedCity2] = useState('');
+
+  const handleCityChange = (event) => {
+    setSelectedCity(event.target.value);
+  };
+  const handleCityChange2 = (event) => {
+    setSelectedCity2(event.target.value);
+  };
+
   return (
+
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
       onSubmit={onSubmit}
     >
+
       <Form className="form">
         <div className="d-flex align-items-center justify-content-between flex-wrap">
-          {/* <FormInput
-            name="fromAddress"
-            placeholder="From address"
-            formGroupClass="form__group"
 
-          /> */}
-
-          {/* <FormInput
-            name="toAddress"
-            placeholder="To address"
-            formGroupClass="form__group"
-
-          /> */}
-
-          <FormInput
-            name="startDate"
-            inputClass="form-control"
-            type="date"
-            placeholder="Start Date"
-            id="date"
-            onFocus={activateDateInput}
-            onBlur={deactivateDateInput}
-            pattern="\d{2}\d{2}\d{4}"
-            formGroupClass="form__group"
-          />
-
-          <FormInput
-            name="endDate"
-            inputClass="form-control"
-            type="date"
-            placeholder="End Date"
-            formGroupClass="form__group"
-
-          />
-
-          {/* Add a select input for car type */}
-          {/* <FormInput
-            name="car-type"
-            inputClass="select"
-            type="select"
-            formGroupClass="form__group"
-          >
-            <select>
-              <option value="ac">AC Car</option>
-              <option value="non-ac">Non AC Car</option>
+          <div>
+            <h2>Şehir Seçimi</h2>
+            <select value={selectedCity} onChange={handleCityChange}>
+              <option value="">Şehir Seçiniz</option>
+              <option value="Kadıköy">Kadıköy</option>
+              <option value="Maltepe">Maltepe</option>
+              <option value="Bahçeşehir">Bahçeşehir</option>
+              <option value="Ataşehir">Ataşehir</option>
             </select>
-          </FormInput> */}
+            <p>Seçili Şehir: {selectedCity}</p>
+          </div>
+          <div>
+            <h2>Şehir Seçimi</h2>
+            <select value={selectedCity2} onChange={handleCityChange2}>
+              <option value="">Şehir Seçiniz</option>
+              <option value="Kadıköy">Kadıköy</option>
+              <option value="Maltepe">Maltepe</option>
+              <option value="Bahçeşehir">Bahçeşehir</option>
+              <option value="Ataşehir">Ataşehir</option>
+            </select>
+            <p>Seçili Şehir: {selectedCity2}</p>
+          </div>
+          <FormInput
+            formGroupClass="booking__form d-inline-block ms-1 me-1"
+            type="date" name="startDate" placeholder="Start Date"
+          />
+          <FormInput
+            formGroupClass="booking__form d-inline-block ms-1 me-1"
+            type="date" name="endDate" placeholder="End Date"
+          />
+
+
 
           <FormGroup className="form__group">
-            <button className="btn find__car-btn">Find Car</button>
+            <button type="submit" className="btn find__car-btn">Find Car</button>
           </FormGroup>
         </div>
       </Form>

@@ -6,6 +6,10 @@ class CarService extends BaseService {
         super();
         this.apiUrl = "cars";
     }
+
+    async getAvailable() {
+        return await axiosInstance.get(this.apiUrl + "/getAvailableCars");
+    }
 }
 
 export default new CarService();

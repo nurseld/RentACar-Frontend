@@ -1,3 +1,4 @@
+
 export function storeAuthState(auth) {
     localStorage.setItem("auth", JSON.stringify(auth));
 }
@@ -37,5 +38,19 @@ export function loadToken() {
         return JSON.parse(tokenInString)
     } catch {
         return null;
+    }
+}
+export function storeRentalState(rental) {
+    localStorage.setItem("rental", JSON.stringify(rental));
+}
+
+export function loadRentalState() {
+    const defaultState = { startDate: "", endDate: "" };
+    const rentalStateInStorage = localStorage.getItem("rental");
+    if (!rentalStateInStorage) return defaultState;
+    try {
+        return JSON.parse(rentalStateInStorage);
+    } catch {
+        return defaultState;
     }
 }
