@@ -19,7 +19,7 @@ const CarItem = (props) => {
       dispatch(loadCar(id))
     } else {
       // navigate("/login")
-      toast.error("Üye girişi yapmalısınız!")
+      // toast.error("Üye girişi yapmalısınız!")
     }
   }
 

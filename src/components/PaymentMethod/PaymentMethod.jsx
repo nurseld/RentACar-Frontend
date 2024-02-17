@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 import { deleteRental } from "../../store/rental/rentalSlice";
 import axiosInstance from "../../core/utils/interceptors/axiosInterceptors";
 
-const PaymentMethod = () => {
+const PaymentMethod = (props) => {
   const dispatch = useDispatch();
   const rentalState = useSelector((store) => store.rental);
   const authState = useSelector((store) => store.auth);
@@ -19,7 +19,7 @@ const PaymentMethod = () => {
     console.log("Form submitted with values:");
     try {
       if (authState.id !== 0) {
-        const response = await axiosInstance.post(`rentals/add`, { startDate: rentalState.startDate, endDate: rentalState.endDate, userId: authState.id, carId: rentalState.carId });
+        const response = await axiosInstance.post(`rentals/add`, { startDate: rentalState.startDate, endDate: rentalState.endDate, userId: authState.id, carId: props.carId });
         dispatch(deleteRental())
         navigate("/order-complete", { state: { info: response.data, rental: { startDate: rentalState.startDate, endDate: rentalState.endDate, userId: authState.id, carId: rentalState.carId } } })
       } else {
@@ -63,7 +63,15 @@ const PaymentMethod = () => {
         <img src={paypal} alt="" />
       </div>
       <div className="payment text-end mt-5">
-        <button type="button" onClick={onSubmit}>Reserve Now</button>
+        {
+          (authState.id !== 0)
+            ?
+            <button type="button" onClick={onSubmit}>Reserve Now</button>
+            :
+            <button
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop">Reserve Now</button>
+        }
       </div>
     </>
   );

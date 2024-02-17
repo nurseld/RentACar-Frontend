@@ -49,18 +49,14 @@ const FindCarForm = () => {
     // Handle form submission logic here
 
     console.log("Form submitted with values:", values);
+
+
+
     try {
-      if (authState.id !== 0) {
-        const response = await axiosInstance.post(`cars/getAvailableCars`, { ...values });
-        console.log('Response:', response);
-        dispatch(loadRental(values))
-        navigate("/rentable-cars", { state: { cars: response.data } })
-      } else {
-        // navigate("/login")
-        toast.error("Üye girişi yapmalısınız!")
-      }
-
-
+      const response = await axiosInstance.post(`cars/getAvailableCars`, { ...values });
+      console.log('Response:', response);
+      dispatch(loadRental(values))
+      navigate("/rentable-cars", { state: { cars: response.data } })
     } catch (error) {
       console.error('Veri çekme hatası:', error);
       toast.error(error.response.data.message)
