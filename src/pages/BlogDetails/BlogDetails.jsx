@@ -1,16 +1,19 @@
 import React, { useEffect } from "react";
 import { Container, Row, Col, Form, FormGroup, Input } from "reactstrap";
+import { useTranslation } from 'react-i18next';
 
 import { useParams } from "react-router-dom";
 import blogData from "../../assets/data/blogData.js";
 import Helmet from "../../components/Helmet/Helmet.jsx";
 import { Link } from "react-router-dom";
 
+
 import commentImg from "../../assets/all-images/ava-1.jpg";
 
 import "./blog-details.css";
 
 const BlogDetails = () => {
+  const { t } = useTranslation();
   const { slug } = useParams();
   const blog = blogData.find((blog) => blog.title === slug);
 
@@ -49,30 +52,28 @@ const BlogDetails = () => {
               </div>
 
               <div className="comment__list mt-5">
-                <h4 className="mb-5">3 Comments</h4>
+                <h4 className="mb-5">  {t("blog.Comments")}</h4>
 
                 <div className="single__comment d-flex gap-3">
                   <img src={commentImg} alt="" />
                   <div className="comment__content">
                     <h6 className=" fw-bold">David Visa</h6>
-                    <p className="section__description mb-0">14 July, 2022</p>
+                    <p className="section__description mb-0">{t("blog.Date")}14 July, 2022</p>
                     <p className="section__description">
-                      Just stumbled upon your latest blog, and WOW! It's like
-                      you have a magical pen that turns words into pure
-                      brilliance. 🌟
+                    {t("blog.Comment")} 
                     </p>
 
                     <span className="replay d-flex align-items-center gap-1">
-                      <i className="ri-reply-line"></i> Replay
+                      <i className="ri-reply-line"></i>{t("blog.Replay")} 
                     </span>
                   </div>
                 </div>
 
                 {/* =============== comment form ============ */}
                 <div className="leave__comment-form mt-5">
-                  <h4>Leave a Comment</h4>
+                  <h4>{t("blog.Leave")}</h4>
                   <p className="section__description">
-                    You must sign-in to make or comment a post
+                  {t("blog.SignWarn")}
                   </p>
 
                   <Form>
@@ -85,12 +86,12 @@ const BlogDetails = () => {
                       <textarea
                         rows="5"
                         className="w-100 py-2 px-3"
-                        placeholder="Comment..."
+                        placeholder={t("blog.Placehold")}
                       ></textarea>
                     </FormGroup>
 
                     <button className="btn comment__btn mt-3">
-                      Post a Comment
+                    {t("blog.Post")} 
                     </button>
                   </Form>
                 </div>
@@ -99,7 +100,7 @@ const BlogDetails = () => {
 
             <Col lg="4" md="4">
               <div className="recent__post mb-4">
-                <h5 className=" fw-bold">Recent Posts</h5>
+                <h5 className=" fw-bold">{t("blog.Recent")}</h5>
               </div>
               {blogData.map((item) => (
                 <div className="recent__blog-post mb-4" key={item.id}>

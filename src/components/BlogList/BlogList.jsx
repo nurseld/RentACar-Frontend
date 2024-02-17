@@ -3,18 +3,21 @@ import { Col } from "reactstrap";
 import "./blog-list.css";
 import { Link } from "react-router-dom";
 import blogData from "../../assets/data/blogData";
+import { useTranslation } from 'react-i18next';
 
 const BlogList = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       {blogData.map((item) => (
-        <BlogItem item={item} key={item.id} />
+        <BlogItem item={item} key={item.id} t={t} />
       ))}
     </>
   );
 };
 
-const BlogItem = ({ item }) => {
+const BlogItem = ({ item, t }) => {
   const { imgUrl, title, author, date, description, time } = item;
 
   return (
@@ -23,7 +26,7 @@ const BlogItem = ({ item }) => {
         <img src={imgUrl} alt="" className="w-100" />
         <div className="blog__info p-3">
           <Link to={`/blogs/${title}`} className="blog__title">
-            {title}
+            {t(`global.blogs.${title}`)}
           </Link>
           <p className="section__description mt-3">
             {description.length > 100
@@ -32,7 +35,7 @@ const BlogItem = ({ item }) => {
           </p>
 
           <Link to={`/blogs/${title}`} className="read__more">
-            Read More
+            {t("blog.Read")}
           </Link>
 
           <div className="blog__time pt-3 mt-3 d-flex align-items-center justify-content-between">
