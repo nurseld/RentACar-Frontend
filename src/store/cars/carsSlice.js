@@ -1,6 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import axiosInstance from '../../core/utils/interceptors/axiosInterceptors';
-import { useEffect } from "react";
 import carService from "../../services/carService";
 
 const getCars = async () => {
@@ -26,14 +24,18 @@ const carsSlice = createSlice(
         name: "cars",
         initialState: {
             cars: await getCars(),
+            filteredCars: await getCars(),
         },
         reducers: {
-            setCars: (state, action) => {
-                return { ...state, cars: [...state.cars, action.payload] };
+            // setCars: (state, action) => {
+            //     return { ...state, cars: [...state.cars, action.payload] };
+            // },
+            setFilteredCars: (state, action) => {
+                return { ...state, filteredCars: action.payload }
             }
         }
     }
 )
 
 export const carsReducer = carsSlice.reducer;
-export const { setCars } = carsSlice.actions;
+export const { setCars, setFilteredCars } = carsSlice.actions;

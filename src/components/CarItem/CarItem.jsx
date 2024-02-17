@@ -6,6 +6,7 @@ import axiosInstance from "../../core/utils/interceptors/axiosInterceptors";
 import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { loadCar } from "../../store/rental/rentalSlice";
+import { Page } from '../../constants'
 
 
 const CarItem = (props) => {
@@ -18,12 +19,9 @@ const CarItem = (props) => {
       dispatch(loadCar(id))
     } else {
       // navigate("/login")
-      toast.error("Üye girişi yapmalısınız!")
+      // toast.error("Üye girişi yapmalısınız!")
     }
-
   }
-
-
 
   return (
     <Col xl="4" lg="6" md="6" sm="12" className="mb-5">
@@ -51,12 +49,22 @@ const CarItem = (props) => {
           </div>
 
           <div className="car__item__buttons">
-            <button className="car__item-btn car__btn-rent">
-              <Link className="link-padding" to={`/reservation/${id}`} onClick={test}>Rent</Link>
-            </button>
-            <button className="car__item-btn car__btn-details">
-              <Link className="link-padding" to={`/cars/${id}`}>Details</Link>
-            </button>
+            {
+              (props.page !== Page.RentableCars)
+                ?
+                <button className="car__item-btn car__btn-details-full-size">
+                  <Link className="link-padding" to={`/cars/${id}`}>Details</Link>
+                </button>
+                :
+                <>
+                  <button className="car__item-btn car__btn-rent">
+                    <Link className="link-padding" to={`/reservation/${id}`} onClick={test}>Rent</Link>
+                  </button>
+                  <button className="car__item-btn car__btn-details">
+                    <Link className="link-padding" to={`/cars/${id}`}>Details</Link>
+                  </button>
+                </>
+            }
           </div>
         </div>
       </div>

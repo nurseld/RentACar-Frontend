@@ -15,6 +15,7 @@ import Testimonial from "../../components/Testimonials/Testimonial";
 import BlogList from "../../components/BlogList/BlogList";
 import axios from "axios";
 import axiosInstance from "../../core/utils/interceptors/axiosInterceptors";
+import { Page } from "../../constants";
 
 const Home = () => {
 
@@ -81,7 +82,7 @@ const Home = () => {
             </Col>
 
             {posts.slice(0, 3).map((item) => (
-              <CarItem item={item} key={item.id} />
+              <CarItem item={item} key={item.id} page={Page.Home_HotOffers} />
             ))}
           </Row>
         </Container>
