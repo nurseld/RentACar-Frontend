@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import './year-filter.css'
 import { useDispatch, useSelector } from "react-redux";
-import axiosInstance from '../../../core/utils/interceptors/axiosInterceptors';
 import { setFilteredCars } from '../../../store/cars/carsSlice';
+import { setSelectedYear, setSelectedYears } from '../../../store/filter/filterSlice';
 
 
 function YearFilter({ name, id, labelClassForColor = "secondary" }) {
@@ -13,16 +13,16 @@ function YearFilter({ name, id, labelClassForColor = "secondary" }) {
     const filteredCars = useSelector((state) => state.cars.filteredCars);
 
     const [years, setYears] = useState([]);
-    const [selectedYear, setSelectedYear] = useState("all");
-    const [selectedYears, setSelectedYears] = useState([]);
 
+    const selectedYear = useSelector((state) => state.filters.selectedYear);
+    const selectedYears = useSelector((state) => state.filters.selectedYears);
 
     const checkSelectedYears = () => {
         if (selectedYears.includes(selectedYear)) {
-            setSelectedYears([...selectedYears.filter((y) => y !== selectedYear)]);
+            dispatch(setSelectedYears([...selectedYears.filter((y) => y !== selectedYear)]))
         }
         else {
-            setSelectedYears([...selectedYears, selectedYear]);
+            dispatch(setSelectedYears([...selectedYears, selectedYear]))
         }
     }
 
@@ -33,7 +33,7 @@ function YearFilter({ name, id, labelClassForColor = "secondary" }) {
         else {
             dispatch(setFilteredCars(initialCars.filter((c) => selectedYears.includes(c.year))))
         }
-        setSelectedYear("all")
+        dispatch(setSelectedYear("all"))
     }
 
     const getUniqueYears = async () => {
@@ -70,7 +70,7 @@ function YearFilter({ name, id, labelClassForColor = "secondary" }) {
                         <input type="checkbox" className="btn-check" id={year} />
                         <label
                             onClick={(e) => {
-                                setSelectedYear(year)
+                                dispatch(setSelectedYear(year))
                             }}
                             for={year}
                             className={`btn btn-outline-${labelClassForColor} filter-btn-outline filter-btn-outline-hover`}>

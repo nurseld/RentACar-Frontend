@@ -3,6 +3,7 @@ import './brand-filter.css'
 import { useDispatch, useSelector } from "react-redux";
 import axiosInstance from '../../../core/utils/interceptors/axiosInterceptors';
 import { setFilteredCars } from '../../../store/cars/carsSlice';
+import { setSelectedBrand, setSelectedBrands } from '../../../store/filter/filterSlice';
 
 function BrandFilter({ name, id, labelClassForColor = "secondary" }) {
     const dispatch = useDispatch();
@@ -14,15 +15,16 @@ function BrandFilter({ name, id, labelClassForColor = "secondary" }) {
     const [error, setError] = useState(null);
 
     const [brands, setBrands] = useState([])
-    const [selectedBrand, setSelectedBrand] = useState("all")
-    const [selectedBrands, setSelectedBrands] = useState([])
+
+    const selectedBrand = useSelector((state) => state.filters.selectedBrand);
+    const selectedBrands = useSelector((state) => state.filters.selectedBrands);
 
     const checkSelectedBrands = () => {
         if (selectedBrands.includes(selectedBrand)) {
-            setSelectedBrands([...selectedBrands.filter((b) => b !== selectedBrand)]);
+            dispatch(setSelectedBrands([...selectedBrands.filter((b) => b !== selectedBrand)]))
         }
         else {
-            setSelectedBrands([...selectedBrands, selectedBrand]);
+            dispatch(setSelectedBrands([...selectedBrands, selectedBrand]))
         }
     }
 
@@ -33,7 +35,7 @@ function BrandFilter({ name, id, labelClassForColor = "secondary" }) {
         else {
             dispatch(setFilteredCars(initialCars.filter((c) => selectedBrands.includes(c.brandName))))
         }
-        setSelectedBrand("all")
+        dispatch(setSelectedBrand("all"))
     }
 
     const getUniqueBrands = async () => {
@@ -82,7 +84,7 @@ function BrandFilter({ name, id, labelClassForColor = "secondary" }) {
                         <input type="checkbox" className="btn-check" id={brand.id} />
                         <label
                             onClick={(e) => {
-                                setSelectedBrand(e.target.textContent)
+                                dispatch(setSelectedBrand(e.target.textContent))
                             }}
                             for={brand.id}
                             className={`btn btn-outline-${labelClassForColor} filter-btn-outline filter-btn-outline-hover`}>
