@@ -85,29 +85,6 @@ const FindCarForm = () => {
 
       <Form className="form">
         <div className="d-flex align-items-center justify-content-between flex-wrap">
-
-          <div>
-            <h2>Şehir Seçimi</h2>
-            <select value={selectedCity} onChange={handleCityChange}>
-              <option value="">Şehir Seçiniz</option>
-              <option value="Kadıköy">Kadıköy</option>
-              <option value="Maltepe">Maltepe</option>
-              <option value="Bahçeşehir">Bahçeşehir</option>
-              <option value="Ataşehir">Ataşehir</option>
-            </select>
-            <p>Seçili Şehir: {selectedCity}</p>
-          </div>
-          <div>
-            <h2>Şehir Seçimi</h2>
-            <select value={selectedCity2} onChange={handleCityChange2}>
-              <option value="">Şehir Seçiniz</option>
-              <option value="Kadıköy">Kadıköy</option>
-              <option value="Maltepe">Maltepe</option>
-              <option value="Bahçeşehir">Bahçeşehir</option>
-              <option value="Ataşehir">Ataşehir</option>
-            </select>
-            <p>Seçili Şehir: {selectedCity2}</p>
-          </div>
           <FormInput
             formGroupClass="booking__form d-inline-block ms-1 me-1"
             type="date" name="startDate" placeholder="Start Date"
@@ -116,8 +93,6 @@ const FindCarForm = () => {
             formGroupClass="booking__form d-inline-block ms-1 me-1"
             type="date" name="endDate" placeholder="End Date"
           />
-
-
 
           <FormGroup className="form__group">
             <button type="submit" className="btn find__car-btn">Find Car</button>
