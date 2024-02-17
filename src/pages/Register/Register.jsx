@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Container, Row, Col, FormGroup, Input } from "reactstrap";
 import Helmet from "../../components/Helmet/Helmet";
 import CommonSection from "../../components/CommonSection/CommonSection";
@@ -15,6 +15,8 @@ import { toast } from "react-toastify";
 const Register = () => {
 
     const [dateInputType, setDateInputType] = useState("text");
+
+    const navigate = useNavigate();
 
     const activateDateInput = () => {
         setDateInputType("date");
@@ -100,6 +102,10 @@ const Register = () => {
         try {
             const response = await authService.customerRegister(values)
             console.log(response)
+            toast.success("You have successfully registered")
+            setTimeout(() => {
+                navigate("/login");
+            }, 2000);
         } catch (error) {
             toast.error(error.response.data.message)
             console.error('Veri çekme hatası:', error);
