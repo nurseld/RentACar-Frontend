@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Container, Row, Col, FormGroup, Input } from "reactstrap";
 import Helmet from "../../components/Helmet/Helmet";
 import CommonSection from "../../components/CommonSection/CommonSection";
@@ -8,12 +8,15 @@ import * as Yup from "yup";
 import FormInput from "../../components/FormInput/FormInput";
 import "./register.css";
 import authService from "../../services/authService";
+import { toast } from "react-toastify";
 
 
 
 const Register = () => {
 
     const [dateInputType, setDateInputType] = useState("text");
+
+    const navigate = useNavigate();
 
     const activateDateInput = () => {
         setDateInputType("date");
@@ -32,30 +35,32 @@ const Register = () => {
     const nameValidationRegex = /^[A-Za-zÇçĞğİıÖöŞşÜü\s]+$/;
     const phoneValidationRegex = /^(?:(\+|00)90[\s-]?)?(?:(0)?[1-9]\d{8,9})$/;
     const corporateValidationSchema = Yup.object().shape({
-      companyName: Yup.string().max(100).required("Company name is required"),
-      taxNo: Yup.string().matches(/^\d{10}$/, "Please enter a valid tax number.").required("Tax No is required"),
-      contactName: Yup.string()
-        .matches(nameValidationRegex, "Only letters are allowed")
-        .max(40)
-        .required("Contact name is required"),
-      phoneNumber: Yup.string()
-        .matches(phoneValidationRegex, "Please enter a valid phone number.")
-        .required("Phone number is required"),
-      password: Yup.string().min(6, "Your password must have at least 6 charaters.").max(120, "Your password can not exceed 120 characters").required("Password is required"),
-      confirmPassword: Yup.string()
-        .min(6)
-        .max(120)
-        .required("Password confirmation doesn't match. Please try again.")
-        .oneOf([Yup.ref("password"), null], "Passwords must match"),
+        companyName: Yup.string().max(100).required("Company name is required"),
+        taxNo: Yup.string().matches(/^\d{10}$/, "Please enter a valid tax number.").required("Tax No is required"),
+        contactName: Yup.string()
+            .matches(nameValidationRegex, "Only letters are allowed")
+            .max(40)
+            .required("Contact name is required"),
+        phoneNumber: Yup.string()
+            .matches(phoneValidationRegex, "Please enter a valid phone number.")
+            .required("Phone number is required"),
+        password: Yup.string().min(6, "Your password must have at least 6 charaters.").max(120, "Your password can not exceed 120 characters").required("Password is required"),
+        confirmPassword: Yup.string()
+            .min(6)
+            .max(120)
+            .required("Password confirmation doesn't match. Please try again.")
+            .oneOf([Yup.ref("password"), null], "Passwords must match"),
     });
     const corporateOnSubmit = async (values, { resetForm }) => {
         // Handle form submission logic here
         console.log("Form submitted with values:", values);
         try {
 
-            authService.corporateRegister(values);
+            const response = await authService.corporateRegister(values);
+            console.log(response)
         } catch (error) {
             console.error('Veri çekme hatası:', error);
+            toast.error(error.response.data.message)
         }
         resetForm();
     };
@@ -72,31 +77,37 @@ const Register = () => {
     };
 
     const individualValidationSchema = Yup.object().shape({
-      firstName: Yup.string().matches(nameValidationRegex, "Only letters are allowed").max(30).required("First name is required"),
-      lastName: Yup.string().matches(nameValidationRegex, "Only letters are allowed").max(20).required("Last name is required"),
-      nationalIdNo: Yup.string().matches(/^\d{11}$/, "Please enter a valid National ID.").required("TC No is required"),
-      birthDate: Yup.date()
-      .max(new Date(new Date().setFullYear(new Date().getFullYear() - 18)), "You must be at least 18 years old")
-      .min(new Date(new Date().setFullYear(new Date().getFullYear() - 88)), "You cannot be older than 88 years")
-      .required("Birth date is required"),
-      phoneNumber: Yup.string()
-        .matches(phoneValidationRegex, "Please enter a valid phone number.")
-        .required("Phone number is required"),
-      email: Yup.string().email().required("Email is required"),
-      password: Yup.string().min(6, "Your password must have at least 6 charaters.").max(120, "Your password can not exceed 120 characters").required("Password is required"),
-      confirmPassword: Yup.string()
-        .min(6)
-        .max(120)
-        .required("Password confirmation doesn't match. Please try again.")
-        .oneOf([Yup.ref("password"), null], "Passwords must match"),
+        firstName: Yup.string().matches(nameValidationRegex, "Only letters are allowed").max(30).required("First name is required"),
+        lastName: Yup.string().matches(nameValidationRegex, "Only letters are allowed").max(20).required("Last name is required"),
+        nationalIdNo: Yup.string().matches(/^\d{11}$/, "Please enter a valid National ID.").required("TC No is required"),
+        birthDate: Yup.date()
+            .max(new Date(new Date().setFullYear(new Date().getFullYear() - 18)), "You must be at least 18 years old")
+            .min(new Date(new Date().setFullYear(new Date().getFullYear() - 88)), "You cannot be older than 88 years")
+            .required("Birth date is required"),
+        phoneNumber: Yup.string()
+            .matches(phoneValidationRegex, "Please enter a valid phone number.")
+            .required("Phone number is required"),
+        email: Yup.string().email().required("Email is required"),
+        password: Yup.string().min(6, "Your password must have at least 6 charaters.").max(120, "Your password can not exceed 120 characters").required("Password is required"),
+        confirmPassword: Yup.string()
+            .min(6)
+            .max(120)
+            .required("Password confirmation doesn't match. Please try again.")
+            .oneOf([Yup.ref("password"), null], "Passwords must match"),
     });
 
     const individualOnSubmit = async (values, { resetForm }) => {
         // Handle form submission logic here
         console.log("Form submitted with values:", values);
         try {
-            authService.customerRegister(values)
+            const response = await authService.customerRegister(values)
+            console.log(response)
+            toast.success("You have successfully registered")
+            setTimeout(() => {
+                navigate("/login");
+            }, 2000);
         } catch (error) {
+            toast.error(error.response.data.message)
             console.error('Veri çekme hatası:', error);
         }
         resetForm();
