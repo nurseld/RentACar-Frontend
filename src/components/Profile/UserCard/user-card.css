@@ -1,11 +1,13 @@
 .user-card {
     padding: 20px 30px;
     width: 20%;
+    height: fit-content;
     border: 1px solid rgba(0, 0, 0, 0.204);
     border-radius: 13px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 .profile-img {
@@ -25,7 +27,11 @@
 }
 
 .user-information-detail {
+    width: 130%;
     margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     text-align: center;
 }
 
@@ -35,4 +41,32 @@
     padding: 5px 10px;
     width: 250px;
     border-radius: 10px;
+}
+
+@media (max-width: 1700px) {
+    .user-card {
+        width: 25%;
+    }
+}
+
+@media (max-width: 1350px) {
+    .user-card {
+        width: 35%;
+    }
+
+    .user-information-detail p {
+        width: 80%;
+    }
+}
+
+@media (max-width: 996px) {
+    .user-card {
+        width: 55%;
+    }
+}
+
+@media (max-width: 770px) {
+    .user-card {
+        width: 100%;
+    }
 }

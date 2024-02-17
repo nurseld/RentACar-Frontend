@@ -77,7 +77,7 @@ const Header = () => {
       <div className="header__top">
         <Container>
           <Row>
-            <Col lg="6" md="6" sm="6">
+            <Col className="header-vertical-align-start" lg="6" md="6" sm="6">
               <div className="header__top__left">
                 <Link to="/home">
                   <img src={logo} alt="Home" className="logo" />
@@ -89,7 +89,7 @@ const Header = () => {
               </div>
             </Col>
 
-            <Col lg="6" md="6" sm="6">
+            <Col className="header-vertical-align-end" lg="6" md="6" sm="6">
               <div className="header__top__right d-flex align-items-center justify-content-end gap-3">
                 {authState.id !== 0 && (
                   <Link
@@ -172,7 +172,7 @@ const Header = () => {
                                 aria-controls="home"
                                 aria-selected="true"
                               >
-                               {t("header.Individual")}
+                                {t("header.Individual")}
                               </button>
                             </li>
                             <li className="nav-item" role="presentation">
@@ -186,7 +186,7 @@ const Header = () => {
                                 aria-controls="profile"
                                 aria-selected="false"
                               >
-                               {t("header.Corporate")}
+                                {t("header.Corporate")}
                               </button>
                             </li>
                           </ul>

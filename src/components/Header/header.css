@@ -43,6 +43,18 @@
   font-size: 0.7rem;
 }
 
+.header-vertical-align-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header-vertical-align-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .header__top__right a {
   text-decoration: none;
   color: #fff;
@@ -68,6 +80,10 @@
 
 .header__middle {
   padding: 20px 0px;
+}
+
+.logo {
+  width: 175px;
 }
 
 .logo h1 a span {
@@ -191,6 +207,8 @@
 .nav__active {
   color: #f9a826;
 }
+
+
 
 @media only screen and (max-width: 768px) {
 
