@@ -8,6 +8,8 @@ function BrandFilter({ name, id, labelClassForColor = "secondary" }) {
     const dispatch = useDispatch();
 
     const initialCars = useSelector((state) => state.cars.cars);
+    const filteredCars = useSelector((state) => state.cars.filteredCars);
+    console.log(filteredCars)
 
     const [error, setError] = useState(null);
 
@@ -36,7 +38,7 @@ function BrandFilter({ name, id, labelClassForColor = "secondary" }) {
 
     const getUniqueBrands = async () => {
         const brandsSet = new Set();
-        initialCars.forEach(car => {
+        filteredCars.forEach(car => {
             brandsSet.add(car.brandName);
         });
         const updatedBrands = Array.from(brandsSet);
@@ -56,6 +58,10 @@ function BrandFilter({ name, id, labelClassForColor = "secondary" }) {
         filterByBrands()
     }, [selectedBrands])
 
+    // useEffect(() => {
+    //     getUniqueBrands()
+    // }, [filteredCars])
+
 
     const fetchData = async () => {
         try {
@@ -69,6 +75,7 @@ function BrandFilter({ name, id, labelClassForColor = "secondary" }) {
 
     return (
         <>
+            <h5>Brands</h5>
             {
                 brands.map((brand) => (
                     <>
