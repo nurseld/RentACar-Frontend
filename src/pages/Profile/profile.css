@@ -8,3 +8,36 @@
 .profile-page-content {
     width: 75%;
 }
+
+@media (max-width: 1350px) {
+    .profile-page-container {
+        width: 95%;
+    }
+
+    .profile-page-content {
+        width: 60%;
+    }
+}
+
+@media (max-width: 996px) {
+    .profile-page-container {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-page-content {
+        width: 95%;
+    }
+}
+
+@media (max-width: 770px) {
+    .profile-page-container {
+        width: 80%;
+    }
+
+    .profile-page-content {
+        width: 80%;
+    }
+}
