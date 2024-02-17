@@ -10,12 +10,14 @@ import userService from '../../services/userService';
 import corporateCustomerService from '../../services/corporateCustomerService';
 import customerService from '../../services/customerService';
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 
 
 const Profile = () => {
 
     const authState = useSelector((store) => store.auth);
+    const { t } = useTranslation("global")
 
     const [user, setUser] = useState();
     const [corporate, setCorporate] = useState();

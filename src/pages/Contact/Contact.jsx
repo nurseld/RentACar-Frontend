@@ -42,33 +42,33 @@ const Contact = () => {
 
               <Form>
                 <FormGroup className="contact__form">
-                  <Input placeholder="Your Name" type="text" />
+                  <Input placeholder={t("contact.Name")} type="text" />
                 </FormGroup>
                 <FormGroup className="contact__form">
-                  <Input placeholder="Email" type="email" />
+                  <Input placeholder={t("contact.Email")} type="email" />
                 </FormGroup>
                 <FormGroup className="contact__form">
                   <textarea
                     rows="5"
-                    placeholder="Message"
+                    placeholder={t("contact.Message")}
                     className="textarea"
                   ></textarea>
                 </FormGroup>
 
                 <button className=" contact__btn" type="submit">
-                  Send Message
+                {t("contact.Send")} 
                 </button>
               </Form>
             </Col>
 
             <Col lg="5" md="5">
               <div className="contact__info">
-                <h6 className="fw-bold">Contact Information</h6>
+                <h6 className="fw-bold">{t("contact.Info")} </h6>
                 <p className="section__description mb-0">
-                Koşuyolu Mah. Lambacı Sok. No: 2 Kadıköy İSTANBUL
+                {t("contact.Address")}
                 </p>
                 <div className=" d-flex align-items-center gap-2">
-                  <h6 className="fs-6 mb-0">Phone:</h6>
+                  <h6 className="fs-6 mb-0">{t("contact.Phone")}</h6>
                   <p className="section__description mb-0">0 (550) 500 50 50</p>
                 </div>
 
@@ -77,7 +77,7 @@ const Contact = () => {
                   <p className="section__description mb-0">2G0Cars@pair2b2mail.com</p>
                 </div>
 
-                <h6 className="fw-bold mt-4">Follow Us</h6>
+                <h6 className="fw-bold mt-4">{t("contact.Follow")}</h6>
 
                 <div className=" d-flex align-items-center gap-4 mt-3">
                   {socialLinks.map((item, index) => (

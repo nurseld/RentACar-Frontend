@@ -82,7 +82,7 @@ const Header = () => {
                 <Link to="/home">
                   <img src={logo} alt="Home" className="logo" />
                 </Link>
-                <span>Need Help?</span>
+                <span>{t("header.Need")}?</span>
                 <span className="header__top__help">
                   <i className="ri-phone-fill"></i> 0 (550) 500 50 50
                 </span>
@@ -97,7 +97,7 @@ const Header = () => {
                     className="d-flex align-items-center gap-1"
                   >
                     <i className="fa-solid fa-arrow-right-to-bracket"></i>{" "}
-                    Profile
+                    {t("header.Profile")}
                   </Link>
                 )}
 
@@ -111,7 +111,7 @@ const Header = () => {
                     className="d-flex align-items-center gap-1"
                   >
                     <i className="fa-solid fa-arrow-right-to-bracket"></i>{" "}
-                    Logout
+                    {t("header.Logout")}
                   </Link>
                 )}
 
@@ -122,7 +122,7 @@ const Header = () => {
                     data-bs-toggle="modal"
                     data-bs-target="#staticBackdrop"
                   >
-                    <i className="fa-solid fa-arrow-right-to-bracket"></i> Login
+                    <i className="fa-solid fa-arrow-right-to-bracket"></i> {t("header.Login")}
                   </Link>
                 )}
 
@@ -133,7 +133,7 @@ const Header = () => {
                     data-bs-target="#staticBackdrop"
                   >
                     <i className="fa-solid fa-arrow-right-to-bracket"></i>{" "}
-                    Register
+                    {t("header.Register")}
                   </Link>
                 )}
 
@@ -172,7 +172,7 @@ const Header = () => {
                                 aria-controls="home"
                                 aria-selected="true"
                               >
-                                Bireysel
+                               {t("header.Individual")}
                               </button>
                             </li>
                             <li className="nav-item" role="presentation">
@@ -186,7 +186,7 @@ const Header = () => {
                                 aria-controls="profile"
                                 aria-selected="false"
                               >
-                                Kurumsal
+                               {t("header.Corporate")}
                               </button>
                             </li>
                           </ul>
@@ -197,7 +197,7 @@ const Header = () => {
                               role="tabpanel"
                               aria-labelledby="login-individual-tab"
                             >
-                              <Login title="Bireysel" />
+                              <Login title={t("header.Individual")} />
                             </div>
                             <div
                               className="tab-pane fade"
@@ -205,7 +205,7 @@ const Header = () => {
                               role="tabpanel"
                               aria-labelledby="login-corporate-tab"
                             >
-                              <Login title="Kurumsal" />
+                              <Login title={t("header.Corporate")} />
                             </div>
                           </div>
                         </>

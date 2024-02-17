@@ -1,8 +1,87 @@
 {
     "header": {
-     "chooseLanguage": "Choose Language:"
+      "chooseLanguage": "Dil Seçin:"
+    },
+    "about": {
+      "GetInTouch": "İletişime Geçin",
+      "Title": "Hakkında",
+      "Us": "Bizim Hakkımızda",
+      "Safety": "Her Sürüşte Güvenliğe Adanmıştır. Huzurunuz Bizim Önceliğimizdir.",
+      "SectionD1": "2G0 Cars'ta güvenlik, değerli müşterilerimize güvenilir yol çözümleri sunma konusundaki kararlılığımızdır. Çeşitli filomuzun özenli bakımı ve düzenli kontrollerle başlayarak güvenli ulaşımın üstün önemini anlıyoruz. Her araç, en yüksek güvenlik standartlarını karşılamak ve aşmak için sıkı kontrollerden geçer, böylece bir aracımıza her adım attığınızda huzurunuzu sağlar.",
+      "SectionD2": "2G0 Cars'ı seçtiğinizde sadece bir yolculuk yapmıyorsunuz; güvenilir ve güvenilir bir ulaşım ortağı seçiyorsunuz. Güvenli sürüş çözümleri sunmaya olan bağlılığımız, hizmetimizin her yönüne derinlemesine yerleştirilmiş olup, sizinle olan yolculuğunuzun sadece rahat değil, en önemlisi güvenli olmasını sağlar.",
+      "Help": "Herhangi Bir Yardıma İhtiyacınız Mı Var?",
+      "Experts": "Uzmanlar",
+      "Members": "Üyelerimiz"
+    },
+    "aboutSection": {
+      "About": "Hakkımızda",
+      "Title": "2G0 Araç Kiralama Servisine Hoş Geldiniz",
+      "Description": "Yolculuğunuz bizim için önemli 2G0 Araç Kiralama Servisi'nde. Bizi diğerlerinden ayıran sorunsuz araç kiralama ve mükemmel müşteri hizmetini yaşayın. İhtiyaçlarınıza uygun araçlar sunuyoruz en uygun fiyatlarla. Kullanıcı dostu uygulamamız, rezervasyon sürecini basitleştirir, konforlu ve cüzdan dostu bir yolculuk için çeşitli araçları sergiler, yolculuğunuz boyunca finansal olarak güçlü hissetmenizi sağlar.",
+      "Exceptional": "Olağanüstü Top-Notch Hizmet Deneyimi",
+      "UserFriendly": "Kullanıcı Dostu Rezervasyon Sistemi",
+      "Diverse": "Çeşitli Araç Seçimi",
+      "Transparently": "Şeffaf ve Uygun Fiyatlı Konfor"
+    },
+    "becomeDriver" : {
+        "Title" : "Bizimle Kazanmak İster Misiniz? O zaman Geç Kalma",
+        "P1" : "Bugün bize katılarak kazanma fırsatlarını keşfedin! 2G0 Cars olarak, sürücü olmak isteyen bireylere esnek ve ödüllendirici bir kariyere dalma şansı sunmaktan heyecan duyuyoruz. 2G0 Cars sürücüsü olarak, güvenilir ödemelerin ve sorunsuz takibin avantajlarını yaşayacak, sorunsuz ve desteklenen bir yolculuk sağlayacağız. Bizi diğerlerinden ayıran, sizin iyiliğinize olan taahhüdümüzdür; araç bakımı, yakıt ve ek avantajlar konusunda indirimler dahil olmak üzere özel sürücü avantajlarına erişim sağlıyoruz.",
+        "P2" : "Kariyerinizi dönüştürmek ve dinamik bir topluluğun parçası olmak için şimdi fırsatı değerlendirin. Tereddüt etmeyin; bugün 2G0 Cars sürücüsü olun ve birlikte profesyonel büyüme ve finansal başarı yolculuğuna çıkalım!",
+        "Button" : "Sürücü Olun"
     },
     "contact": {
-        "GetInTouch": "İletişime geç"
+        "GetInTouch": "İletişime Geçin",
+        "Name": "Ad",
+        "Email": "E-posta",
+        "Message": "Mesaj",
+        "Send": "Mesaj Gönder",
+        "Info": "İletişim Bilgileri",
+        "Address": "Koşuyolu Mah. Lambacı Sok. No: 2 Kadıköy İSTANBUL",
+        "Phone": "Telefon:",
+        "Follow": "Takip et"
+    },
+    "blog": {
+        "Title": "Bloglar",
+        "Read": "Daha Fazla Oku",
+        "Comments" : "3 Yorum",
+        "Date" : "14 Temmuz 2022",
+        "Comment" : "En son blogunuzla karşılaştım ve VAY! Kelimeleri saf parlaklığa dönüştüren sihirli bir kalem olduğunuz gibi. 🌟",
+        "Replay" : "Yanıtla",
+        "Leave" : " Yorum Bırak",
+        "SignWarn" : " Bir gönderi yapmak veya yorum yapmak için giriş yapmalısınız",
+        "Placehold" : "Yorum...",
+        "Post" : "Bir Yorum Gönder",
+        "Recent" : " Son Gönderiler"
+    },
+    "Footer": {
+        "Content" : "2G0 Cars'ta güvenliği öncelik haline getirin. Güvenli ödemelerden, anlık takibe ve 7/24 desteğe faydalanın. Şeffaflığımız, kiralama detaylarına kolay erişimi basitleştirir. Seyahatinizi 2G0 Cars ile dönüştürün.",
+        "Links" : " Hızlı Bağlantılar",
+        "Office" : "Merkez Ofis",
+        "Address" : "Koşuyolu Mah. Lambacı Sok. No: 2 Kadıköy İSTANBUL",
+        "Phone" : "Telefon:",
+        "Time" : "Ofis Saatleri: 9am - 7pm",
+        "Newsletter" : "Bülten",
+        "Subscribe" : "Bültenimize Abone Olun",
+        "Copyright" : "Telif Hakkı",
+        "Developers" : "Tobeto Pair2 tarafından geliştirilmiştir"
+    },
+    "home": {
+      "Find": "Burada en iyi aracınızı bulun",
+      "See": "Görün",
+      "Popular": "Popüler Hizmetler",
+      "Come": "İle Gel",
+      "Hot": "Özel Teklifler",
+      "Clients": "Müşterilerimiz diyor",
+      "Testimonials": "Referanslar",
+      "Explore": "Bloglarımızı Keşfedin",
+      "Latest": "En Son Bloglar"
+    },
+    "global": {
+      "Read": "Daha Fazla Oku",
+      "blogs": {
+        "Thebestwaytodrivecars": "Araç Sürmenin En İyi Yolu",
+        "NavigatingtheRoad": "Yolu Gezinmek: Boşalmış Bir Araba Pilini Nasıl İdare Edeceğimize Dair Pratik Bir Kılavuz",
+        "Thebestwaytogivetrip": "Gezi Vermenin En İyi Yolu"
+      }
     }
-   }
+  }
+  

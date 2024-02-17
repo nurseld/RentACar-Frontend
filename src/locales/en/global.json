@@ -1,8 +1,120 @@
 {
-    "header": {
-     "chooseLanguage": "Choose Language:"
+    "lang": {
+        "chooseLanguage": "Choose Language:"
+    },
+    "about": {
+        "GetInTouch": "Get In Touch",
+        "Title": "About",
+        "Us": "About Us",
+        "Safety": "Dedicated to Your Safety, Every Ride. Your Peace of Mind, Our Priority.",
+        "SectionD1": "At 2G0 Cars, safety is our unwavering commitment as we provide reliable ride solutions for our valued customers. We recognize the paramount importance of delivering secure transportation, starting with the meticulous maintenance and regular inspections of our diverse fleet. Each vehicle undergoes rigorous checks to meet and exceed the highest safety standards, ensuring your peace of mind every time you step into one of our cars.",
+        "SectionD2": "When you choose 2G0 Cars, you're not just opting for a ride; you're selecting a secure and reliable transportation partner. Our dedication to providing safe ride solutions is deeply embedded in every facet of our service, ensuring that your journey with us is not only comfortable but, most importantly, safe.",
+        "Help": "Need Any Help?",
+        "Experts": "Experts",
+        "Members": "Our Members"
+    },
+    "aboutSection": {
+        "About": "About Us",
+        "Title": "Welcome to 2G0 Car Rental Service",
+        "Description": "Your journey matters to us at 2G0 Car Rental Service. Experience hassle-free car rental and excellent customer service that sets us apart from the rest. We offer vehicles suitable for your needs at the most affordable prices.Our user-friendly app simplifies the reservation process, showcasing a diverse fleet of vehicles for a comfortable and wallet-smart journey, ensuring you feel financially empowered throughout your trip.",
+        "Exceptional": "Exceptional Top-Notch Service Experience",
+        "UserFriendly": "User-friendly Booking System",
+        "Diverse" : "Diverse Vehicle Selection",
+        "Transparently" : "Transparently Affordable Comfort"
+
+    },
+    "becomeDriver" : {
+        "Title" : "Do You Want to Earn With Us? So Don't Be Late",
+        "P1" : "Unlock new opportunities for earning by joining us today! At 2G0 Cars, we're thrilled to offer a unique chance for individuals aspiring to become drivers and dive into a flexible and rewarding career. As a 2G0 Cars driver, you'll experience the advantages of reliable payments and streamlined tracking, ensuring a seamless and supported journey. What sets us apart is our commitment to your well-being, providing access to exclusive driver benefits, including discounts on vehicle maintenance, fuel, and additional perks.",
+        "P2" : "Seize the opportunity now to transform your career and be part of a dynamic community. Don't hesitate; become a 2G0 Cars driver today and let's embark on this journey of professional growth and financial success together!",
+        "Button" : "Become a Driver"
+
     },
     "contact": {
-     "GetInTouch": "Get In Touch"
+        "GetInTouch": "Get In Touch",
+        "Name": "Name",
+        "Email": "Email",
+        "Message": "Message",
+        "Send": "Send Message",
+        "Info": "Contact Information",
+        "Address": "Koşuyolu Mah. Lambacı Sok. No: 2 Kadıköy ISTANBUL",
+        "Phone": "Phone:",
+        "Follow": "Follow Us"
+    },
+    "blog": {
+        "Title": "Blogs",
+        "Read": "Read More",
+        "Comments" : "3 Comments",
+        "Date" : "14 July, 2022",
+        "Comment" : "Just stumbled upon your latest blog, and WOW! It's like you have a magical pen that turns words into pure brilliance. 🌟",
+        "Replay" : "Replay",
+        "Leave" : " Leave a Comment",
+        "SignWarn" : "  You must sign-in to make or comment a post",
+        "Placehold" : "Comment...",
+        "Post" : "Post a Comment",
+        "Recent" : " Recent Posts"
+    },
+    "footer": {
+        "Content" : "At 2G0 Cars, prioritize safety. Benefit from secure payments, real-time tracking, and 24/7 support. Our transparency simplifies access to rental details. Transform your travel with 2G0 Cars.",
+        "Links" : " Quick Links",
+        "Office" : "Head Office",
+        "Address" : "Koşuyolu Mah. Lambacı Sok. No: 2 Kadıköy İSTANBUL",
+        "Phone" : "Phone:",
+        "Time" : "Office Time: 9am - 7pm",
+        "Newsletter" : "Newsletter",
+        "Subscribe" : "Subscribe to our newsletter",
+        "Copyright" : "Copyright",
+        "Developers" : "Developed by Tobeto Pair2"
+    },
+    "header": {
+        "Need" : "Need Help",
+        "Logout" : "Logout",
+        "Login" : "Login",
+        "Profile" : "Profile",
+        "Register" : "Register",
+        "Individual" : "Individual",
+        "Corporate" : " Corporate"
+    },
+    "home": {
+        "Find" : "Find your best car here",
+        "See" : "See our",
+        "Popular" : "Popular Services",
+        "Come" : "Come with",
+        "Hot" : "Hot Offers",
+        "Clients" : "Our clients says",
+        "Testimonials" : "Testimonials",
+        "Explore" : "Explore our blogs",
+        "Latest" : "Latest Blogs"
+    },
+    "global": {
+        "Read": "Read More",
+        "blogs": {
+            "Thebestwaytodrivecars": "The best way to drive cars",
+            "NavigatingtheRoad": "Navigating the Road: A Practical Guide to Handling a Dead Car Battery",
+            "Thebestwaytogivetrip": "The best way to give trip"
+        }
+    },
+    "privacyPolicy":{
+        "Title" : "Privacy Policy",
+        "Update" : "Last Updated:",
+        "P1" : "Welcome to 2G0 Cars! At 2G0 Cars, we are committed to prioritizing the privacy of our customers and website visitors. This privacy policy document outlines the online information collection and usage practices of our company. Please take a moment to carefully review this policy.",
+        "Info" : "Information We Collect:",
+        "P2" : " When you visit our website, we collect certain information to enhance user experience and customize our services. This information may include personal details such as your name, email address, and phone number for purposes like reservation processes or contact forms.",
+        "Cookies" : "Cookies and Tracking Technologies:",
+        "P3" :"To improve our services and remember user preferences, we may use cookies and similar tracking technologies when you visit our website.",
+        "Usage" : "How We Use and Share Information:",
+        "P4" : "We collect information to improve user experience and deliver personalized services. Rest assured that we never share your information with third parties without your explicit consent.",
+        "Security" : "Security:",
+        "P5" : " We implement various security measures to protect the information of our customers. However, it's essential to acknowledge that it's impossible to eliminate all risks associated with internet communication and data storage.",
+        "Changes" : " Changes and Updates:",
+        "P6" : "This privacy policy may be subject to changes and updates over time. It is your responsibility to stay informed about any modifications.",
+        "Contact" : " Contact:",
+        "Questions" : "If you have any questions or feedback regarding our privacy policy, please reach out to us via [Contact Information].",
+        "Thanks" : "Thank you."
+    
+    },
+    "profile" : {
+        "Title": "Profile",
+        ""
     }
-   }
+}

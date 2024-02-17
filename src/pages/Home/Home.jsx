@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import { useTranslation } from 'react-i18next';
 import HeroSlider from "../../components/HeroSlider/HeroSlider";
 import Helmet from "../../components/Helmet/Helmet";
 
@@ -18,6 +18,7 @@ import axiosInstance from "../../core/utils/interceptors/axiosInterceptors";
 import { Page } from "../../constants";
 
 const Home = () => {
+  const { t } = useTranslation("global")
 
   const [posts, setPosts] = useState([]);
 
@@ -46,7 +47,7 @@ const Home = () => {
             <Row className="form__row">
               <Col lg="4" md="4">
                 <div className="find__cars-left">
-                  <h2>Find your best car here</h2>
+                  <h2>{t("home.Find")}</h2>
                 </div>
               </Col>
 
@@ -64,8 +65,8 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12" className="mb-5 text-center">
-              <h6 className="section__subtitle">See our</h6>
-              <h2 className="section__title">Popular Services</h2>
+              <h6 className="section__subtitle">{t("home.See")}</h6>
+              <h2 className="section__title">{t("home.Popular")}</h2>
             </Col>
 
             <ServicesList />
@@ -77,8 +78,8 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12" className="text-center mb-5">
-              <h6 className="section__subtitle">Come with</h6>
-              <h2 className="section__title">Hot Offers</h2>
+              <h6 className="section__subtitle">{t("home.Come")}</h6>
+              <h2 className="section__title">{t("home.Hot")}</h2>
             </Col>
 
             {posts.slice(0, 3).map((item) => (
@@ -95,8 +96,8 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12" className="mb-4 text-center">
-              <h6 className="section__subtitle">Our clients says</h6>
-              <h2 className="section__title">Testimonials</h2>
+              <h6 className="section__subtitle">{t("home.Clients")}</h6>
+              <h2 className="section__title">{t("home.Testimonials")}</h2>
             </Col>
 
             <Testimonial />
@@ -109,8 +110,8 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12" className="mb-5 text-center">
-              <h6 className="section__subtitle">Explore our blogs</h6>
-              <h2 className="section__title">Latest Blogs</h2>
+              <h6 className="section__subtitle">{t("home.Explore")}</h6>
+              <h2 className="section__title">{t("home.Latest")}</h2>
             </Col>
 
             <BlogList />

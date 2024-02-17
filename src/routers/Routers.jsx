@@ -26,8 +26,8 @@ const Routers = () => {
   const adminRoutes = (
     <Routes>
       <Route path="/" element={<Admin />} />
-      <Route path="dashboard" element={<Dashboard />} />
-      <Route path="cars" element={<CarControl />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/carcontrol" element={<CarControl />} />
       {/* ... (other admin routes) */}
     </Routes>
   );

@@ -7,7 +7,7 @@ const CarControl = () => {
     <Container fluid className="Cars">
       <Row>
         <Col lg="12">
-          <h1 className="mb-4">Dashboard</h1>
+          <h1 className="mb-4">Dasfgjkhhboard</h1>
         </Col>
       </Row>
 
