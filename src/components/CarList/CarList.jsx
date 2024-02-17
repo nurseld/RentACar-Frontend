@@ -1,21 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Row, Col } from "reactstrap";
 import CarItem from "../CarItem/CarItem";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Page } from '../../constants';
+import { setFilteredCars } from '../../store/cars/carsSlice';
 
 function CarList() {
+    const dispatch = useDispatch();
 
     const initialCars = useSelector((state) => state.cars.cars);
-    const [filteredCars, setFilteredCars] = useState([]);
+    const filteredCars = useSelector((state) => state.cars.filteredCars);
     const [years, setYears] = useState([]);
     const [selectedYear, setSelectedYear] = useState("all");
 
     const filterByYear = () => {
         if (selectedYear === "all") {
-            setFilteredCars(initialCars);
+            dispatch(setFilteredCars(initialCars));
         } else {
-            setFilteredCars(initialCars.filter((c) => c.year == selectedYear));
+            dispatch(setFilteredCars(initialCars.filter((c) => c.year == selectedYear)))
         }
     }
 
