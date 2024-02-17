@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import { Container, Row, Col, Form, FormGroup, Input } from "reactstrap";
 import Helmet from "../../components/Helmet/Helmet";
 import CommonSection from "../../components/CommonSection/CommonSection";
+import { useTranslation } from 'react-i18next'
 
 import "./contact.css";
 
 const socialLinks = [
+  
   {
     url: "#",
     icon: "ri-facebook-line",
@@ -25,7 +27,10 @@ const socialLinks = [
   },
 ];
 
+
 const Contact = () => {
+  const { t } = useTranslation("global")
+
   return (
     <Helmet title="Contact">
       <CommonSection title="Contact" />
@@ -33,7 +38,7 @@ const Contact = () => {
         <Container>
           <Row>
             <Col lg="7" md="7">
-              <h6 className="fw-bold mb-4">Get In Touch</h6>
+              <h6 className="fw-bold mb-4">{t("contact.GetInTouch")}</h6>
 
               <Form>
                 <FormGroup className="contact__form">

@@ -16,14 +16,26 @@ import Profile from "../pages/Profile/Profile";
 import RentableCars from "../pages/RentableCars/RentableCars";
 import ProtectedRoute from "./ProtectedRoute";
 import Admin from "../pages/Admin/Admin";
-import PrivacyPolicy from "../pages/PrivacyPolicy/PrivacyPolicy";
 import Dashboard from "../pages/Admin/AdminPages/Dashboard";
 import CarControl from "../pages/Admin/AdminPages/CarControl";
+import PrivacyPolicy from "../pages/PrivacyPolicy/PrivacyPolicy"
+
 
 
 const Routers = () => {
+  const adminRoutes = (
+    <Routes>
+      <Route path="/" element={<Admin />} />
+      <Route path="dashboard" element={<Dashboard />} />
+      <Route path="cars" element={<CarControl />} />
+      {/* ... (other admin routes) */}
+    </Routes>
+  );
+
   return (
     <Routes>
+      {/* Public routes */}
+
       <Route path="/" element={<Navigate to="/home" />} />
       <Route path="/home" element={<Home />} />
       <Route path="/about" element={<About />} />
@@ -40,13 +52,11 @@ const Routers = () => {
       <Route path="/order-complete" element={<OrderComplete />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/rentable-cars" element={<RentableCars />} />
-     
       <Route
         path="/admin/*"
         element={
-          <ProtectedRoute>
-            <Route path="/" element={<Admin />} />
-            
+          <ProtectedRoute role="admin">
+            {adminRoutes}
           </ProtectedRoute>
         }
       />

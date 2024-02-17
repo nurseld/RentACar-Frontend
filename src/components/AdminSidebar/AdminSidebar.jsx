@@ -1,21 +1,22 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import logo2 from "../../assets/all-images/logo2.png";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const AdminSidebar = () => {
   const navLinks = [
     {
-      path: "/dashboard",
+      path: "./",
       icon: "fas fa-tachometer-alt fa-fw",
       display: "Dashboard",
     },
     {
-      path: "/carcontrol",
+      path: "./carcontrol",
       icon: "fas fa-chart-area fa-fw",
       display: "Car Panel",
     },
     {
-      path: "/admin/rental",
+      path: "./rental",
       icon: "fas fa-chart-bar fa-fw",
       display: "Rents",
     },
@@ -25,7 +26,7 @@ const AdminSidebar = () => {
       display: "User Panel",
     },
     {
-      path: "/admin/colors",
+      path: "./admin/colors",
       icon: "fas fa-money-bill fa-fw",
       display: "Colors",
     },
@@ -204,21 +205,6 @@ const AdminSidebar = () => {
                 <li>
                   <a className="dropdown-item" href="#">
                     <i className="flag-france flag"></i>Français
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    <i className="flag-spain flag"></i>Español
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    <i className="flag-russia flag"></i>Русский
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    <i className="flag-portugal flag"></i>Português
                   </a>
                 </li>
               </ul>
