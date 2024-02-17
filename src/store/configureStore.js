@@ -5,13 +5,15 @@ import { usersReducer } from "./users/usersSlice";
 import { authSlice } from "./auth/authSlice";
 import { storeAuthState, storeRentalState } from "./storage/storage";
 import { rentalSlice } from "./rental/rentalSlice";
+import { filtersReducer } from "./filter/filterSlice";
 
 const rootReducer = combineReducers({
     loading: loadingReducer,
     cars: carsReducer,
     users: usersReducer,
     auth: authSlice.reducer,
-    rental: rentalSlice.reducer
+    rental: rentalSlice.reducer,
+    filters: filtersReducer,
 });
 
 export const store = configureStore({ reducer: rootReducer });
