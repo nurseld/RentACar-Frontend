@@ -3,6 +3,7 @@ import { Container, Row, Col } from "reactstrap";
 import CarItem from "../CarItem/CarItem";
 import { Page } from '../../constants';
 import carService from '../../services/carService';
+import './car-list.css'
 
 
 function CarList() {
@@ -62,29 +63,28 @@ function CarList() {
     };
 
     return (
-        <Container>
-            <Row>
-                <Col>
-                    {
-                        brandNames.map((brandName, index) => (
-                            <React.Fragment key={index}>
-                                <button onClick={() => handleBrandClick(brandName)}>{brandName}</button>
-                            </React.Fragment>
-                        ))
-                    }
-                </Col>
-                <Col>
-                    {
-                        years.map((year, index) => (
-                            <React.Fragment key={index}>
-                                <button onClick={() => handleYearClick(year)}>{year}</button>
-                            </React.Fragment>
-                        ))
-                    }
-                </Col>
+        <div className="car-list-content">
+            <div className="car-filters">
+                {
+                    brandNames.map((brandName, index) => (
+                        <React.Fragment key={index}>
+                            <button onClick={() => handleBrandClick(brandName)}>{brandName}</button>
+                        </React.Fragment>
+                    ))
+                }
+                {
+                    years.map((year, index) => (
+                        <React.Fragment key={index}>
+                            <button onClick={() => handleYearClick(year)}>{year}</button>
+                        </React.Fragment>
+                    ))
+                }
+            </div>
+            <div className="filtered-car-list">
                 {
                     filteredCars.map((car, index) => (
                         <CarItem
+                            imagePath={car.imagePath}
                             brandName={car.brandName}
                             modelName={car.modelName}
                             colorName={car.colorName}
@@ -95,8 +95,9 @@ function CarList() {
                         />
                     ))
                 }
-            </Row>
-        </Container>
+            </div>
+
+        </div>
     )
 }
 
