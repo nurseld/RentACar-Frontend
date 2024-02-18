@@ -100,12 +100,14 @@ function CarList() {
                 {
                     filteredCars.map((car, index) => (
                         <CarItem
-                            imagePath={car.imagePath}
-                            brandName={car.brandName}
-                            modelName={car.modelName}
-                            colorName={car.colorName}
-                            year={car.year}
-                            dailyPrice={car.dailyPrice}
+                            car={car}
+                            // id={car.id}
+                            // imagePath={car.imagePath}
+                            // brandName={car.brandName}
+                            // modelName={car.modelName}
+                            // colorName={car.colorName}
+                            // year={car.year}
+                            // dailyPrice={car.dailyPrice}
                             key={index}
                             page={Page.CarListing_CarList}
                         />

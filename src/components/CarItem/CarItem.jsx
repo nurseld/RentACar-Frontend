@@ -11,17 +11,17 @@ import { Page } from '../../constants'
 
 const CarItem = (props) => {
 
-  const { id, modelName, colorName, year, dailyPrice, imagePath, brandName } = props;
-  // const authState = useSelector((store) => store.auth);
-  // const dispatch = useDispatch();
-  // const test = async () => {
-  //   if (authState.id !== 0) {
-  //     dispatch(loadCar(id))
-  //   } else {
-  //     // navigate("/login")
-  //     // toast.error("Üye girişi yapmalısınız!")
-  //   }
-  // }
+  const { id, modelName, colorName, year, dailyPrice, imagePath, brandName } = props.car;
+  const authState = useSelector((store) => store.auth);
+  const dispatch = useDispatch();
+  const test = async () => {
+    if (authState.id !== 0) {
+      dispatch(loadCar(id))
+    } else {
+      // navigate("/login")
+      // toast.error("Üye girişi yapmalısınız!")
+    }
+  }
 
   return (
     <Col xl="4" lg="6" md="6" sm="12" className="mb-5">

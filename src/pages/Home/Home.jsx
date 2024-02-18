@@ -47,7 +47,7 @@ const Home = () => {
             <Row className="form__row">
               <Col lg="4" md="4">
                 <div className="find__cars-left">
-                 {/* <h2>Start your reservation here</h2> */}
+                  {/* <h2>Start your reservation here</h2> */}
                   <h2>{t("home.Find")}</h2>
                 </div>
               </Col>
@@ -84,7 +84,7 @@ const Home = () => {
             </Col>
 
             {posts.slice(0, 3).map((item) => (
-              <CarItem item={item} key={item.id} page={Page.Home_HotOffers} />
+              <CarItem car={item} key={item.id} page={Page.Home_HotOffers} />
             ))}
           </Row>
         </Container>
