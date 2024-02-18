@@ -24,18 +24,36 @@
     padding: 30px;
 }
 
-.car-filters .filter-btn-outline {
+.filter-group {
+    margin-bottom: 30px;
+}
+
+.filter-button-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.filter-button-group button {
+    background-color: #000d6b;
+    color: white;
+    border: none;
+    border-radius: 4.4px;
+    padding: 6px 10px;
     margin: 2px !important;
 }
 
-.car-filters .filter-btn-outline-hover:hover {
-    background-color: #f9a826 !important;
+.filter-button-group button:hover {
+    background-color: #f9a826;
+    color: white;
 }
 
-.btn-check:checked+.btn {
 
-    background-color: #f9a826 !important;
+.filter-button-group button.clicked {
+    background-color: #f9a826;
+    /* Tıklanınca rengi değiştir */
 }
+
 
 @media (max-width: 1199.98px) {
 

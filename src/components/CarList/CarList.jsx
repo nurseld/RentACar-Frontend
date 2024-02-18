@@ -4,6 +4,7 @@ import CarItem from "../CarItem/CarItem";
 import { Page } from '../../constants';
 import carService from '../../services/carService';
 import './car-list.css'
+import { toast } from 'react-toastify';
 
 
 function CarList() {
@@ -40,7 +41,12 @@ function CarList() {
             return brandSelected && yearSelected;
         });
         setFilteredCars(filteredCars);
+        // if (filteredCars.length === 0) {
+        //     toast.warning("Arac bulunaamadi")
+        // }
     }, [selectedBrands, selectedYears]);
+
+
 
     const handleBrandClick = (brandName) => {
         setSelectedBrands(prevBrands => {
@@ -65,20 +71,30 @@ function CarList() {
     return (
         <div className="car-list-content">
             <div className="car-filters">
-                {
-                    brandNames.map((brandName, index) => (
-                        <React.Fragment key={index}>
-                            <button onClick={() => handleBrandClick(brandName)}>{brandName}</button>
-                        </React.Fragment>
-                    ))
-                }
-                {
-                    years.map((year, index) => (
-                        <React.Fragment key={index}>
-                            <button onClick={() => handleYearClick(year)}>{year}</button>
-                        </React.Fragment>
-                    ))
-                }
+                <div className="filter-group brand-filter">
+                    <h4>Brands</h4>
+                    <div className="filter-button-group">
+                        {
+                            brandNames.map((brandName, index) => (
+                                <div key={index}>
+                                    <button onClick={() => handleBrandClick(brandName)}>{brandName}</button>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+                <div className="filter-group year-filter">
+                    <h4>Years</h4>
+                    <div className="filter-button-group">
+                        {
+                            years.map((year, index) => (
+                                <div key={index}>
+                                    <button onClick={() => handleYearClick(year)}>{year}</button>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
             </div>
             <div className="filtered-car-list">
                 {
@@ -97,7 +113,7 @@ function CarList() {
                 }
             </div>
 
-        </div>
+        </div >
     )
 }
 
