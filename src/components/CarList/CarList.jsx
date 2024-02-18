@@ -100,6 +100,7 @@ function CarList() {
                 {
                     filteredCars.map((car, index) => (
                         <CarItem
+                            id={car.id}
                             imagePath={car.imagePath}
                             brandName={car.brandName}
                             modelName={car.modelName}
