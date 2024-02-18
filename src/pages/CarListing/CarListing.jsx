@@ -9,9 +9,9 @@ const CarListing = () => {
   return (
     <Helmet title="Cars">
       <CommonSection title="Car Listing" />
-      <section className="car-listing">
+      <div className="car-listing">
         <CarList />
-      </section>
+      </div>
     </Helmet>
   );
 };
