@@ -12,13 +12,14 @@ function CarList() {
     const [initialCars, setInitialCars] = useState([])
     const [filteredCars, setFilteredCars] = useState([]);
     const [selectedBrands, setSelectedBrands] = useState([]);
+    const [selectedModels, setSelectedModels] = useState([]);
     const [selectedYears, setSelectedYears] = useState([]);
 
     const getCars = async () => {
         try {
             const response = await carService.getAll()
             setInitialCars(response.data);
-            setFilteredCars(response.data)
+            setFilteredCars(response.data);
         } catch (error) {
             console.log("Error fetching cars:", error);
         }
@@ -29,8 +30,10 @@ function CarList() {
     }, [])
 
     const cars = initialCars;
-    const brandNames = [...new Set(cars.map(car => car.brandName))];
+    const brandNames = [...new Set(cars.map(car => car.brandName))].sort((a, b) => a.length - b.length);
+    const modelNames = [...new Set(cars.map(car => car.modelName))].sort((a, b) => a.length - b.length);
     const years = [...new Set(cars.map(car => car.year))];
+
 
 
     useEffect(() => {
@@ -38,13 +41,13 @@ function CarList() {
         const filteredCars = cars.filter(car => {
             const brandSelected = selectedBrands.length === 0 || selectedBrands.includes(car.brandName);
             const yearSelected = selectedYears.length === 0 || selectedYears.includes(car.year);
-            return brandSelected && yearSelected;
+            const modelSelected = selectedModels.length === 0 || selectedModels.includes(car.modelName);
+            return brandSelected && yearSelected && modelSelected;
+
         });
         setFilteredCars(filteredCars);
-        // if (filteredCars.length === 0) {
-        //     toast.warning("Arac bulunaamadi")
-        // }
-    }, [selectedBrands, selectedYears]);
+
+    }, [selectedBrands, selectedYears, selectedModels]);
 
 
 
@@ -54,6 +57,17 @@ function CarList() {
                 return prevBrands.filter(b => b !== brandName);
             } else {
                 return [...prevBrands, brandName];
+            }
+        });
+    };
+
+
+    const handleModelClick = (modelName) => {
+        setSelectedModels(prevModels => {
+            if (prevModels.includes(modelName)) {
+                return prevModels.filter(m => m !== modelName);
+            } else {
+                return [...prevModels, modelName];
             }
         });
     };
@@ -84,6 +98,19 @@ function CarList() {
                     </div>
                 </div>
                 <div className="filter-group year-filter">
+                    <h4>Models</h4>
+                    <div className="filter-button-group">
+                        {
+                            modelNames.map((modelName, index) => (
+                                <div key={index}>
+                                    <button onClick={() => handleModelClick(modelName)}>{modelName}</button>
+                                </div>
+                            ))
+                        }
+                    </div>
+
+                </div>
+                <div className="filter-group year-filter">
                     <h4>Years</h4>
                     <div className="filter-button-group">
                         {
@@ -94,7 +121,10 @@ function CarList() {
                             ))
                         }
                     </div>
+
                 </div>
+
+
             </div>
             <div className="filtered-car-list">
                 {

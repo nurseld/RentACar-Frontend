@@ -38,6 +38,8 @@ const FindCarForm = () => {
 
 
 
+
+
   const validationSchema = Yup.object().shape({
     // fromAddress: Yup.string().required("From Address is required"),
     // toAddress: Yup.string().required("To Address is required"),
@@ -85,7 +87,31 @@ const FindCarForm = () => {
 
       <Form className="form">
         <div className="d-flex align-items-center justify-content-between flex-wrap">
+
+          <div className="booking__form d-inline-block ms-1 me-1">
+            <h2>Pick Up Location</h2>
+            <select value={selectedCity} onChange={handleCityChange}>
+              <option value="">Şehir Seçiniz</option>
+              <option value="Kadıköy">Kadıköy</option>
+              <option value="Maltepe">Maltepe</option>
+              <option value="Bahçeşehir">Bahçeşehir</option>
+              <option value="Ataşehir">Ataşehir</option>
+            </select>
+            <p>Seçili Şehir: {selectedCity}</p>
+          </div>
+          <div className="booking__form d-inline-block ms-1 me-1">
+            <h2>Drop Off Location</h2>
+            <select value={selectedCity2} onChange={handleCityChange2}>
+              <option value="">Şehir Seçiniz</option>
+              <option value="Kadıköy">Kadıköy</option>
+              <option value="Maltepe">Maltepe</option>
+              <option value="Bahçeşehir">Bahçeşehir</option>
+              <option value="Ataşehir">Ataşehir</option>
+            </select>
+            <p>Seçili Şehir: {selectedCity2}</p>
+          </div>
           <FormInput
+
             formGroupClass="booking__form d-inline-block ms-1 me-1"
             type="date" name="startDate" placeholder="Start Date"
           />
