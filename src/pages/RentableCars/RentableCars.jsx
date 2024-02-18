@@ -80,7 +80,7 @@ function RentableCars() {
 
                     {
                         filteredCars.map((item) => (
-                            <CarItem item={item} key={item.id} page={Page.RentableCars} />
+                            <CarItem car={item} key={item.id} page={Page.RentableCars} />
                         ))
                     }
                 </Row>
