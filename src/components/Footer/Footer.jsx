@@ -32,7 +32,7 @@ const quickLinks = [
 ];
 
 const Footer = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("global");
 
   const date = new Date();
   const year = date.getFullYear();
@@ -81,7 +81,7 @@ const Footer = () => {
 
           <Col lg="3" md="4" sm="12">
             <div className="mb-4">
-              <h5 className="footer__link-title"> {t("footer.Newsletter")}Newsletter</h5>
+              <h5 className="footer__link-title"> {t("footer.Newsletter")}</h5>
               <p className="section__description"> {t("footer.Subscribe")}</p>
               <div className="newsletter">
                 <input type="email" placeholder="Email" />

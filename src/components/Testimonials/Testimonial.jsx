@@ -47,8 +47,8 @@ const Testimonial = () => {
   return (
     <Slider {...settings}>
       {/* Testimonial 1 */}
-      <div className="testimonial py-4 px-3">
-        <div className="testimonial-content bg-light rounded p-3">
+      <div className="testimonial py-4 px-3" style={{ width: "150px", height: "150px"}}>
+        <div className="testimonial-content bg-light rounded p-3"> 
           <img src={cusava1} alt="" className="w-25 h-25 rounded-2 me-3" />
           <div className="text-start testimonial-text">
             <h6 className="mb-0 mt-3">Kader Yavuz</h6>

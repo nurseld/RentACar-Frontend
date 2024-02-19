@@ -1,4 +1,3 @@
-/* Genel Stiller */
 
 .testimonial img {
   width: 100%;
@@ -8,7 +7,7 @@
 
 .testimonial-content {
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* İçerikleri en üstte hizalamak için */
 }
 
 .testimonial-image {
@@ -20,7 +19,7 @@
 }
 
 .testimonial-text {
-  width: calc(100% - 100px); /* İstenilen genişliği belirleyin ve testimonial-image'in genişliğini çıkartın */
+  width: 100%; /* İçerik genişliğini %100 olarak ayarlayın */
 }
 
 /* Medya Sorguları */
