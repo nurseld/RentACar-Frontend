@@ -33,7 +33,7 @@ function OrderList() {
                 <thead>
                     <tr>
                         <th scope="col">Kiralama No</th>
-                        <th scope="col">Plate Number</th>
+                        <th scope="col">Araç Modeli</th>
                         <th scope="col">Start Date</th>
                         <th scope="col">End Date</th>
                         <th scope="col">Invoice No</th>
@@ -44,7 +44,7 @@ function OrderList() {
                     {rentals.map((rental, index) => (
                         <tr key={index}>
                             <th scope="row">{index + 1}</th>
-                            <td>{rental.plateNumber}</td>
+                            <td>{rental.modelName}</td>
                             <td>{rental.startDate}</td>
                             <td>{rental.endDate}</td>
                             <td>{rental.invoiceNo}</td>
