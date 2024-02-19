@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import './add-brand.css'
+import './edit-car.css'
 import Helmet from '../../../components/Helmet/Helmet'
 import CommonSection from '../../../components/CommonSection/CommonSection'
-import './add-brand.css'
 import FormInput from '../../../components/FormInput/FormInput'
 import { Form, Formik } from 'formik'
 import * as Yup from "yup";
-import brandService from '../../../services/brandService'
+import carService from '../../../services/carService'
 import { useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
 

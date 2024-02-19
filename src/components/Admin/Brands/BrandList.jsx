@@ -4,6 +4,9 @@ import brandService from '../../../services/brandService'
 import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import DeleteModal from '../Modals/DeleteModal/DeleteModal'
+import EditModal from '../Modals/EditModal/EditModal'
+import * as Yup from "yup";
+import AddModal from '../Modals/AddModal/AddModal'
 
 
 function BrandList() {
@@ -19,12 +22,25 @@ function BrandList() {
         fetchBrands()
     }, [])
 
+    const validationSchema = Yup.object().shape({
+        name: Yup.string().required("Marka en az 2 karakterden oluşmalıdır.")
+    })
 
 
     return (
         <div className='admin-brand-list-container'>
             <div className='d-flex justify-content-end'>
-                <Link to={"/admin/add-brand"} type="button" className="btn btn-success">Ekle</Link>
+                <a className="btn btn-success"
+                    data-bs-toggle="modal"
+                    data-bs-target={"#addBrandModal"}>
+                    Ekle
+                </a>
+                <AddModal
+                    entityService={brandService}
+                    modalId="addBrandModal"
+                    initialValues={{ name: "" }}
+                    validationSchema={validationSchema}
+                />
             </div>
             <div className="brand-list">
                 <table className="table">
@@ -44,18 +60,26 @@ function BrandList() {
                                     <th scope="row">{brand.id}</th>
                                     <td>{brand.name}</td>
                                     <td className='table-button-column edit-button'>
-                                        <Link to={"/admin/edit-brand/" + brand.id}>
+                                        <a data-bs-toggle="modal"
+                                            data-bs-target={"#editBrandId-" + brand.id}>
                                             <i className="ri-edit-2-fill"></i>
-                                        </Link>
+                                        </a>
+                                        <EditModal
+                                            entityService={brandService}
+                                            entity={brand}
+                                            modalId={"editBrandId-" + brand.id}
+                                            initialValues={{ name: brand.name }}
+                                            validationSchema={validationSchema}
+                                        />
                                     </td>
                                     <td className='table-button-column delete-button'>
                                         <a data-bs-toggle="modal"
-                                            data-bs-target={"#id-" + brand.id}>
+                                            data-bs-target={"#deleteBrandId-" + brand.id}>
                                             <i className="ri-delete-bin-fill"></i>
                                         </a>
                                         <DeleteModal
                                             entityService={brandService}
-                                            entityId={"id-" + brand.id}
+                                            entityId={"deleteBrandId-" + brand.id}
                                         />
                                     </td>
                                 </tr>

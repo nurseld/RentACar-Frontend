@@ -17,8 +17,7 @@ import RentableCars from "../pages/RentableCars/RentableCars";
 import ProtectedRoute from "./ProtectedRoute";
 import Admin from "../pages/Admin/Admin";
 import PrivacyPolicy from "../pages/PrivacyPolicy/PrivacyPolicy"
-import AddBrand from "../pages/Admin/Brands/AddBrand";
-import EditBrand from "../pages/Admin/Brands/EditBrand";
+import EditCar from "../pages/Admin/Cars/EditCar";
 
 
 
@@ -26,8 +25,8 @@ const Routers = () => {
   const adminRoutes = (
     <Routes>
       <Route path="/" element={<Admin />} />
-      <Route path="/add-brand" element={<AddBrand />} />
-      <Route path="/edit-brand/:id" element={<EditBrand />} />
+      <Route path="/edit-car/:id" element={<EditCar />} />
+
     </Routes>
   );
 
