@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import Helmet from "../../components/Helmet/Helmet.jsx";
 import CommonSection from "../../components/CommonSection/CommonSection.jsx";
-import './admin.css';
+import "./admin.css";
 import BrandList from "../../components/Admin/Brands/BrandList.jsx";
 
 
