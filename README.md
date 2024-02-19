@@ -8,8 +8,8 @@ Tobeto çatısı altında Java ve React full-stack geliştiricileri olarak, şu 
 
 
 ## Installation
--npm install 
--npm run dev
+ - [ npm install ]
+ - [npm run dev]
 
 
 ## Acknowledgements
