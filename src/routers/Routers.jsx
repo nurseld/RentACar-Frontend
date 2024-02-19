@@ -19,6 +19,8 @@ import Admin from "../pages/Admin/Admin";
 import PrivacyPolicy from "../pages/PrivacyPolicy/PrivacyPolicy"
 import AddBrand from "../pages/Admin/Brands/AddBrand";
 import EditBrand from "../pages/Admin/Brands/EditBrand";
+import AddCar from "../pages/Admin/Cars/AddCar";
+import EditCar from "../pages/Admin/Cars/EditCar";
 
 
 
@@ -28,6 +30,9 @@ const Routers = () => {
       <Route path="/" element={<Admin />} />
       <Route path="/add-brand" element={<AddBrand />} />
       <Route path="/edit-brand/:id" element={<EditBrand />} />
+      <Route path="/add-car" element={<AddCar />} />
+      <Route path="/edit-car/:id" element={<EditCar />} />
+
     </Routes>
   );
 

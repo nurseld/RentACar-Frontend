@@ -50,8 +50,7 @@ function DeleteModal({ entityService, entityId }) {
                         </button>
                         <button type="button"
                             data-bs-dismiss="modal"
-                            onClick={() => handleDeleteEntity(entityService, Number(entityId.replace("id-", "")))} className="btn btn-primary">
-
+                            onClick={() => handleDeleteEntity(entityService, Number(entityId.replace(/.*-/, "")))} className="btn btn-primary">
                             Evet
                         </button>
                     </div>

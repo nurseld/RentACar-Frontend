@@ -88,7 +88,7 @@ const FindCarForm = () => {
       <Form className="form">
         <div className="d-flex align-items-center justify-content-between flex-wrap">
 
-          <div className="booking__form d-inline-block ms-1 me-1">
+          {/* <div className="booking__form d-inline-block ms-1 me-1">
             <h2>Pick Up Location</h2>
             <select value={selectedCity} onChange={handleCityChange}>
               <option value="">Şehir Seçiniz</option>
@@ -98,8 +98,8 @@ const FindCarForm = () => {
               <option value="Ataşehir">Ataşehir</option>
             </select>
             <p>Seçili Şehir: {selectedCity}</p>
-          </div>
-          <div className="booking__form d-inline-block ms-1 me-1">
+          </div> */}
+          {/* <div className="booking__form d-inline-block ms-1 me-1">
             <h2>Drop Off Location</h2>
             <select value={selectedCity2} onChange={handleCityChange2}>
               <option value="">Şehir Seçiniz</option>
@@ -109,7 +109,7 @@ const FindCarForm = () => {
               <option value="Ataşehir">Ataşehir</option>
             </select>
             <p>Seçili Şehir: {selectedCity2}</p>
-          </div>
+          </div> */}
           <FormInput
 
             formGroupClass="booking__form d-inline-block ms-1 me-1"

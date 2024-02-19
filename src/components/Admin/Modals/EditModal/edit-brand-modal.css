@@ -1,0 +1,59 @@
+.edit-brand-modal-header,
+.edit-brand-modal-body {
+    border: none !important;
+    padding: 10px 16px !important;
+}
+
+.image-edit-brand-modal {
+    height: 50px;
+}
+
+.edit-brand-modal-body-title {
+    text-align: left;
+    margin-bottom: 8px;
+    padding-left: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.2px;
+    color: #282828;
+}
+
+.edit-brand-modal-body-content {
+    text-align: left;
+    padding-left: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #828282;
+}
+
+.edit-brand-modal-footer {
+    background-color: #e0dddd !important;
+    margin-top: 40px;
+    justify-content: space-between;
+    padding: 16px 16px !important;
+    border: none !important;
+}
+
+.edit-brand-modal-footer button {
+    width: 47%;
+    background-color: white;
+    border: none;
+    color: #828282;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 0px;
+    transition: all 0.5s ease;
+}
+
+.edit-brand-modal-footer button:hover {
+    transform: scale(1.025);
+    opacity: 1;
+    background-color: #000d6b;
+}
+
+.edit-brand-modal-footer button i {
+    font-size: 20px;
+    margin: 0px 5px;
+}
