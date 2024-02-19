@@ -5,8 +5,13 @@
 .booking__form input {
   padding: 8px 15px;
   border: 1px solid #7c8a972a;
-  color: #7c8a97;
+  color: #e2e2e2;
   width: 100%;
+
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.27);
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .booking__form select,
