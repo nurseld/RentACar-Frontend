@@ -14,15 +14,15 @@ class BaseService {
     }
 
     add(request) {
-        return axiosInstance.post(this.apiUrl, request);
+        return axiosInstance.post(this.apiUrl + "/add", request);
     }
 
-    update(request) {
-        return axiosInstance.put(this.apiUrl, request);
+    async update(request) {
+        return await axiosInstance.put(this.apiUrl + "/update", request);
     }
 
-    delete(id) {
-        return axiosInstance.delete(this.apiUrl + "/" + id);
+    async delete(id) {
+        return await axiosInstance.delete(this.apiUrl + "/" + id);
     }
 }
 

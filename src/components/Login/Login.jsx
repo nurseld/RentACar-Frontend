@@ -31,7 +31,7 @@ function Login({ title }) {
             console.log(responseData)
             return responseData;
         } catch (error) {
-            console.log("Error fetching cars:", error);
+            console.log("Error fetching users:", error);
         }
     };
 
