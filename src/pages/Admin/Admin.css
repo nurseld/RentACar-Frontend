@@ -1,10 +1,10 @@
 .admin-page-container {
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     margin: 20px auto 50px auto;
 }
 
 .admin-page-content {
-    width: 75%;
+    width: 85%;
 }

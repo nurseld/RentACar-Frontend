@@ -63,7 +63,7 @@ const FindCarForm = () => {
       console.error('Veri çekme hatası:', error);
       toast.error(error.response.data.message)
     }
-    resetForm();
+    // resetForm();
   };
 
 

@@ -18,7 +18,7 @@ function CarList() {
     }, [])
 
     return (
-        <div className='admin-brand-list-container'>
+        <div className='admin-car-list-container'>
             <div className='d-flex justify-content-end'>
                 <Link to={"/admin/add-car"} type="button" className="btn btn-success">Ekle</Link>
             </div>
@@ -26,6 +26,7 @@ function CarList() {
                 <table className="table">
                     <thead>
                         <tr>
+                            <th scope="col"></th>
                             <th scope="col">Kilometre</th>
                             <th scope="col">Plaka</th>
                             <th scope="col">Yıl</th>
@@ -43,8 +44,11 @@ function CarList() {
                         {
                             cars.map((car, index) => (
                                 <tr key={index}>
+                                    <td>
+                                        <img src={car.imagePath} style={{ width: '150px' }} alt="" />
+                                    </td>
                                     <td scope="row">{car.kilometer}</td>
-                                    <td>{car.plateNumber}</td>
+                                    <td>{car.plate}</td>
                                     <td>{car.year}</td>
                                     <td>{car.gearType}</td>
                                     <td>{car.fuelType}</td>
