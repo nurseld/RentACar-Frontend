@@ -1,0 +1,49 @@
+.btn-success {
+    background-color: #198754 !important;
+}
+
+.btn-success:hover {
+    background-color: #157347 !important;
+}
+
+.table-button-column {
+    width: 50px;
+}
+
+
+
+.table-button-column i {
+    padding: 6px 10px;
+    margin: auto;
+    border: 1px solid #000c6b2e;
+    border-radius: 5px;
+}
+
+.table-button-column.edit-button {
+    color: #FFC107;
+    font-size: 17px;
+
+    /* background-color: #FFCA2C;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px; */
+}
+
+.table-button-column.delete-button {
+    color: #DC3545;
+    font-size: 17px;
+
+    /* background-color: #DC3545;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px; */
+}
+
+.table-button-column.edit-button:hover {
+    cursor: pointer;
+    color: #ff9807;
+}
+
+.table-button-column.delete-button:hover {
+
+    cursor: pointer;
+    color: #a5212e;
+}

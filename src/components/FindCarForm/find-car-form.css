@@ -1,3 +1,7 @@
+.find__car__form {
+  width: 47.5%;
+}
+
 .find__cars-left {
   /* background: linear-gradient(rgb(249, 168, 38, 0.9), rgb(249, 168, 38, 0.9)),
     url("../../assets/all-images/toyota-offer-2.png"); */
@@ -10,6 +14,7 @@
 .find__cars-left h2 {
   font-weight: 600;
   font-size: 2.8rem;
+  color: #ddd !important
 }
 
 .form__group {
@@ -18,11 +23,13 @@
 }
 
 .form__group input {
-  border: 1px solid #7c8a972a;
-  padding: 8px 12px;
-
-  width: 100%;
-  outline: none;
+  /* border: 1px solid #7c8a972a; */
+  /* padding: 8px 15px;
+  background-color: rgba(0, 0, 0, 0.27) !important;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
+  border: none !important;
+  width: 100% !important;
+  outline: none !important; */
 }
 
 .form__group input::placeholder {
@@ -30,11 +37,14 @@
 }
 
 .form {
-  background: #fff;
+  /* background: #fff; */
   padding-top: 55px;
   padding-bottom: 50px;
   padding-left: 15px;
   padding-right: 15px;
+
+
+
 }
 
 .select__group {
@@ -57,14 +67,21 @@
 
 .hero__form {
   position: absolute;
-  bottom: -150px;
+  bottom: 85px;
   z-index: 11;
   width: 100%;
 }
 
 .form__row {
-  background: #fff;
-  box-shadow: 5px 5px 15px -5px #7c8a97;
+  /* background: #fff;
+  box-shadow: 5px 5px 15px -5px #7c8a97; */
+
+  color: #ddd;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.13);
+  backdrop-filter: blur(10.5px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
 }
 
 .journey__time::before {

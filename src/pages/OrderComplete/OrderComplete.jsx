@@ -16,9 +16,11 @@ function OrderComplete() {
     }, []);
 
     return (
-        <Helmet><CommonSection title="Order Complete" />
+        <Helmet>
+            <CommonSection />
+            <h4 className="text-center mb-4">Your order has been completed successfully!</h4>
             <div className="order-complete-container container">
-                <h2 className="text-center mb-4">Order Complete</h2>
+                {/* <h3 className="text-center mb-4">Your order has been completed successfully...</h3> */}
                 <div className="order-information-card">
                     <div className="car-details-card">
                         <div className="car-details-card-body">
@@ -39,6 +41,11 @@ function OrderComplete() {
                                 <span className="car-details-card-description">Year</span>
                                 <span className="car-details-card-value">{info.car.year}</span>
                             </div>
+                            <div className="car-details-card-row">
+                                <span className="car-details-card-description">Daily Price</span>
+                                <span className="car-details-card-value">{info.car.dailyPrice}</span>
+                            </div>
+
                         </div>
                     </div>
                     <div className="car-image-card">
@@ -48,17 +55,17 @@ function OrderComplete() {
                         <div className="rental-details-card-body">
                             <h3 className="card-title text-center">Rental Details</h3>
                             {/* <div className="rental-details-card-row">
-                            <span className="rental-details-card-description">User ID:</span>
-                            <span className="rental-details-card-value">{info.userId}</span>
-                        </div> */}
-                            <div className="rental-details-card-row">
+                                <span className="rental-details-card-description">User ID:</span>
+                                <span className="rental-details-card-value">{info.userId.name}</span>
+                            </div> */}
+                            {/* <div className="rental-details-card-row">
                                 <span className="rental-details-card-description">Pick-Up Location</span>
                                 <span className="rental-details-card-value">{rental.pickUpLocation}</span>
                             </div>
                             <div className="rental-details-card-row">
                                 <span className="rental-details-card-description">Drop-Off Location</span>
                                 <span className="rental-details-card-value">{rental.dropOffLocation}</span>
-                            </div>
+                            </div> */}
                             <div className="rental-details-card-row">
                                 <span className="rental-details-card-description">Start Date</span>
                                 <span className="rental-details-card-value">{rental.startDate}</span>
@@ -73,7 +80,7 @@ function OrderComplete() {
                             </div>
                             <div className="rental-details-card-row">
                                 <span className="rental-details-card-description">Invoice No</span>
-                                <span className="rental-details-card-value">{info.invoiceNo}</span>
+                                <span className="rental-details-card-value">{info.invoiceNo.substring(0, 20)}</span>
                             </div>
                         </div>
                     </div>
