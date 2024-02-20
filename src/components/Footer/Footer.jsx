@@ -5,31 +5,6 @@ import { Link } from "react-router-dom";
 import "./footer.css";
 import { useTranslation } from 'react-i18next';
 
-const quickLinks = [
-  {
-    path: "/about",
-    display: "About",
-  },
-
-  {
-    path: "/privacypolicy",
-    display: "Privacy Policy",
-  },
-
-  {
-    path: "/cars",
-    display: "Car Listing",
-  },
-  {
-    path: "/blogs",
-    display: "Blog",
-  },
-
-  {
-    path: "/contact",
-    display: "Contact",
-  },
-];
 
 const Footer = () => {
   const { t } = useTranslation("global");
@@ -40,6 +15,7 @@ const Footer = () => {
     <footer className="footer">
       <Container>
         <Row>
+       
           <Col lg="4" md="4" sm="12">
             <div className="logo footer__logo">
               <h1>
@@ -53,20 +29,32 @@ const Footer = () => {
             </div>
             <p className="footer__logo-content">{t("footer.Content")}</p>
           </Col>
-
           <Col lg="2" md="4" sm="6">
             <div className="mb-4">
               <h5 className="footer__link-title">{t("footer.Links")}</h5>
               <ListGroup>
-                {quickLinks.map((item, index) => (
-                  <ListGroupItem key={index} className="p-0 mt-3 quick__link">
-                    <Link to={item.path}>{item.display}</Link>
-                  </ListGroupItem>
-                ))}
+                <ListGroupItem className="p-0 mt-3 quick__link">
+                  <Link to="/about">{t("header.About")}</Link>
+                </ListGroupItem>
+
+                <ListGroupItem className="p-0 mt-3 quick__link">
+                  <Link to="/privacypolicy">{t("footer.Privacy")}</Link>
+                </ListGroupItem>
+
+                <ListGroupItem className="p-0 mt-3 quick__link">
+                  <Link to="/cars">{t("header.Cars")}</Link>
+                </ListGroupItem>
+
+                <ListGroupItem className="p-0 mt-3 quick__link">
+                  <Link to="/blogs">{t("header.Blog")}</Link>
+                </ListGroupItem>
+
+                <ListGroupItem className="p-0 mt-3 quick__link">
+                  <Link to="/contact">{t("header.Contact")}</Link>
+                </ListGroupItem>
               </ListGroup>
             </div>
           </Col>
-
           <Col lg="3" md="4" sm="6">
             <div className="mb-4">
               <h5 className="footer__link-title mb-4"> {t("footer.Office")}</h5>

@@ -55,6 +55,7 @@
     "title2": "Yolu Navige Etme: Ölü Bir Araç Pilini Kullanma Kılavuzu",
     "title3": "Yolculuk Hediye Etmenin En İyi Yolu"
   },
+
   "footer": {
     "Content": "2G0 Cars'ta güvenliğizi önceliklendiriyoruz. Güvenli ödemeler, gerçek zamanlı izleme ve 7/24 destekten faydalanın. Şeffaflığımız kiralama detaylarına erişimi kolaylaştırır. 2G0 Cars ile seyahatinizi dönüştürün.",
     "Links": " Hızlı Bağlantılar",
@@ -64,8 +65,9 @@
     "Time": "Ofis Saati: 9am - 7pm",
     "Newsletter": "Bülten",
     "Subscribe": "Bültenimize abone olun",
-    "Copyright": "Telif Hakkı",
-    "Developers": "Tobeto Pair2 tarafından geliştirildi"
+    "Copyright": "Tüm Hakları Saklıdır",
+    "Developers": "Tobeto Pair2 tarafından geliştirildi",
+    "Privacy" : "Gizlilik Politikası"
   },
   "header": {
     "Home": "Anasayfa",

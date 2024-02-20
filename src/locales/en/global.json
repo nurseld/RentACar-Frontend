@@ -66,8 +66,10 @@
         "Newsletter": "Newsletter",
         "Subscribe": "Subscribe to our newsletter",
         "Copyright": "Copyright",
-        "Developers": "Developed by Tobeto Pair2"
+        "Developers": "Developed by Tobeto Pair2",
+        "Privacy": "Privacy Policy"
     },
+   
     "header": {
         "Home": "Home",
         "About": "About",
