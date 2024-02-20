@@ -146,3 +146,44 @@
 .register-footer button {
     margin: 20px 0px 5px;
 }
+
+@media (max-width: 1199.98px) {
+    .register-container {
+        width: 90%;
+        padding: 30px;
+    }
+
+    .corporate-register-body {
+        padding-top: 20px !important;
+    }
+
+    .individual-register-body {
+        padding-top: 20px !important;
+    }
+
+    .register-form.page-form div {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .register-form input,
+    .register-form div input {
+        width: 100% !important;
+    }
+
+    .register-form.page-form div.m-top-20 {
+        margin-top: 0px;
+    }
+
+    .register-form input,
+    .register-form div input {
+        width: 100% !important;
+        padding: 10px 16px;
+        margin: 0px 0px;
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.27);
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+
+}

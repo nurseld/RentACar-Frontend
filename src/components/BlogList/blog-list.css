@@ -1,5 +1,9 @@
 .blog__item {
   border: 1px solid #7c8a972e;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .blog__time {

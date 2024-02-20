@@ -45,10 +45,7 @@ const Testimonial = () => {
   return (
     <Slider {...settings}>
       {/* Testimonial 1 */}
-      <div
-        className="testimonial py-4 px-3"
-        style={{ width: "150px", height: "150px" }}
-      >
+      <div className="testimonial py-4 px-3" style={{ width: "150px", height: "150px" }}>
         <div className="testimonial-content bg-light rounded p-3">
           <img src={cusava1} alt="" className="w-25 h-25 rounded-2 me-3" />
           <div className="text-start testimonial-text">
@@ -63,22 +60,9 @@ const Testimonial = () => {
               Çok gezen mi bilir, çok okuyan mı? Tabii ki de çok gezen Kader!
               Beni tanıyanlar gezmeyi ne kadar çok sevdiğimi bilirler.
             </div>
-            {readMoreIndex !== 0 && (
-              <div
-                className="scroll-indicator"
-                onClick={() => handleReadMore(0)}
-              >
-                <span>Devamını Oku</span>
-                <i className="ri-arrow-down-s-line"></i>
-              </div>
-            )}
-            {readMoreIndex === 0 && (
-              <div className={`section__description expanded`}>
-                2g0 cars yurtiçi seyahatlerimde her zaman ilk tercihim.
-                <br />
-                #KaderileHerYere #Interlaken
-              </div>
-            )}
+            {/* <button className="btn btn-link" onClick={() => handleReadMore(0)}>
+              {readMoreIndex === 0 ? "Küçült" : "Devamını Oku"}
+            </button> */}
           </div>
         </div>
       </div>
@@ -99,21 +83,9 @@ const Testimonial = () => {
               Süper. Pair 2 zaten her zaman alanında parlayan öğrencilerimden
               olmuştur.
             </div>
-            {readMoreIndex !== 1 && (
-              <div
-                className="scroll-indicator"
-                onClick={() => handleReadMore(1)}
-              >
-                <span>Devamını Oku</span>
-                <i className="ri-arrow-down-s-line"></i>
-              </div>
-            )}
-            {readMoreIndex === 1 && (
-              <div className={`section__description expanded`}>
-                <br /> Ne diyebilirim ki? S ü p e r.
-              </div>
-            )}
-
+            {/* <button className="btn btn-link" onClick={() => handleReadMore(1)}>
+              {readMoreIndex === 1 ? "Küçült" : "Devamını Oku"}
+            </button> */}
           </div>
         </div>
       </div>
@@ -133,28 +105,9 @@ const Testimonial = () => {
             >
               Yok artık!
             </div>
-            {readMoreIndex !== 2 && (
-              <div
-                className="scroll-indicator"
-                onClick={() => handleReadMore(2)}
-              >
-                <span>Devamını Oku</span>
-                <i className="ri-arrow-down-s-line"></i>
-              </div>
-            )}
-            {readMoreIndex === 2 && (
-              <div className={`section__description expanded`}>
-                o <br/>
-                k <br/>
-                <br/>
-                A <br/>
-                r <br/>
-                t<br/>
-                ı<br/>
-                k <br/>
-                !<br/>
-              </div>
-            )}
+            {/* <button className="btn btn-link" onClick={() => handleReadMore(2)}>
+              {readMoreIndex === 2 ? "Küçült" : "Devamını Oku"}
+            </button> */}
           </div>
         </div>
       </div>
@@ -175,20 +128,9 @@ const Testimonial = () => {
               Daha iyi bir Rent-A-Car firması bilenler artı birleyebilir mi
               arkadaşlar?
             </div>
-            {readMoreIndex !== 3 && (
-              <div
-                className="scroll-indicator"
-                onClick={() => handleReadMore(3)}
-              >
-                <span>Devamını Oku</span>
-                <i className="ri-arrow-down-s-line"></i>
-              </div>
-            )}
-            {readMoreIndex === 3 && (
-              <div className={`section__description expanded`}>
-                -1'ler çoğunlukta.
-              </div>
-            )}
+            {/* <button className="btn btn-link" onClick={() => handleReadMore(3)}>
+              {readMoreIndex === 3 ? "Küçült" : "Devamını Oku"}
+            </button> */}
           </div>
         </div>
       </div>

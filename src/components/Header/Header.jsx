@@ -14,7 +14,49 @@ import Login from "../Login/Login";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutSuccess } from "../../store/auth/authSlice";
 import logo from "../../assets/all-images/logo.png";
+import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
+
+const navLinks = [
+  {
+    path: "/home",
+    display: "Home",
+  },
+  {
+    path: "/about",
+    display: "About",
+  },
+  {
+    path: "/cars",
+    display: "Cars",
+  },
+
+  {
+    path: "/blogs",
+    display: "Blog",
+  },
+  {
+    path: "/contact",
+    display: "Contact",
+  },
+];
+
+const headerLinks = [
+  {
+    path: "/login",
+    display: "Login",
+  },
+
+  {
+    path: "/register",
+    display: "Register",
+  },
+
+  {
+    path: "/profile",
+    display: "Profile",
+  },
+];
 
 const Header = () => {
   const { t, i18n } = useTranslation("global");
@@ -104,6 +146,7 @@ const Header = () => {
                     onClick={() => {
                       dispatch(logoutSuccess());
                       navigate("/home");
+                      toast.success("Oturum başarıyla kapatıldı.")
                     }}
                     to="/home"
                     className="d-flex align-items-center gap-1"
@@ -243,6 +286,7 @@ const Header = () => {
 
             <div className="navigation" ref={menuRef} onClick={toggleMenu}>
               <div className="menu">
+
                 {navLinks.map((item, index) => (
                   <NavLink
                     to={item.path}
@@ -254,6 +298,52 @@ const Header = () => {
                     {item.display}
                   </NavLink>
                 ))}
+
+                {authState.id === 0 && (
+                  <Link
+                    to="/login"
+                    className="d-block d-md-none"
+                  >
+                    <i className="fa-solid fa-arrow-right-to-bracket"></i> {t("header.Login")}
+                  </Link>
+                )}
+
+                {authState.id === 0 && (
+                  <Link
+                    to="/register"
+                    className="d-block d-md-none"
+                    data-bs-target="#staticBackdrop"
+                  >
+                    <i className="fa-solid fa-arrow-right-to-bracket"></i>{" "}
+                    {t("header.Register")}
+                  </Link>
+                )}
+
+                {authState.id !== 0 && (
+                  <Link
+                    to="/profile"
+                    className="d-block d-md-none"
+                  >
+                    <i className="fa-solid fa-arrow-right-to-bracket"></i>{" "}
+                    {t("header.Profile")}
+                  </Link>
+                )}
+
+                {authState.id !== 0 && (
+                  <Link
+                    onClick={() => {
+                      dispatch(logoutSuccess());
+                      navigate("/home");
+                      toast.success("Oturum başarıyla kapatıldı.")
+                    }}
+                    to="/home"
+                    className="d-block d-md-none"
+                  >
+                    <i className="fa-solid fa-arrow-right-to-bracket"></i>{" "}
+                    {t("header.Logout")}
+                  </Link>
+                )}
+
               </div>
             </div>
           </div>

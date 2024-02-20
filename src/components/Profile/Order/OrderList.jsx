@@ -26,29 +26,35 @@ function OrderList() {
 
         fetchData();
     }, [authState.id]);
-
+    console.log(rentals)
     return (
         <div className='order-container'>
             <table className="table table-hover">
                 <thead>
                     <tr>
-                        <th scope="col">Kiralama No</th>
-                        <th scope="col">Araç Modeli</th>
-                        <th scope="col">Start Date</th>
-                        <th scope="col">End Date</th>
-                        <th scope="col">Invoice No</th>
-                        <th scope="col">Total Price</th>
+                        <th className='text-center' scope="col">Kiralama No</th>
+                        <th className='text-center' scope="col"></th>
+                        <th className='text-center' scope="col">Plaka</th>
+                        <th className='text-center' scope="col">Araç Modeli</th>
+                        <th className='text-center' scope="col">Start Date</th>
+                        <th className='text-center' scope="col">End Date</th>
+                        <th className='text-center' scope="col">Invoice No</th>
+                        <th className='text-end' scope="col">Total Price</th>
                     </tr>
                 </thead>
                 <tbody className="table-group-divider">
                     {rentals.map((rental, index) => (
                         <tr key={index}>
-                            <th scope="row">{index + 1}</th>
-                            <td>{rental.modelName}</td>
-                            <td>{rental.startDate}</td>
-                            <td>{rental.endDate}</td>
-                            <td>{rental.invoiceNo}</td>
-                            <td>{rental.totalPrice}</td>
+                            <th className='align-middle text-center' scope="row">{index + 1}</th>
+                            <td>
+                                <img src={rental.imagePath} style={{ width: '160px' }} />
+                            </td>
+                            <td className='align-middle text-center' scope="row">{rental.plate}</td>
+                            <td className='align-middle text-center'>{rental.brandName} {rental.modelName}</td>
+                            <td className='align-middle text-center'>{rental.startDate}</td>
+                            <td className='align-middle text-center'>{rental.endDate}</td>
+                            <td className='align-middle text-center' style={{ width: '200px' }}>{rental.invoiceNo}</td>
+                            <th className='align-middle text-end h5 fw-bold'>{rental.totalPrice} ₺</th>
                         </tr>
                     ))}
                 </tbody>
