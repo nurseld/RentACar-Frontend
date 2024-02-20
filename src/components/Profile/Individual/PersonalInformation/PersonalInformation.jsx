@@ -5,24 +5,30 @@ import Card from 'react-bootstrap/Card';
 import Nav from 'react-bootstrap/Nav';
 import FormInput from '../../../FormInput/FormInput';
 import { Form, Formik } from 'formik';
-
+import userService from '../../../../services/userService';
 
 
 
 
 
 function PersonalInformation({ customer }) {
-    return (
 
+    const onSubmit = async (values) => {
+        const userUpdateResponse = await userService.update(values)
+        console.log(userUpdateResponse)
+    }
+
+    console.log("custu", customer)
+    return (
         <div className='personal-information-container'>
             <Formik
                 initialValues={{
-
                     firstName: customer.firstName,
-                    lastName: customer.lastName
-
-
-                }}>
+                    lastName: customer.lastName,
+                    phoneNumber: customer.phoneNumber,
+                    // password: customer.password
+                }}
+                onSubmit={onSubmit}>
                 <Form className='personal-information-form'>
                     <div className='personal-information-form-element'>
                         <label className='personal-information-label'>Ad</label>
@@ -47,6 +53,11 @@ function PersonalInformation({ customer }) {
                     <div className='personal-information-form-element'>
                         <label className='personal-information-label'>Şifre Tekrar</label>
                         <FormInput formGroupClass="" inputClass="personal-information-input" name="confirmPassword" placeholder="********" />
+                    </div>
+                    <div className="d-flex justify-content-end mt-3">
+                        <button type='submit' className='btn btn-warning px-4'>
+                            Güncelle
+                        </button>
                     </div>
                 </Form>
             </Formik>
