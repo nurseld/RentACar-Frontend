@@ -21,7 +21,7 @@ const BlogList = () => {
 const BlogItem = ({ item, index, t }) => {
   const { imgUrl, title, author, date, description, time } = item;
 
-  const translatedTitle = t(`blog.${title}`);
+  const translatedTitle = t(`${title}`);
 
   return (
     <Col lg="4" md="6" sm="6" className="mb-5" key={index}>
