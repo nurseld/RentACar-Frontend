@@ -3,10 +3,10 @@ import { Col } from "reactstrap";
 import "./blog-list.css";
 import { Link } from "react-router-dom";
 import blogData from "../../assets/data/blogData";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 const BlogList = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("global");
 
   return (
     <>
@@ -26,7 +26,7 @@ const BlogItem = ({ item, t }) => {
         <img src={imgUrl} alt="" className="w-100" />
         <div className="blog__info p-3">
           <Link to={`/blogs/${title}`} className="blog__title">
-            {t(`global.blogs.${title}`)}
+          {t(`blog.${title}`)}
           </Link>
           <p className="section__description mt-3">
             {description.length > 100

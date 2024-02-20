@@ -93,7 +93,7 @@ const Testimonial = () => {
             <p className="section__description">Customer</p>
             <hr className="my-2" />
             <div className={`section__description ${readMoreIndex === 2 ? "expanded" : ""}`}>
-              <br />Yok artık!
+              Yok artık!
             </div>
             <button className="btn btn-link" onClick={() => handleReadMore(2)}>
               {readMoreIndex === 2 ? "Küçült" : "Devamını Oku"}
