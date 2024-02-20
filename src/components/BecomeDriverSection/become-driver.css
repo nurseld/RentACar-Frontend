@@ -1,10 +1,19 @@
 .become__driver {
-  background: linear-gradient(rgba(160, 201, 224, 0.9), rgba(255, 255, 255, 0.9)),
-    url("../assets/all-images/drive.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   padding: 80px 0px;
+}
+
+.become__driver .row {
+
+  display: flex;
+  justify-content: center;
+}
+
+.brand-img-container {
+  width: 180px !important;
+  margin: 50px 0px;
 }
 
 .become__driver button {
@@ -45,6 +54,7 @@
   .become__driver-img {
     display: none;
   }
+
   .become__driver {
     text-align: center;
   }
