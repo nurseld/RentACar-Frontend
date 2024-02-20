@@ -22,7 +22,7 @@ const serviceData = [
 
   {
     id: 4,
-    title: "Hızlı Rezervasyon",
+    title: "Fast & Easy Booking",
     icon: "ri-timer-flash-line",
     desc: "Swift and Effortless Reservations redefine your car rental experience with Fast & Easy Booking by 2G0 Cars. Streamline your journey from start to finish, ensuring every step is as seamless as your destination.",
   },
