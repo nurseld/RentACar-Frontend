@@ -87,12 +87,11 @@
         "Find": "Find your best car here",
         "See": "See our",
         "Popular": "Popular Services",
-        "Come": "Come with",
-        "Hot": "Hot Offers",
         "Clients": "Our clients says",
         "Testimonials": "Testimonials",
         "Explore": "Explore our blogs",
-        "Latest": "Latest Blogs"
+        "Latest": "Latest Blogs",
+        "FindCar" : "Find Car"
     },
     "privacyPolicy": {
         "Title": "Privacy Policy",

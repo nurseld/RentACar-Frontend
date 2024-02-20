@@ -50,7 +50,10 @@
     "SignWarn": " Bir gönderi yapmak veya yorum yapmak için giriş yapmalısınız",
     "Placehold": "Yorum...",
     "Post": "Bir Yorum Gönder",
-    "Recent": " Son Gönderiler"
+    "Recent": " Son Gönderiler",
+    "title1": "Araç Sürmenin En İyi Yolu",
+    "title2": "Yolu Navige Etme: Ölü Bir Araç Pilini Kullanma Kılavuzu",
+    "title3": "Yolculuk Hediye Etmenin En İyi Yolu"
   },
   "footer": {
     "Content": "2G0 Cars'ta güvenliğizi önceliklendiriyoruz. Güvenli ödemeler, gerçek zamanlı izleme ve 7/24 destekten faydalanın. Şeffaflığımız kiralama detaylarına erişimi kolaylaştırır. 2G0 Cars ile seyahatinizi dönüştürün.",
@@ -66,7 +69,7 @@
   },
   "header": {
     "Home": "Anasayfa",
-    "About": "Hakkında",
+    "About": "Hakkımızda",
     "Services": "Hizmetler",
     "Cars": "Araçlar",
     "Blog": "Bloglar",
@@ -80,15 +83,14 @@
     "Corporate": "Kurumsal"
   },
   "home": {
-    "Find": "En iyi aracını bul",
+    "Find": "En iyi aracını buradan bul",
     "See": "Görün",
     "Popular": "Popüler Hizmetler",
-    "Come": "Popüler Teklifler",
-    "Hot": "ile gel",
     "Clients": "Referanslar",
     "Testimonials": "Müşterilerimiz diyor ki",
     "Explore": "Bloglarımızı Keşfedin",
-    "Latest": "En Son Bloglar"
+    "Latest": "En Son Bloglar",
+    "FindCar": "Araba bul"
   },
   "global": {
     "Read": "Daha Fazla Oku",
