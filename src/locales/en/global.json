@@ -50,7 +50,11 @@
         "SignWarn": "  You must sign-in to make or comment a post",
         "Placehold": "Comment...",
         "Post": "Post a Comment",
-        "Recent": " Recent Posts"
+        "Recent": " Recent Posts"},
+    "global":{
+        "title1": "The best way to drive cars",
+        "title2": "Navigating the Road: A Practical Guide to Handling a Dead Car Battery",
+        "Title3": "The best way to give trip"
     },
     "footer": {
         "Content": "At 2G0 Cars, prioritize safety. Benefit from secure payments, real-time tracking, and 24/7 support. Our transparency simplifies access to rental details. Transform your travel with 2G0 Cars.",
@@ -65,6 +69,12 @@
         "Developers": "Developed by Tobeto Pair2"
     },
     "header": {
+        "Home": "Home",
+        "About": "About",
+        "Services": "Services",
+        "Cars": "Cars",
+        "Blog": "Blog",
+        "Contact": "Contact",
         "Need": "Need Help",
         "Logout": "Logout",
         "Login": "Login",
@@ -77,20 +87,11 @@
         "Find": "Find your best car here",
         "See": "See our",
         "Popular": "Popular Services",
-        "Come": "Come with",
-        "Hot": "Hot Offers",
         "Clients": "Our clients says",
         "Testimonials": "Testimonials",
         "Explore": "Explore our blogs",
-        "Latest": "Latest Blogs"
-    },
-    "global": {
-        "Read": "Read More",
-        "blogs": {
-            "Thebestwaytodrivecars": "The best way to drive cars",
-            "NavigatingtheRoad": "Navigating the Road: A Practical Guide",
-            "Thebestwaytogivetrip": "The best way to give trip"
-        }
+        "Latest": "Latest Blogs",
+        "FindCar" : "Find Car"
     },
     "privacyPolicy": {
         "Title": "Privacy Policy",

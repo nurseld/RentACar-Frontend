@@ -29,7 +29,7 @@ const BlogItem = ({ item, index, t }) => {
         <img src={imgUrl} alt="" className="w-100" />
         <div className="blog__info p-3">
           <Link to={`/blogs/${title}`} className="blog__title">
-            {t(`${title}`)}
+            {translatedTitle} <i className="ri-arrow-right-s-line"></i>
           </Link>
           <p className="section__description mt-3">
             {description.length > 100
