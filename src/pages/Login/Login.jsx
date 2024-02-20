@@ -12,6 +12,7 @@ import authService from "../../services/authService";
 import { useDispatch } from "react-redux";
 import customerService from "../../services/customerService";
 import { loginSuccess } from "../../store/auth/authSlice";
+import { toast } from "react-toastify";
 
 
 
@@ -60,6 +61,7 @@ const Login = () => {
             console.log(currentUser)
             dispatch(loginSuccess(response.data))
             navigate("/home")
+            toast.success("Giriş başarılı.")
         } catch (error) {
             console.error('Veri çekme hatası:', error);
         }

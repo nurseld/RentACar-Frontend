@@ -55,9 +55,11 @@ const Register = () => {
         // Handle form submission logic here
         console.log("Form submitted with values:", values);
         try {
-
             const response = await authService.corporateRegister(values);
-            console.log(response)
+            toast.success("Kayıt işlemi başarıyla tamamlandı.")
+            setTimeout(() => {
+                navigate("/login");
+            }, 1000);
         } catch (error) {
             console.error('Veri çekme hatası:', error);
             toast.error(error.response.data.message)
@@ -102,10 +104,10 @@ const Register = () => {
         try {
             const response = await authService.customerRegister(values)
             console.log(response)
-            toast.success("You have successfully registered")
+            toast.success("Kayıt işlemi başarıyla tamamlandı.")
             setTimeout(() => {
                 navigate("/login");
-            }, 2000);
+            }, 1000);
         } catch (error) {
             toast.error(error.response.data.message)
             console.error('Veri çekme hatası:', error);
@@ -180,8 +182,8 @@ const Register = () => {
                                                 <FormInput inputClass="form-control" name="contactName" placeholder="Yetkili Ad Soyad*" />
                                                 <FormInput inputClass="form-control" name="phoneNumber" placeholder="Telefon*" />
                                                 <FormInput inputClass="form-control" name="email" placeholder="E-Posta*" />
-                                                <FormInput inputClass="form-control" name="password" placeholder="Şifre*" />
-                                                <FormInput inputClass="form-control" name="confirmPassword" placeholder="Şifre Tekrar*" />
+                                                <FormInput inputClass="form-control" name="password" type="password" placeholder="Şifre*" />
+                                                <FormInput inputClass="form-control" name="confirmPassword" type="password" placeholder="Şifre Tekrar*" />
                                             </div>
                                         </div>
                                         <div className="register-footer">
