@@ -18,7 +18,6 @@ function PersonalInformation({ customer }) {
         console.log(userUpdateResponse)
     }
 
-    console.log("custu", customer)
     return (
         <div className='personal-information-container'>
             <Formik
@@ -48,11 +47,11 @@ function PersonalInformation({ customer }) {
                     </div>
                     <div className='personal-information-form-element'>
                         <label className='personal-information-label'>Şifre</label>
-                        <FormInput formGroupClass="" inputClass="personal-information-input" name="password" placeholder="********" />
+                        <FormInput formGroupClass="" type='password' inputClass="personal-information-input" name="password" placeholder="********" />
                     </div>
                     <div className='personal-information-form-element'>
                         <label className='personal-information-label'>Şifre Tekrar</label>
-                        <FormInput formGroupClass="" inputClass="personal-information-input" name="confirmPassword" placeholder="********" />
+                        <FormInput formGroupClass="" type='password' inputClass="personal-information-input" name="confirmPassword" placeholder="********" />
                     </div>
                     <div className="d-flex justify-content-end mt-3">
                         <button type='submit' className='btn btn-warning px-4'>
