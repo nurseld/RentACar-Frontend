@@ -247,6 +247,7 @@ const Header = () => {
 
             <div className="navigation" ref={menuRef} onClick={toggleMenu}>
               <div className="menu">
+
                 {navLinks.map((item, index) => (
                   <NavLink
                     to={item.path}
@@ -258,6 +259,52 @@ const Header = () => {
                     {item.display}
                   </NavLink>
                 ))}
+
+                {authState.id === 0 && (
+                  <Link
+                    to="/login"
+                    className="d-block d-md-none"
+                  >
+                    <i className="fa-solid fa-arrow-right-to-bracket"></i> {t("header.Login")}
+                  </Link>
+                )}
+
+                {authState.id === 0 && (
+                  <Link
+                    to="/register"
+                    className="d-block d-md-none"
+                    data-bs-target="#staticBackdrop"
+                  >
+                    <i className="fa-solid fa-arrow-right-to-bracket"></i>{" "}
+                    {t("header.Register")}
+                  </Link>
+                )}
+
+                {authState.id !== 0 && (
+                  <Link
+                    to="/profile"
+                    className="d-block d-md-none"
+                  >
+                    <i className="fa-solid fa-arrow-right-to-bracket"></i>{" "}
+                    {t("header.Profile")}
+                  </Link>
+                )}
+
+                {authState.id !== 0 && (
+                  <Link
+                    onClick={() => {
+                      dispatch(logoutSuccess());
+                      navigate("/home");
+                      toast.success("Oturum başarıyla kapatıldı.")
+                    }}
+                    to="/home"
+                    className="d-block d-md-none"
+                  >
+                    <i className="fa-solid fa-arrow-right-to-bracket"></i>{" "}
+                    {t("header.Logout")}
+                  </Link>
+                )}
+
               </div>
             </div>
           </div>
