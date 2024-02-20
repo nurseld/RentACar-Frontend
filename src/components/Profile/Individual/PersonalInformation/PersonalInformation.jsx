@@ -26,15 +26,15 @@ function PersonalInformation({ customer }) {
                 <Form className='personal-information-form'>
                     <div className='personal-information-form-element'>
                         <label className='personal-information-label'>Ad</label>
-                        <FormInput formGroupClass="" inputClass="personal-information-input" name="firstName" placeholder="Ad*" />
+                        <FormInput formGroupClass="" inputClass="personal-information-input" name="firstName" placeholder={customer.firstName} />
                     </div>
                     <div className='personal-information-form-element'>
                         <label className='personal-information-label'>Soyad</label>
-                        <FormInput formGroupClass="" inputClass="personal-information-input" name="lastName" placeholder="Soyad*" />
+                        <FormInput formGroupClass="" inputClass="personal-information-input" name="lastName" placeholder={customer.lastName} />
                     </div>
                     <div className='personal-information-form-element'>
                         <label className='personal-information-label'>Telefon Numarası</label>
-                        <FormInput formGroupClass="" inputClass="personal-information-input" name="phoneNumber" placeholder="555 555 55 55*" />
+                        <FormInput formGroupClass="" inputClass="personal-information-input" name="phoneNumber" placeholder={customer.phoneNumber} />
                     </div>
                     <div className='personal-information-form-element'>
                         <label className='personal-information-label'>Email</label>
