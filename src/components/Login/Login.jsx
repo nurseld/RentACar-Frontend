@@ -9,6 +9,7 @@ import userService from '../../services/userService';
 import customerService from '../../services/customerService';
 import { loginSuccess } from '../../store/auth/authSlice';
 import { useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
 
 function Login({ title }) {
 
@@ -56,6 +57,7 @@ function Login({ title }) {
             const currentUser = await getUser(response.data.id);
             console.log(currentUser)
             dispatch(loginSuccess(response.data))
+            toast.success("Giriş başarılı.")
         } catch (error) {
             console.error('Veri çekme hatası:', error);
         }
