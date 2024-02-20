@@ -10,7 +10,6 @@ import ava04 from "../../assets/all-images/ava-4.jpg";
 const OUR__MEMBERS = [
   {
     name: "Nursel Demirkıran",
-    experience: "7 years of experience",
     ghUrl: "https://github.com/nurseld",
     instUrl: "#",
     twitUrl: "#",
@@ -19,7 +18,6 @@ const OUR__MEMBERS = [
   },
   {
     name: "Adem Furkan Kavuş",
-    experience: "5 years of experience",
     ghUrl: "https://github.com/adem24077",
     instUrl: "#",
     twitUrl: "#",
@@ -28,7 +26,6 @@ const OUR__MEMBERS = [
   },
   {
     name: "Enes Yetgin",
-    experience: "2 years of experience",
     ghUrl: "https://github.com/enyetgin",
     instUrl: "#",
     twitUrl: "#",
@@ -37,7 +34,6 @@ const OUR__MEMBERS = [
   },
   {
     name: "Melisa Selin Welfringer",
-    experience: "6 years of experience",
     ghUrl: "https://github.com/melselin",
     instUrl: "#",
     twitUrl: "#",

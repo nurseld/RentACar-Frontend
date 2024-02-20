@@ -7,7 +7,9 @@
 
 .testimonial-content {
   display: flex;
-  align-items: flex-start; /* İçerikleri en üstte hizalamak için */
+  align-items: flex-start;
+  box-shadow: 0 0 20px rgba(96, 138, 255, 0.529);
+  min-height: 250px;
 }
 
 .testimonial-image {
@@ -45,4 +47,6 @@
     width: 60px; /* İstenilen genişliği belirleyin */
     height: 60px; /* İstenilen yüksekliği belirleyin */
   }
+
+  
 }

@@ -78,11 +78,7 @@ const Home = () => {
       <section>
         <Container>
           <Row>
-            <Col lg="12" className="text-center mb-5">
-              <h6 className="section__subtitle">{t("home.Come")}</h6>
-              <h2 className="section__title">{t("home.Hot")}</h2>
-            </Col>
-
+        
             {posts.slice(0, 3).map((item) => (
               <CarItem car={item} key={item.id} page={Page.Home_HotOffers} />
             ))}

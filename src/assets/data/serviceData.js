@@ -15,7 +15,7 @@ const serviceData = [
 
   {
     id: 3,
-    title: "Ekonomik Fiyatlar",
+    title: "Limitless Miles",
     icon: "ri-roadster-line",
     desc: "Experience the freedom of the open road with Unlimited Miles Car Rental, a premium service by 2G0 Cars. Say goodbye to restrictions and embrace a limitless journey, where every mile becomes an opportunity for adventure and discovery.",
   },
@@ -29,7 +29,7 @@ const serviceData = [
 
   {
     id: 5,
-    title: "7/24 Destek",
+    title: "7/24 Support",
     icon: "ri-map-pin-line",
     desc: "Explore an Array of Start Points with 2G0 Cars - where convenience meets choice. With an abundance of pickup locations, your car rental experience transforms into a customizable journey, adding a touch of excitement to every start.",
   },
