@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import './reservation.css'
 import carData from "../../assets/data/carData";
 import { Container, Row, Col } from "reactstrap";
 import Helmet from "../../components/Helmet/Helmet";
@@ -42,8 +42,8 @@ const Reservation = () => {
         <Helmet title={carDetail.modelName}>
             <CommonSection title="Reservation" />
             <section>
-                <Container>
-                    <Row>
+                <Container className="reservation-page-container">
+                    <Row className="d-flex justify-content-start">
                         <Col lg="6">
                             <img src={carDetail.imagePath} alt="" className="w-100" />
                         </Col>
@@ -54,7 +54,7 @@ const Reservation = () => {
 
                                 <div className=" d-flex align-items-center gap-5 mb-4 mt-3">
                                     <h6 className="rent__price fw-bold fs-4">
-                                        {carDetail.dailyPrice}₺ / Day
+                                        {carDetail.dailyPrice} ₺ / Gün
                                     </h6>
 
                                     <span className=" d-flex align-items-center gap-2">
@@ -64,6 +64,7 @@ const Reservation = () => {
                                             <i className="ri-star-s-fill"></i>
                                             <i className="ri-star-s-fill"></i>
                                             <i className="ri-star-s-fill"></i>
+                                            &nbsp;&nbsp;5/5
                                         </span>
                                         {/* ({carDetail.rating} ratings) */}
                                     </span>
@@ -71,7 +72,7 @@ const Reservation = () => {
 
                                 <p className="section__description">
                                     {/* {carDetail.description} */}
-                                    {carDetail.colorName}
+                                    Gövde Tipi: {carDetail.bodyType}
                                 </p>
 
                                 <div
@@ -80,11 +81,12 @@ const Reservation = () => {
                                 >
                                     <span className=" d-flex align-items-center gap-1 section__description">
                                         <i
-                                            className="ri-roadster-line"
+                                            className="ri-road-map-line"
                                             style={{ color: "#f9a826" }}
                                         ></i>{" "}
-                                        {carDetail.model}
+                                        {carDetail.kilometer} Km
                                     </span>
+
 
                                     <span className=" d-flex align-items-center gap-1 section__description">
                                         <i
@@ -92,16 +94,15 @@ const Reservation = () => {
                                             style={{ color: "#f9a826" }}
                                         ></i>{" "}
                                         {/* {carDetail.automatic} */}
-                                        {carDetail.kilometer}
+                                        Vites Tipi: {carDetail.gearType}
                                     </span>
 
                                     <span className=" d-flex align-items-center gap-1 section__description">
                                         <i
-                                            className="ri-timer-flash-line"
+                                            className="ri-pantone-line"
                                             style={{ color: "#f9a826" }}
                                         ></i>{" "}
-                                        {/* {carDetail.speed} */}
-                                        {carDetail.year}
+                                        Renk: {carDetail.colorName}
                                     </span>
                                 </div>
 
@@ -110,26 +111,34 @@ const Reservation = () => {
                                     style={{ columnGap: "2.8rem" }}
                                 >
                                     <span className=" d-flex align-items-center gap-1 section__description">
-                                        <i className="ri-map-pin-line" style={{ color: "#f9a826" }}></i>{" "}
-                                        {/* {carDetail.gps} */}
+                                        <i
+                                            className="ri-arrow-right-double-line"
+                                            style={{ color: "#f9a826" }}
+                                        ></i>{" "}
+                                        Yakıt Tipi: {carDetail.fuelType}
                                     </span>
 
                                     <span className=" d-flex align-items-center gap-1 section__description">
                                         <i
-                                            className="ri-wheelchair-line"
+                                            className="ri-arrow-right-double-line"
                                             style={{ color: "#f9a826" }}
                                         ></i>{" "}
-                                        {/* {carDetail.seatType} */}
+                                        {/* {carDetail.speed} */}
+                                        Model Yılı: {carDetail.year}
                                     </span>
 
                                     <span className=" d-flex align-items-center gap-1 section__description">
                                         <i
-                                            className="ri-building-2-line"
+                                            className="ri-arrow-right-double-line"
                                             style={{ color: "#f9a826" }}
                                         ></i>{" "}
-                                        {/* {carDetail.brandName} */}
+                                        Plaka: {carDetail.plate}
                                     </span>
                                 </div>
+                            </div>
+                            <div className="payment__info mt-5">
+                                <h5 className="mb-0 fw-bold text-end">Ödeme Seçenekleri</h5>
+                                <PaymentMethod carId={carDetail.id} />
                             </div>
                         </Col>
 
@@ -140,11 +149,8 @@ const Reservation = () => {
                             </div>
                         </Col> */}
 
-                        <Col lg="5" className="mt-5">
-                            <div className="payment__info mt-5">
-                                <h5 className="mb-4 fw-bold ">Payment Information</h5>
-                                <PaymentMethod carId={carDetail.id} />
-                            </div>
+                        <Col lg="5" className="ms-auto me-5">
+
                         </Col>
 
                     </Row>

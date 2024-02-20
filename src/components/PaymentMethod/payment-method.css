@@ -3,6 +3,17 @@
   color: #000d6b;
 }
 
+.payment__info {
+  margin-right: 100px !important;
+  display: flex;
+  flex-direction: column;
+  /* align-items: start; */
+}
+
+.payment-method-container {
+  display: flex;
+}
+
 .payment button {
   padding: 8px 15px;
   border-radius: 5px;

@@ -35,42 +35,34 @@ const PaymentMethod = (props) => {
 
   return (
     <>
-      <div className="payment">
-        <label htmlFor="" className="d-flex align-items-center gap-2">
-          <input type="radio" /> Havale & EFT
-        </label>
-      </div>
 
-      <div className="payment mt-3">
+      <div className="payment mt-3 d-flex align-items-center justify-content-end  ">
         <label htmlFor="" className="d-flex align-items-center gap-2">
-          <input type="radio" /> Online Kredi Kartı
-        </label>
-      </div>
-
-      <div className="payment mt-3 d-flex align-items-center justify-content-between">
-        <label htmlFor="" className="d-flex align-items-center gap-2">
-          <input type="radio" />Araç Tesliminde Banka Kartı
+          <input type="radio" />Teslim Alırken Kredi Kartı
         </label>
 
-        <img src={masterCard} alt="" />
+        {/* <img src={masterCard} alt="" /> */}
       </div>
 
-      <div className="payment mt-3 d-flex align-items-center justify-content-between">
+      <div className="payment mt-3 d-flex align-items-center justify-content-end">
         <label htmlFor="" className="d-flex align-items-center gap-2">
-          <input type="radio" /> Araç Tesliminde Kredi Kartı
+          <input type="radio" /> Teslim Ederken Kredi Kartı
         </label>
 
-        <img src={paypal} alt="" />
+        {/* <img src={paypal} alt="" /> */}
+
+
       </div>
-      <div className="payment text-end mt-5">
+
+      <div className="payment d-flex align-items-center justify-content-end mt-5">
         {
           (authState.id !== 0)
             ?
-            <button type="button" onClick={onSubmit}>Reserve Now</button>
+            <button type="button" onClick={onSubmit}>Hemen Kirala</button>
             :
             <button
               data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop">Reserve Now</button>
+              data-bs-target="#staticBackdrop">Hemen Kirala</button>
         }
       </div>
     </>
