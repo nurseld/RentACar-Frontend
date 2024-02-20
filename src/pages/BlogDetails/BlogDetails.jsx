@@ -13,7 +13,7 @@ import commentImg from "../../assets/all-images/ava-1.jpg";
 import "./blog-details.css";
 
 const BlogDetails = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("global");
   const { slug } = useParams();
   const blog = blogData.find((blog) => blog.title === slug);
 

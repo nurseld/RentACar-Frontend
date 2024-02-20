@@ -9,9 +9,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { loadRental } from "../../store/rental/rentalSlice";
+import { useTranslation } from "react-i18next";
 
 
 const FindCarForm = () => {
+  const { t } = useTranslation("global");
   const [dateInputType, setDateInputType] = useState("text");
 
   const authState = useSelector((store) => store.auth);
@@ -121,7 +123,7 @@ const FindCarForm = () => {
           />
 
           <FormGroup className="form__group">
-            <button type="submit" className="btn find__car-btn">Find Car</button>
+            <button type="submit" className="btn find__car-btn">{t("home.FindCar")}</button>
           </FormGroup>
         </div>
       </Form>

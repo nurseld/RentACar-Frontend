@@ -1,6 +1,4 @@
 import React, { useRef, useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
-
 import {
   Container,
   Row,
@@ -17,6 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { logoutSuccess } from "../../store/auth/authSlice";
 import logo from "../../assets/all-images/logo.png";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
 const navLinks = [
   {
@@ -61,6 +60,7 @@ const headerLinks = [
 
 const Header = () => {
   const { t, i18n } = useTranslation("global");
+
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const menuRef = useRef(null);
@@ -71,6 +71,45 @@ const Header = () => {
   const authState = useSelector((store) => store.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  // Çeviri anahtarlarını ekleyerek linkleri oluştur
+  const navLinks = [
+    {
+      path: "/home",
+      display: t("header.Home"),
+    },
+    {
+      path: "/about",
+      display: t("header.About"),
+    },
+    {
+      path: "/cars",
+      display: t("header.Cars"),
+    },
+    {
+      path: "/blogs",
+      display: t("header.Blog"),
+    },
+    {
+      path: "/contact",
+      display: t("header.Contact"),
+    },
+  ];
+
+  const headerLinks = [
+    {
+      path: "/login",
+      display: t("header.Login"),
+    },
+    {
+      path: "/register",
+      display: t("header.Register"),
+    },
+    {
+      path: "/profile",
+      display: t("header.Profile"),
+    },
+  ];
 
   return (
     <header className="header">
@@ -218,14 +257,14 @@ const Header = () => {
                 <div className="d-flex align-items-center gap-1">
                   <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
                     <DropdownToggle caret={false} className="dropdown-button">
-                      {i18n.language === "en" ? "EN" : "TR"}
+                      {i18n.language === "tr" ? "TR" : "EN" } <i class="bi bi-globe2"></i>
                     </DropdownToggle>
                     <DropdownMenu>
                       <DropdownItem onClick={() => i18n.changeLanguage("en")}>
-                        EN
+                      <p className="t1">EN</p>
                       </DropdownItem>
-                      <DropdownItem onClick={() => i18n.changeLanguage("tr")}>
-                        TR
+                      <DropdownItem  onClick={() => i18n.changeLanguage("tr")}>
+                        <p className="t2">TR</p>
                       </DropdownItem>
                     </DropdownMenu>
                   </Dropdown>
