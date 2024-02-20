@@ -16,6 +16,7 @@ import Login from "../Login/Login";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutSuccess } from "../../store/auth/authSlice";
 import logo from "../../assets/all-images/logo.png";
+import { toast } from "react-toastify";
 
 const navLinks = [
   {
@@ -106,6 +107,7 @@ const Header = () => {
                     onClick={() => {
                       dispatch(logoutSuccess());
                       navigate("/home");
+                      toast.success("Oturum başarıyla kapatıldı.")
                     }}
                     to="/home"
                     className="d-flex align-items-center gap-1"
