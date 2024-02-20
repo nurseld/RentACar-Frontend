@@ -26,18 +26,18 @@ function CarList() {
                 <table className="table">
                     <thead>
                         <tr>
-                            <th scope="col"></th>
-                            <th scope="col">Kilometre</th>
-                            <th scope="col">Plaka</th>
-                            <th scope="col">Yıl</th>
-                            <th scope="col">Vites Tipi</th>
-                            <th scope="col">Yakıt Tipi</th>
-                            <th scope="col">Kasa Tipi</th>
-                            <th scope="col">Günlük Fiyat</th>
-                            <th scope="col">Model</th>
-                            <th scope="col">Renk</th>
-                            <th scope="col table-button-column"></th>
-                            <th scope="col table-button-column"></th>
+                            <th className='text-center' scope="col"></th>
+                            <th className='text-center' scope="col">Kilometre</th>
+                            <th className='text-center' scope="col">Plaka</th>
+                            <th className='text-center' scope="col">Yıl</th>
+                            <th className='text-center' scope="col">Vites Tipi</th>
+                            <th className='text-center' scope="col">Yakıt Tipi</th>
+                            <th className='text-center' scope="col">Kasa Tipi</th>
+                            <th className='text-center' scope="col">Günlük Fiyat</th>
+                            <th className='text-center' scope="col">Model</th>
+                            <th className='text-center' scope="col">Renk</th>
+                            <th className='text-center' scope="col table-button-column"></th>
+                            <th className='text-center' scope="col table-button-column"></th>
                         </tr>
                     </thead>
                     <tbody className='table-group-divider'>
@@ -47,21 +47,21 @@ function CarList() {
                                     <td>
                                         <img src={car.imagePath} style={{ width: '150px' }} alt="" />
                                     </td>
-                                    <td scope="row">{car.kilometer}</td>
-                                    <td>{car.plate}</td>
-                                    <td>{car.year}</td>
-                                    <td>{car.gearType}</td>
-                                    <td>{car.fuelType}</td>
-                                    <td>{car.bodyType}</td>
-                                    <td>{car.dailyPrice}</td>
-                                    <td>{car.modelName}</td>
-                                    <td>{car.colorName}</td>
-                                    <td className='table-button-column edit-button'>
+                                    <td className='align-middle text-center' scope="row">{car.kilometer}</td>
+                                    <td className='align-middle text-center' >{car.plate}</td>
+                                    <td className='align-middle text-center' >{car.year}</td>
+                                    <td className='align-middle text-center' >{car.gearType}</td>
+                                    <td className='align-middle text-center' >{car.fuelType}</td>
+                                    <td className='align-middle text-center' >{car.bodyType}</td>
+                                    <td className='align-middle text-center' >{car.dailyPrice}</td>
+                                    <td className='align-middle text-center' >{car.modelName}</td>
+                                    <td className='align-middle text-center' >{car.colorName}</td>
+                                    <td className='table-button-column edit-button align-middle text-center'>
                                         <Link to={"/admin/edit-car/" + car.id}>
                                             <i className="ri-edit-2-fill"></i>
                                         </Link>
                                     </td>
-                                    <td className='table-button-column delete-button'>
+                                    <td className='table-button-column delete-button align-middle text-center'>
                                         <a data-bs-toggle="modal"
                                             data-bs-target={"#carId-" + car.id}>
                                             <i className="ri-delete-bin-fill"></i>
