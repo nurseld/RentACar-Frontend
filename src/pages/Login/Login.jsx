@@ -95,7 +95,7 @@ const Login = () => {
                                     >
                                         Giriş Yap
                                     </button>
-                                    <a href="#">Şifremi Unuttum</a>
+                                    <a href="#" style={{ marginTop: '30px' }}>Şifremi Unuttum</a>
                                     <span>Henüz üye değil misin?
                                         <Link
                                             to="/register"

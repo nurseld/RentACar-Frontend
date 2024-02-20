@@ -139,12 +139,25 @@
     transition: .2s;
 }
 
-
 .login-page-section .login-footer a:hover {
     background-color: rgba(220, 20, 60, .7);
 }
 
-
 .login-page-section .login-footer button {
     margin: 20px 0px 5px;
+}
+
+@media (max-width: 1199.98px) {
+    .login-page-section .login-container {
+        width: 90%;
+        padding: 30px;
+    }
+
+    .login-form {
+        width: 100% !important;
+    }
+
+    .login-page-section .login-button {
+        width: 100%;
+    }
 }
