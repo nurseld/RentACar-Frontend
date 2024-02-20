@@ -1,25 +1,35 @@
+.testimonial {}
 
 .testimonial img {
-  width: 100%;
-  height: 100%;
+  width: 30% !important;
+  height: 100% !important;
   object-fit: cover;
 }
 
 .testimonial-content {
+  height: 350px !important;
   display: flex;
-  align-items: flex-start; /* İçerikleri en üstte hizalamak için */
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  overflow: hidden;
+  /* İçerikleri en üstte hizalamak için */
 }
 
 .testimonial-image {
-  width: 80px; /* İstenilen genişliği belirleyin */
-  height: 80px; /* İstenilen yüksekliği belirleyin */
+  width: 80px;
+  /* İstenilen genişliği belirleyin */
+  height: 80px;
+  /* İstenilen yüksekliği belirleyin */
   object-fit: cover;
   border-radius: 50%;
-  margin-right: 20px; /* İstenilen boşluk miktarını belirleyin */
+  margin-right: 20px;
+  /* İstenilen boşluk miktarını belirleyin */
 }
 
 .testimonial-text {
-  width: 100%; /* İçerik genişliğini %100 olarak ayarlayın */
+  width: 100%;
+  /* İçerik genişliğini %100 olarak ayarlayın */
 }
 
 /* Medya Sorguları */
@@ -42,7 +52,9 @@
   }
 
   .testimonial-image {
-    width: 60px; /* İstenilen genişliği belirleyin */
-    height: 60px; /* İstenilen yüksekliği belirleyin */
+    width: 60px;
+    /* İstenilen genişliği belirleyin */
+    height: 60px;
+    /* İstenilen yüksekliği belirleyin */
   }
 }

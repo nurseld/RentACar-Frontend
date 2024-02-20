@@ -47,8 +47,8 @@ const Testimonial = () => {
   return (
     <Slider {...settings}>
       {/* Testimonial 1 */}
-      <div className="testimonial py-4 px-3" style={{ width: "150px", height: "150px"}}>
-        <div className="testimonial-content bg-light rounded p-3"> 
+      <div className="testimonial py-4 px-3" style={{ width: "150px", height: "150px" }}>
+        <div className="testimonial-content bg-light rounded p-3">
           <img src={cusava1} alt="" className="w-25 h-25 rounded-2 me-3" />
           <div className="text-start testimonial-text">
             <h6 className="mb-0 mt-3">Kader Yavuz</h6>
@@ -58,9 +58,9 @@ const Testimonial = () => {
               Çok gezen mi bilir, çok okuyan mı? Tabii ki de çok gezen Kader! Beni tanıyanlar gezmeyi ne kadar çok sevdiğimi bilirler. 2g0 cars yurtiçi seyahatlerimde her zaman ilk seçeneğim.
               <br />#KaderileHerYere #Interlaken
             </div>
-            <button className="btn btn-link" onClick={() => handleReadMore(0)}>
+            {/* <button className="btn btn-link" onClick={() => handleReadMore(0)}>
               {readMoreIndex === 0 ? "Küçült" : "Devamını Oku"}
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
@@ -77,9 +77,9 @@ const Testimonial = () => {
               Pair 2 zaten her zaman alanında parlayan öğrencilerimden olmuştur. Ne diyebilirim ki?
               S ü p e r.
             </div>
-            <button className="btn btn-link" onClick={() => handleReadMore(1)}>
+            {/* <button className="btn btn-link" onClick={() => handleReadMore(1)}>
               {readMoreIndex === 1 ? "Küçült" : "Devamını Oku"}
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
@@ -95,9 +95,9 @@ const Testimonial = () => {
             <div className={`section__description ${readMoreIndex === 2 ? "expanded" : ""}`}>
               <br />Yok artık!
             </div>
-            <button className="btn btn-link" onClick={() => handleReadMore(2)}>
+            {/* <button className="btn btn-link" onClick={() => handleReadMore(2)}>
               {readMoreIndex === 2 ? "Küçült" : "Devamını Oku"}
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
@@ -113,9 +113,9 @@ const Testimonial = () => {
             <div className={`section__description ${readMoreIndex === 3 ? "expanded" : ""}`}>
               Daha iyi bir Rent-A-Car firması bilenler artı birleyebilir mi arkadaşlar? -1'ler çoğunlukta.
             </div>
-            <button className="btn btn-link" onClick={() => handleReadMore(3)}>
+            {/* <button className="btn btn-link" onClick={() => handleReadMore(3)}>
               {readMoreIndex === 3 ? "Küçült" : "Devamını Oku"}
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
