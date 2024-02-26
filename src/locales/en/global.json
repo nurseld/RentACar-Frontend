@@ -93,7 +93,9 @@
         "Testimonials": "Testimonials",
         "Explore": "Explore our blogs",
         "Latest": "Latest Blogs",
-        "FindCar" : "Find Car"
+        "FindCar" : "Find Car",
+        "Hot": "Hot Deals",
+        "Come" : "Come with"
     },
     "privacyPolicy": {
         "Title": "Privacy Policy",
