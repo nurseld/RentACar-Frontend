@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./brand-list.css";
+//import "./brand-list.css";
 import brandService from "../../../services/brandService";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -7,21 +7,23 @@ import DeleteModal from "../Modals/DeleteModal/DeleteModal";
 import EditModal from "../Modals/EditModal/EditModal";
 import * as Yup from "yup";
 import AddModal from "../Modals/AddModal/AddModal";
+import modelService from "../../../services/modelService";
 
-function BrandList() {
-  const [brands, setBrands] = useState([]);
+function ModelList() {
+  const [models, setModels] = useState([]);
 
-  const fetchBrands = async () => {
-    const brandsResponse = await brandService.getAll();
-    setBrands(brandsResponse.data);
+  const fetchModels = async () => {
+    const modelsResponse = await modelService.getAll();
+    setModels(modelsResponse.data);
   };
 
   useEffect(() => {
-    fetchBrands();
-  }, [fetchBrands]);
+    fetchModels();
+  }, [fetchModels]);
 
   const validationSchema = Yup.object().shape({
-    name: Yup.string().required("Marka en az 2 karakterden oluşmalıdır."),
+    name: Yup.string().required("Model en az 2 karakterden oluşmalıdır."),
+    brandId: Yup.number().required("Marka numarası sayı olmalıdır."),
   });
 
   return (
@@ -35,9 +37,9 @@ function BrandList() {
           Ekle
         </a>
         <AddModal
-          entityService={brandService}
-          modalId="addBrandModal"
-          initialValues={{ name: "" }}
+          entityService={modelService}
+          modalId="addModelModal"
+          initialValues={{ name: "", brandId: 0 }}
           validationSchema={validationSchema}
         />
       </div>
@@ -53,35 +55,35 @@ function BrandList() {
             </tr>
           </thead>
           <tbody className="table-group-divider">
-            {brands.map((brand, index) => (
+            {models.map((model, index) => (
               <tr key={index}>
-                <th scope="row">{brand.id}</th>
-                <td>{brand.name}</td>
+                <th scope="row">{model.id}</th>
+                <td>{model.name}</td>
                 <td className="table-button-column edit-button">
                   <a
                     data-bs-toggle="modal"
-                    data-bs-target={"#editBrandId-" + brand.id}
+                    data-bs-target={"#editBrandId-" + model.id}
                   >
                     <i className="ri-edit-2-fill"></i>
                   </a>
                   <EditModal
-                    entityService={brandService}
-                    entity={brand}
-                    modalId={"editBrandId-" + brand.id}
-                    initialValues={{ name: brand.name }}
+                    entityService={modelService}
+                    entity={model}
+                    modalId={"editBrandId-" + model.id}
+                    initialValues={{ name: model.name }}
                     validationSchema={validationSchema}
                   />
                 </td>
                 <td className="table-button-column delete-button">
                   <a
                     data-bs-toggle="modal"
-                    data-bs-target={"#deleteBrandId-" + brand.id}
+                    data-bs-target={"#deleteBrandId-" + model.id}
                   >
                     <i className="ri-delete-bin-fill"></i>
                   </a>
                   <DeleteModal
-                    entityService={brandService}
-                    entityId={"deleteBrandId-" + brand.id}
+                    entityService={modelService}
+                    entityId={"deleteBrandId-" + model.id}
                   />
                 </td>
               </tr>
@@ -93,4 +95,4 @@ function BrandList() {
   );
 }
 
-export default BrandList;
+export default ModelList;

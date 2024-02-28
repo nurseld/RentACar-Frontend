@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./brand-list.css";
+//import "./brand-list.css";
 import brandService from "../../../services/brandService";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -7,41 +7,42 @@ import DeleteModal from "../Modals/DeleteModal/DeleteModal";
 import EditModal from "../Modals/EditModal/EditModal";
 import * as Yup from "yup";
 import AddModal from "../Modals/AddModal/AddModal";
+import colorService from "../../../services/colorService";
 
-function BrandList() {
-  const [brands, setBrands] = useState([]);
+function ColorList() {
+  const [colors, setColors] = useState([]);
 
-  const fetchBrands = async () => {
-    const brandsResponse = await brandService.getAll();
-    setBrands(brandsResponse.data);
+  const fetchColors = async () => {
+    const colorsResponse = await colorService.getAll();
+    setColors(colorsResponse.data);
   };
 
   useEffect(() => {
-    fetchBrands();
-  }, [fetchBrands]);
+    fetchColors();
+  }, [fetchColors]);
 
   const validationSchema = Yup.object().shape({
-    name: Yup.string().required("Marka en az 2 karakterden oluşmalıdır."),
+    name: Yup.string().required("Renk en az 2 karakterden oluşmalıdır."),
   });
 
   return (
-    <div className="admin-brand-list-container">
+    <div className="admin-color-list-container">
       <div className="d-flex justify-content-end">
         <a
           className="btn btn-success"
           data-bs-toggle="modal"
-          data-bs-target={"#addBrandModal"}
+          data-bs-target={"#addColorModal"}
         >
           Ekle
         </a>
         <AddModal
-          entityService={brandService}
-          modalId="addBrandModal"
+          entityService={colorService}
+          modalId="addColorModal"
           initialValues={{ name: "" }}
           validationSchema={validationSchema}
         />
       </div>
-      <div className="brand-list">
+      <div className="color-list">
         <table className="table">
           <thead>
             <tr>
@@ -53,35 +54,35 @@ function BrandList() {
             </tr>
           </thead>
           <tbody className="table-group-divider">
-            {brands.map((brand, index) => (
+            {colors.map((color, index) => (
               <tr key={index}>
-                <th scope="row">{brand.id}</th>
-                <td>{brand.name}</td>
+                <th scope="row">{color.id}</th>
+                <td>{color.name}</td>
                 <td className="table-button-column edit-button">
                   <a
                     data-bs-toggle="modal"
-                    data-bs-target={"#editBrandId-" + brand.id}
+                    data-bs-target={"#editColorId-" + color.id}
                   >
                     <i className="ri-edit-2-fill"></i>
                   </a>
                   <EditModal
-                    entityService={brandService}
-                    entity={brand}
-                    modalId={"editBrandId-" + brand.id}
-                    initialValues={{ name: brand.name }}
+                    entityService={colorService}
+                    entity={color}
+                    modalId={"editColorId-" + color.id}
+                    initialValues={{ name: color.name }}
                     validationSchema={validationSchema}
                   />
                 </td>
                 <td className="table-button-column delete-button">
                   <a
                     data-bs-toggle="modal"
-                    data-bs-target={"#deleteBrandId-" + brand.id}
+                    data-bs-target={"#deleteColorId-" + color.id}
                   >
                     <i className="ri-delete-bin-fill"></i>
                   </a>
                   <DeleteModal
-                    entityService={brandService}
-                    entityId={"deleteBrandId-" + brand.id}
+                    entityService={colorService}
+                    entityId={"deleteColorId-" + color.id}
                   />
                 </td>
               </tr>
@@ -93,4 +94,4 @@ function BrandList() {
   );
 }
 
-export default BrandList;
+export default ColorList;
