@@ -30,15 +30,15 @@ function PersonalInformation({ customer }) {
                 onSubmit={onSubmit}>
                 <Form className='personal-information-form'>
                     <div className='personal-information-form-element'>
-                        <label className='personal-information-label'>Ad</label>
+                        <label className='personal-information-label'>First Name</label>
                         <FormInput formGroupClass="" inputClass="personal-information-input" name="firstName" placeholder={customer.firstName} />
                     </div>
                     <div className='personal-information-form-element'>
-                        <label className='personal-information-label'>Soyad</label>
+                        <label className='personal-information-label'>Last Name</label>
                         <FormInput formGroupClass="" inputClass="personal-information-input" name="lastName" placeholder={customer.lastName} />
                     </div>
                     <div className='personal-information-form-element'>
-                        <label className='personal-information-label'>Telefon Numarası</label>
+                        <label className='personal-information-label'>Phone</label>
                         <FormInput formGroupClass="" inputClass="personal-information-input" name="phoneNumber" placeholder={customer.phoneNumber} />
                     </div>
                     <div className='personal-information-form-element'>
@@ -46,16 +46,16 @@ function PersonalInformation({ customer }) {
                         <FormInput formGroupClass="" inputClass="personal-information-input" name="email" placeholder="example@example.com" />
                     </div>
                     <div className='personal-information-form-element'>
-                        <label className='personal-information-label'>Şifre</label>
+                        <label className='personal-information-label'>Password</label>
                         <FormInput formGroupClass="" type='password' inputClass="personal-information-input" name="password" placeholder="********" />
                     </div>
                     <div className='personal-information-form-element'>
-                        <label className='personal-information-label'>Şifre Tekrar</label>
+                        <label className='personal-information-label'>Confirm Password</label>
                         <FormInput formGroupClass="" type='password' inputClass="personal-information-input" name="confirmPassword" placeholder="********" />
                     </div>
                     <div className="d-flex justify-content-end mt-3">
                         <button type='submit' className='btn btn-warning px-4'>
-                            Güncelle
+                            Update
                         </button>
                     </div>
                 </Form>

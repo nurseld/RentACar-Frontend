@@ -54,7 +54,7 @@ const Reservation = () => {
 
                                 <div className=" d-flex align-items-center gap-5 mb-4 mt-3">
                                     <h6 className="rent__price fw-bold fs-4">
-                                        {carDetail.dailyPrice} ₺ / Gün
+                                        {carDetail.dailyPrice} ₺ / Daily
                                     </h6>
 
                                     <span className=" d-flex align-items-center gap-2">
@@ -72,7 +72,7 @@ const Reservation = () => {
 
                                 <p className="section__description">
                                     {/* {carDetail.description} */}
-                                    Gövde Tipi: {carDetail.bodyType}
+                                    {carDetail.bodyType}
                                 </p>
 
                                 <div
@@ -94,7 +94,7 @@ const Reservation = () => {
                                             style={{ color: "crimson" }}
                                         ></i>{" "}
                                         {/* {carDetail.automatic} */}
-                                        Vites Tipi: {carDetail.gearType}
+                                        {carDetail.gearType}
                                     </span>
 
                                     <span className=" d-flex align-items-center gap-1 section__description">
@@ -102,7 +102,7 @@ const Reservation = () => {
                                             className="ri-pantone-line"
                                             style={{ color: "crimson" }}
                                         ></i>{" "}
-                                        Renk: {carDetail.colorName}
+                                        {carDetail.colorName}
                                     </span>
                                 </div>
 
@@ -112,10 +112,10 @@ const Reservation = () => {
                                 >
                                     <span className=" d-flex align-items-center gap-1 section__description">
                                         <i
-                                            className="ri-arrow-right-double-line"
+                                            class="ri-gas-station-fill"
                                             style={{ color: "crimson" }}
                                         ></i>{" "}
-                                        Yakıt Tipi: {carDetail.fuelType}
+                                        {carDetail.fuelType}
                                     </span>
 
                                     <span className=" d-flex align-items-center gap-1 section__description">
@@ -124,20 +124,12 @@ const Reservation = () => {
                                             style={{ color: "crimson" }}
                                         ></i>{" "}
                                         {/* {carDetail.speed} */}
-                                        Model Yılı: {carDetail.year}
-                                    </span>
-
-                                    <span className=" d-flex align-items-center gap-1 section__description">
-                                        <i
-                                            className="ri-arrow-right-double-line"
-                                            style={{ color: "crimson" }}
-                                        ></i>{" "}
-                                        Plaka: {carDetail.plate}
+                                        {carDetail.year}
                                     </span>
                                 </div>
                             </div>
                             <div className="payment__info mt-5">
-                                <h5 className="mb-0 fw-bold text-end">Ödeme Seçenekleri</h5>
+                                <h5 className="mb-0 fw-bold text-end">Payment Information</h5>
                                 <PaymentMethod carId={carDetail.id} />
                             </div>
                         </Col>

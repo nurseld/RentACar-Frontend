@@ -74,19 +74,19 @@ function Login({ title }) {
                 <div className="login-container">
                     <div className="login-body">
                         <div className="title">
-                            Hoş Geldiniz,
+                            Welcome,
                             <br></br>
-                            {title} Hesabınızla Giriş Yapabilirsiniz
+                            You can log in with your {title} account
 
                         </div>
                         <div className="login-form">
                             <FormInput
                                 inputClass="form-control"
-                                type="email" name="email" placeholder="E-posta"
+                                type="email" name="email" placeholder="Email"
                             />
                             <FormInput
                                 inputClass="form-control"
-                                type="password" name="password" placeholder="Şifre"
+                                type="password" name="password" placeholder="Password"
                             />
                         </div>
                     </div>
@@ -94,9 +94,9 @@ function Login({ title }) {
                         <button className="login-button" type="submit"
                             data-bs-toggle="modal"
                             data-bs-target="#staticBackdrop"
-                        >Giriş Yap</button>
-                        <a href="#">Şifremi Unuttum</a>
-                        <span>Henüz üye değil misin?
+                        >Sign In</button>
+                        <a href="#">Forget Password</a>
+                        <span>Don't have an account ?
                             <Link
                                 to="/register"
                                 data-bs-toggle="modal"
@@ -104,7 +104,7 @@ function Login({ title }) {
                                 onClick={async () => await setModalStatus(true)}
                                 className="login-footer-link"
                             >
-                                Kayıt Ol
+                                Sign Up
                             </Link>
                         </span>
                     </div>

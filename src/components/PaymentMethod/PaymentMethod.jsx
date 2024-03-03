@@ -38,7 +38,7 @@ const PaymentMethod = (props) => {
 
       <div className="payment mt-3 d-flex align-items-center justify-content-end  ">
         <label htmlFor="" className="d-flex align-items-center gap-2">
-          <input type="radio" />Teslim Alırken Kredi Kartı
+          <input type="radio" />Debit Card at Vehicle Delivery
         </label>
 
         {/* <img src={masterCard} alt="" /> */}
@@ -46,7 +46,7 @@ const PaymentMethod = (props) => {
 
       <div className="payment mt-3 d-flex align-items-center justify-content-end">
         <label htmlFor="" className="d-flex align-items-center gap-2">
-          <input type="radio" /> Teslim Ederken Kredi Kartı
+          <input type="radio" /> Credit Card at Vehicle Delivery
         </label>
 
         {/* <img src={paypal} alt="" /> */}
@@ -58,11 +58,11 @@ const PaymentMethod = (props) => {
         {
           (authState.id !== 0)
             ?
-            <button type="button" onClick={onSubmit}>Hemen Kirala</button>
+            <button type="button" onClick={onSubmit}>Complete Reservation</button>
             :
             <button
               data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop">Hemen Kirala</button>
+              data-bs-target="#staticBackdrop">Complete Reservation</button>
         }
       </div>
     </>

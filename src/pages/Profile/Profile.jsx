@@ -25,7 +25,6 @@ const Profile = () => {
     const isIndividual = customer !== undefined;
 
     const fetchUser = async () => {
-        // Handle form submission logic here
 
         try {
 
@@ -99,10 +98,10 @@ const Profile = () => {
                 <div className="profile-page-content">
                     <ul className="nav nav-tabs" id="myTab" role="tablist">
                         <li className="nav-item" role="presentation">
-                            <button className="nav-link active" id="active-rentals-tab" data-bs-toggle="tab" data-bs-target="#active-rentals" type="button" role="tab" aria-controls="profile" aria-selected="false">Aktif Kiralamalarım</button>
+                            <button className="nav-link active" id="active-rentals-tab" data-bs-toggle="tab" data-bs-target="#active-rentals" type="button" role="tab" aria-controls="profile" aria-selected="false">My Orders</button>
                         </li>
                         <li className="nav-item" role="presentation">
-                            <button className="nav-link" id="my-profile-tab" data-bs-toggle="tab" data-bs-target="#my-profile" type="button" role="tab" aria-controls="home" aria-selected="true">Profilim</button>
+                            <button className="nav-link" id="my-profile-tab" data-bs-toggle="tab" data-bs-target="#my-profile" type="button" role="tab" aria-controls="home" aria-selected="true">My Profile</button>
                         </li>
                         {/* <li className="nav-item" role="presentation">
                             <button className="nav-link" id="bookings-tab" data-bs-toggle="tab" data-bs-target="#bookings" type="button" role="tab" aria-controls="profile" aria-selected="false">Rezervasyonlarım</button>
