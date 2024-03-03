@@ -79,14 +79,16 @@
   left: -100px !important;
   right: 0 !important;
   top: 100% !important;
- opacity: 70% !important;
- border-radius: 10px !important;
+  opacity: 70% !important;
+  border-radius: 10px !important;
 }
+
 .t1 {
   font-size: 0.8rem;
   margin-top: 10px;
- 
+
 }
+
 .t2 {
   font-size: 0.8rem;
   margin-top: 10px;
@@ -201,7 +203,7 @@
 }
 
 .nav__item:hover {
-  color: #f9a826;
+  color: crimson;
 }
 
 .search__box {
@@ -231,7 +233,7 @@
 }
 
 .nav__active {
-  color: #f9a826;
+  color: crimson;
 }
 
 

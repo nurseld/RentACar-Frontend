@@ -33,7 +33,7 @@
 }
 
 .quick__link a:hover {
-  color: #f9a826;
+  color: crimson;
 }
 
 .footer__link-title {
@@ -90,5 +90,5 @@
     font-size: 0.7rem;
   }
 
-  
+
 }

@@ -9,7 +9,7 @@ const Blog = () => {
   const { t } = useTranslation("global")
   return (
     <Helmet title="Blogs">
-      <CommonSection title={t("blog.Title")} />
+      <CommonSection title="Blog" />
       <section>
         <Container>
           <Row>

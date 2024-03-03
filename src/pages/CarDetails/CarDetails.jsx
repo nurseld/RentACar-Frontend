@@ -66,7 +66,7 @@ const CarDetails = () => {
                   <span className=" d-flex align-items-center gap-1 section__description">
                     <i
                       className="ri-roadster-line"
-                      style={{ color: "#f9a826" }}
+                      style={{ color: "crimson" }}
                     ></i>{" "}
                     {carDetail.model}
                   </span>
@@ -74,7 +74,7 @@ const CarDetails = () => {
                   <span className=" d-flex align-items-center gap-1 section__description">
                     <i
                       className="ri-settings-2-line"
-                      style={{ color: "#f9a826" }}
+                      style={{ color: "crimson" }}
                     ></i>{" "}
                     {carDetail.automatic}
                     {carDetail.kilometer}
@@ -83,7 +83,7 @@ const CarDetails = () => {
                   <span className=" d-flex align-items-center gap-1 section__description">
                     <i
                       className="ri-timer-flash-line"
-                      style={{ color: "#f9a826" }}
+                      style={{ color: "crimson" }}
                     ></i>{" "}
                     {carDetail.speed}
                     {carDetail.year}
@@ -92,7 +92,7 @@ const CarDetails = () => {
                   <span className=" d-flex align-items-center gap-1 section__description">
                     <i
                       className="ri-timer-flash-line"
-                      style={{ color: "#f9a826" }}
+                      style={{ color: "crimson" }}
                     ></i>{" "}
                     {carDetail.speed}
                     {carDetail.gearType}
@@ -100,7 +100,7 @@ const CarDetails = () => {
                   <span className=" d-flex align-items-center gap-1 section__description">
                     <i
                       className="ri-timer-flash-line"
-                      style={{ color: "#f9a826" }}
+                      style={{ color: "crimson" }}
                     ></i>{" "}
                     {carDetail.speed}
                     {carDetail.fuelType}
@@ -108,7 +108,7 @@ const CarDetails = () => {
                   <span className=" d-flex align-items-center gap-1 section__description">
                     <i
                       className="ri-timer-flash-line"
-                      style={{ color: "#f9a826" }}
+                      style={{ color: "crimson" }}
                     ></i>{" "}
                     {carDetail.speed}
                     {carDetail.bodyType}
@@ -125,10 +125,6 @@ const CarDetails = () => {
                   </div>
                   <div className="car-details-card-row">
                     <span className="car-details-card-description">Model</span>
-                    <i
-                      className="ri-roadster-line"
-                      style={{ color: "#f9a826" }}
-                    ></i>{" "}
                     <span className="car-details-card-value">{carDetail.modelName}</span>
                   </div>
                   <div className="car-details-card-row">
