@@ -48,10 +48,9 @@
     color: white;
 }
 
-
-.filter-button-group button.clicked {
-    background-color: crimson;
-    /* Tıklanınca rengi değiştir */
+.filter-button-group-button-clicked {
+    background-color: crimson !important;
+    color: white !important;
 }
 
 

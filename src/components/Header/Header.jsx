@@ -214,13 +214,13 @@ const Header = () => {
                 <div className="d-flex align-items-center gap-1">
                   <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
                     <DropdownToggle caret={false} className="dropdown-button">
-                      {i18n.language === "tr" ? "TR" : "EN" } <i class="bi bi-globe2"></i>
+                      {i18n.language === "tr" ? "TR" : "EN"} <i className="bi bi-globe2"></i>
                     </DropdownToggle>
                     <DropdownMenu>
                       <DropdownItem onClick={() => i18n.changeLanguage("en")}>
-                      <p className="t1">EN</p>
+                        <p className="t1">EN</p>
                       </DropdownItem>
-                      <DropdownItem  onClick={() => i18n.changeLanguage("tr")}>
+                      <DropdownItem onClick={() => i18n.changeLanguage("tr")}>
                         <p className="t2">TR</p>
                       </DropdownItem>
                     </DropdownMenu>

@@ -14,6 +14,7 @@ import { useTranslation } from "react-i18next";
 
 const FindCarForm = () => {
   const { t } = useTranslation("global");
+
   const [dateInputType, setDateInputType] = useState("text");
 
   const authState = useSelector((store) => store.auth);
@@ -113,14 +114,39 @@ const FindCarForm = () => {
             <p>Seçili Şehir: {selectedCity2}</p>
           </div> */}
 
-          <FormInput
+          {/* <FormInput
 
-            formGroupClass="booking__form d-inline-block ms-1 me-1"
+            formGroupClass="form__group d-inline-block ms-1 me-1"
             type="date" name="startDate" placeholder="Start Date"
-          />
+          /> */}
+
           <FormInput
-            formGroupClass="booking__form d-inline-block ms-1 me-1"
+            name="startDate"
+            inputClass="form-control"
+            type={dateInputType}
+            placeholder="Start Date"
+            id="date"
+            onFocus={activateDateInput}
+            onBlur={deactivateDateInput}
+            pattern="\d{2}\d{2}\d{4}"
+            formGroupClass="form__group"
+          />
+
+          {/* <FormInput
+            formGroupClass="form__group d-inline-block ms-1 me-1"
             type="date" name="endDate" placeholder="End Date"
+          /> */}
+
+          <FormInput
+            name="endDate"
+            inputClass="form-control"
+            type={dateInputType}
+            placeholder="End Date"
+            id="date"
+            onFocus={activateDateInput}
+            onBlur={deactivateDateInput}
+            pattern="\d{2}\d{2}\d{4}"
+            formGroupClass="form__group"
           />
 
           <FormGroup className="form__group">
