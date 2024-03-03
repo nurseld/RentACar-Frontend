@@ -23,14 +23,17 @@
 }
 
 .form__group input {
-  /* border: 1px solid #7c8a972a; */
-  /* padding: 8px 15px;
-  background-color: rgba(0, 0, 0, 0.27) !important;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
-  border: none !important;
-  width: 100% !important;
-  outline: none !important; */
+  padding: 8px 15px;
+  border: 1px solid #7c8a972a;
+  color: #e2e2e2;
+  width: 100%;
+
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.27);
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
+
 
 .form__group input::placeholder {
   color: #7c8a97;
