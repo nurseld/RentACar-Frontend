@@ -14,10 +14,10 @@
 }
 
 .car-filter .filter-btn-outline-hover:hover {
-    background-color: #f9a826 !important;
+    background-color: crimson !important;
 }
 
 .btn-check:checked+.btn {
 
-    background-color: #f9a826 !important;
+    background-color: crimson !important;
 }

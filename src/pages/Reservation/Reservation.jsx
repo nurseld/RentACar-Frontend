@@ -58,7 +58,7 @@ const Reservation = () => {
                                     </h6>
 
                                     <span className=" d-flex align-items-center gap-2">
-                                        <span style={{ color: "#f9a826" }}>
+                                        <span style={{ color: "crimson" }}>
                                             <i className="ri-star-s-fill"></i>
                                             <i className="ri-star-s-fill"></i>
                                             <i className="ri-star-s-fill"></i>
@@ -82,7 +82,7 @@ const Reservation = () => {
                                     <span className=" d-flex align-items-center gap-1 section__description">
                                         <i
                                             className="ri-road-map-line"
-                                            style={{ color: "#f9a826" }}
+                                            style={{ color: "crimson" }}
                                         ></i>{" "}
                                         {carDetail.kilometer} Km
                                     </span>
@@ -91,7 +91,7 @@ const Reservation = () => {
                                     <span className=" d-flex align-items-center gap-1 section__description">
                                         <i
                                             className="ri-settings-2-line"
-                                            style={{ color: "#f9a826" }}
+                                            style={{ color: "crimson" }}
                                         ></i>{" "}
                                         {/* {carDetail.automatic} */}
                                         Vites Tipi: {carDetail.gearType}
@@ -100,7 +100,7 @@ const Reservation = () => {
                                     <span className=" d-flex align-items-center gap-1 section__description">
                                         <i
                                             className="ri-pantone-line"
-                                            style={{ color: "#f9a826" }}
+                                            style={{ color: "crimson" }}
                                         ></i>{" "}
                                         Renk: {carDetail.colorName}
                                     </span>
@@ -113,7 +113,7 @@ const Reservation = () => {
                                     <span className=" d-flex align-items-center gap-1 section__description">
                                         <i
                                             className="ri-arrow-right-double-line"
-                                            style={{ color: "#f9a826" }}
+                                            style={{ color: "crimson" }}
                                         ></i>{" "}
                                         Yakıt Tipi: {carDetail.fuelType}
                                     </span>
@@ -121,7 +121,7 @@ const Reservation = () => {
                                     <span className=" d-flex align-items-center gap-1 section__description">
                                         <i
                                             className="ri-arrow-right-double-line"
-                                            style={{ color: "#f9a826" }}
+                                            style={{ color: "crimson" }}
                                         ></i>{" "}
                                         {/* {carDetail.speed} */}
                                         Model Yılı: {carDetail.year}
@@ -130,7 +130,7 @@ const Reservation = () => {
                                     <span className=" d-flex align-items-center gap-1 section__description">
                                         <i
                                             className="ri-arrow-right-double-line"
-                                            style={{ color: "#f9a826" }}
+                                            style={{ color: "crimson" }}
                                         ></i>{" "}
                                         Plaka: {carDetail.plate}
                                     </span>

@@ -177,11 +177,11 @@ const Register = () => {
                                     <Form>
                                         <div className="corporate-register-body">
                                             <div className="register-form page-form">
-                                                <FormInput formGroupClass="m-top-20 width-100" inputClass="form-control full-size" name="companyName" placeholder="Company Name*" />
-                                                <FormInput inputClass="form-control" name="taxNo" placeholder="Tax No*" />
+                                                <FormInput formGroupClass="m-top-20 width-100" inputClass="form-control full-size" name="companyName" placeholder="Kurum Adı*" />
+                                                <FormInput inputClass="form-control" name="taxNo" placeholder="Vergi Numarası*" />
                                                 <FormInput inputClass="form-control" name="contactName" placeholder="Yetkili Ad Soyad*" />
                                                 <FormInput inputClass="form-control" name="phoneNumber" placeholder="Telefon*" />
-                                                <FormInput inputClass="form-control" name="email" placeholder="E-Posta*" />
+                                                <FormInput inputClass="form-control" name="email" placeholder="Email*" />
                                                 <FormInput inputClass="form-control" name="password" type="password" placeholder="Şifre*" />
                                                 <FormInput inputClass="form-control" name="confirmPassword" type="password" placeholder="Şifre Tekrar*" />
                                             </div>

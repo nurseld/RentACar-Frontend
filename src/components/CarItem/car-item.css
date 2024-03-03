@@ -12,7 +12,7 @@
 }
 
 .car__item-info span i {
-  color: #f9a826;
+  color: crimson;
   font-size: 1.1rem;
 }
 
@@ -47,12 +47,12 @@
 }
 
 .car__btn-details {
-  background: #f9a826;
+  background: crimson;
   /* border-radius: 0px 4px 4px 0px; */
 }
 
 .car__btn-details-full-size {
-  background: #f9a826;
+  background: crimson;
   width: 100%;
   height: 55px;
 }
