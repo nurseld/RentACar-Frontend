@@ -82,6 +82,19 @@ function CarList() {
         });
     };
 
+    const toggleButtonClass = (entityName, index) => {
+        const button = document.getElementById(`${entityName}ButtonIndex${index}`);
+
+        button.addEventListener("click", toggleButtonClick);
+
+        function toggleButtonClick() {
+            button.classList.toggle("filter-button-group-button-clicked");
+            button.removeEventListener("click", toggleButtonClick);
+        }
+
+        toggleButtonClick();
+    }
+
     return (
         <div className="car-list-content">
             <div className="car-filters">
@@ -91,7 +104,10 @@ function CarList() {
                         {
                             brandNames.map((brandName, index) => (
                                 <div key={index}>
-                                    <button onClick={() => handleBrandClick(brandName)}>{brandName}</button>
+                                    <button id={`brandButtonIndex${index}`} onClick={() => {
+                                        handleBrandClick(brandName)
+                                        toggleButtonClass("brand", index)
+                                    }}>{brandName}</button>
                                 </div>
                             ))
                         }
@@ -103,7 +119,10 @@ function CarList() {
                         {
                             modelNames.map((modelName, index) => (
                                 <div key={index}>
-                                    <button onClick={() => handleModelClick(modelName)}>{modelName}</button>
+                                    <button id={`modelButtonIndex${index}`} onClick={() => {
+                                        handleModelClick(modelName)
+                                        toggleButtonClass("model", index)
+                                    }}>{modelName}</button>
                                 </div>
                             ))
                         }
@@ -116,7 +135,10 @@ function CarList() {
                         {
                             years.map((year, index) => (
                                 <div key={index}>
-                                    <button onClick={() => handleYearClick(year)}>{year}</button>
+                                    <button id={`yearButtonIndex${index}`} onClick={() => {
+                                        handleYearClick(year)
+                                        toggleButtonClass("year", index)
+                                    }}>{year}</button>
                                 </div>
                             ))
                         }
