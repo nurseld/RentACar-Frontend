@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Container, Row, Col, FormGroup, Input } from "reactstrap";
+import { useNavigate } from "react-router-dom";
+import { Container } from "reactstrap";
 import Helmet from "../../components/Helmet/Helmet";
-import CommonSection from "../../components/CommonSection/CommonSection";
-import { Formik, Field, Form, ErrorMessage } from "formik";
+import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import FormInput from "../../components/FormInput/FormInput";
 import "./register.css";
@@ -124,10 +123,10 @@ const Register = () => {
                     <div className="register-container">
                         <ul className="nav nav-tabs" id="myTab" role="tablist">
                             <li className="nav-item" role="presentation">
-                                <button className="nav-link active" id="register-individual-tab" data-bs-toggle="tab" data-bs-target="#register-individual" type="button" role="tab" aria-controls="home" aria-selected="true">Bireysel</button>
+                                <button className="nav-link active" id="register-individual-tab" data-bs-toggle="tab" data-bs-target="#register-individual" type="button" role="tab" aria-controls="home" aria-selected="true">Individual</button>
                             </li>
                             <li className="nav-item" role="presentation">
-                                <button className="nav-link" id="register-corporate-tab" data-bs-toggle="tab" data-bs-target="#register-corporate" type="button" role="tab" aria-controls="profile" aria-selected="false">Kurumsal</button>
+                                <button className="nav-link" id="register-corporate-tab" data-bs-toggle="tab" data-bs-target="#register-corporate" type="button" role="tab" aria-controls="profile" aria-selected="false">Corporate</button>
                             </li>
                         </ul>
                         <div className="tab-content" id="myTabContent">
@@ -141,26 +140,26 @@ const Register = () => {
                                     <Form>
                                         <div className="individual-register-body">
                                             <div className="register-form page-form">
-                                                <FormInput formGroupClass="m-top-20" inputClass="form-control" name="firstName" placeholder="Ad*" />
-                                                <FormInput formGroupClass="m-top-20" inputClass="form-control" name="lastName" placeholder="Soyad*" />
-                                                <FormInput inputClass="form-control" name="nationalIdNo" placeholder="TC No*" />
+                                                <FormInput formGroupClass="m-top-20" inputClass="form-control" name="firstName" placeholder="First Name*" />
+                                                <FormInput formGroupClass="m-top-20" inputClass="form-control" name="lastName" placeholder="Last Name*" />
+                                                <FormInput inputClass="form-control" name="nationalIdNo" placeholder="Natioanal Identity*" />
                                                 <FormInput
                                                     inputClass="form-control"
                                                     type={dateInputType}
                                                     name="birthDate"
                                                     id="date"
-                                                    placeholder="Doğum Tarihi*"
+                                                    placeholder="Birthdate*"
                                                     onFocus={activateDateInput}
                                                     pattern="\d{2}\d{2}\d{4}"
                                                 />
-                                                <FormInput inputClass="form-control" name="phoneNumber" placeholder="Telefon*" />
-                                                <FormInput inputClass="form-control" type="email" name="email" placeholder="E-Posta*" />
-                                                <FormInput inputClass="form-control" type="password" name="password" placeholder="Şifre*" />
-                                                <FormInput inputClass="form-control" type="password" name="confirmPassword" placeholder="Şifre Tekrar*" />
+                                                <FormInput inputClass="form-control" name="phoneNumber" placeholder="Phone*" />
+                                                <FormInput inputClass="form-control" type="email" name="email" placeholder="Email*" />
+                                                <FormInput inputClass="form-control" type="password" name="password" placeholder="Password*" />
+                                                <FormInput inputClass="form-control" type="password" name="confirmPassword" placeholder="Confirm Password*" />
                                             </div>
                                         </div>
                                         <div className="register-footer">
-                                            <button className="register-button" type="submit">Kayıt Ol</button>
+                                            <button className="register-button" type="submit">Sign Up</button>
                                         </div>
                                     </Form>
                                 </Formik>
@@ -177,17 +176,17 @@ const Register = () => {
                                     <Form>
                                         <div className="corporate-register-body">
                                             <div className="register-form page-form">
-                                                <FormInput formGroupClass="m-top-20 width-100" inputClass="form-control full-size" name="companyName" placeholder="Kurum Adı*" />
-                                                <FormInput inputClass="form-control" name="taxNo" placeholder="Vergi Numarası*" />
-                                                <FormInput inputClass="form-control" name="contactName" placeholder="Yetkili Ad Soyad*" />
-                                                <FormInput inputClass="form-control" name="phoneNumber" placeholder="Telefon*" />
+                                                <FormInput formGroupClass="m-top-20 width-100" inputClass="form-control full-size" name="companyName" placeholder="Company Name*" />
+                                                <FormInput inputClass="form-control" name="taxNo" placeholder="Tax No*" />
+                                                <FormInput inputClass="form-control" name="contactName" placeholder="Contact Name*" />
+                                                <FormInput inputClass="form-control" name="phoneNumber" placeholder="Phone*" />
                                                 <FormInput inputClass="form-control" name="email" placeholder="Email*" />
-                                                <FormInput inputClass="form-control" name="password" type="password" placeholder="Şifre*" />
-                                                <FormInput inputClass="form-control" name="confirmPassword" type="password" placeholder="Şifre Tekrar*" />
+                                                <FormInput inputClass="form-control" name="password" type="password" placeholder="Password*" />
+                                                <FormInput inputClass="form-control" name="confirmPassword" type="password" placeholder="Confirm Password*" />
                                             </div>
                                         </div>
                                         <div className="register-footer">
-                                            <button className="register-button" type="submit">Kayıt Ol</button>
+                                            <button className="register-button" type="submit">Sign Up</button>
                                         </div>
                                     </Form>
                                 </Formik>

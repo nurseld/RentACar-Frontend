@@ -58,25 +58,6 @@ function RentableCars() {
             <CommonSection title="Rentable Cars" />
             <Container>
                 <Row>
-                    <Col lg="12">
-                        <div className=" d-flex align-items-center gap-3 mb-5">
-                            <span className=" d-flex align-items-center gap-2">
-                                <i className="ri-sort-asc"></i> Sort By
-                            </span>
-
-                            <select>
-                                <option>Select</option>
-                                <option value="low">Low to High</option>
-                                <option value="high">High to Low</option>
-                            </select>
-                            <select onChange={(e) => setSelectedYear(e.target.value)}>
-                                <option value="all">Year</option>
-                                {
-                                    years.map((year, index) => (<option key={index} value={year}>{year}</option>))
-                                }
-                            </select>
-                        </div>
-                    </Col>
 
                     {
                         filteredCars.map((item) => (

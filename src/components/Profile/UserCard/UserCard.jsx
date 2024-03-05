@@ -32,7 +32,7 @@ function UserCard({ user, corporate, customer }) {
 
             <div className="user-information">
                 <h5 className="user-fullname">{userData.userFullName}</h5>
-                <span>Üyelik Tarihi:</span>
+                <span>Membership Date</span>
                 <p>{userData.createdDate}</p>
 
                 <div className="user-information-detail">

@@ -32,10 +32,10 @@ function OrderList() {
             <table className="table table-hover">
                 <thead>
                     <tr>
-                        <th className='text-center' scope="col">Kiralama No</th>
+                        <th className='text-center' scope="col">Order No</th>
                         <th className='text-center' scope="col"></th>
-                        <th className='text-center' scope="col">Plaka</th>
-                        <th className='text-center' scope="col">Araç Modeli</th>
+                        <th className='text-center' scope="col">Plate</th>
+                        <th className='text-center' scope="col">Model</th>
                         <th className='text-center' scope="col">Start Date</th>
                         <th className='text-center' scope="col">End Date</th>
                         <th className='text-center' scope="col">Invoice No</th>
